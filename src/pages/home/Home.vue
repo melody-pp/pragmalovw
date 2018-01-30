@@ -1,52 +1,41 @@
 <template>
-  <div class="fullpage-container">
-    <div class="fullpage-wp" v-fullpage="fullpageOpt">
-      <div class="page page-1">
-        <Page1/>
-      </div>
-      <div class="page page-2"></div>
-      <div class="page page-3"></div>
-      <div class="page page-4"></div>
+  <div id="fullpage">
+    <div class="section page-1">
+      <Page1/>
     </div>
+    <div class="section page-2">Some section</div>
+    <div class="section page-3">Some section</div>
+    <div class="section page-4">Some section</div>
   </div>
 </template>
 
 <script>
-  import { TimeLineMax } from 'gsap'
+  import $ from 'jquery'
   import Page1 from './Page1'
 
   export default {
     name: 'home',
     data () {
-      return {
-        fullpageOpt: {
-          start: 0,
-          dir: 'v',
-          loop: false,
-          duration: 300,
-          beforeChange (ele, current, next) {
-          },
-          afterChange (ele, current) {
-          }
-        }
-      }
+      return {}
     },
-    components: {
-      Page1
-    }
+    mounted () {
+      const vm = this
+      $('#fullpage').fullpage({
+        scrollingSpeed: 750,
+        responsiveWidth: 767,
+        scrollOverflow: true,
+        verticalCentered: true,
+        easingcss3: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
+        onLeave (index, nextIndex, direction) {
+          vm.$store.commit('moveTo', nextIndex)
+        },
+      })
+    },
+    components: {Page1}
   }
 </script>
 
 <style scoped lang="scss">
-  .fullpage-container {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-  }
-
   .page-1 {
     background-color: #f091a0;
   }
