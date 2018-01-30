@@ -1,15 +1,19 @@
 <template>
   <div class="fullpage-container">
     <div class="fullpage-wp" v-fullpage="fullpageOpt">
-      <div class="page page-1"></div>
+      <div class="page page-1">
+        <Page1/>
+      </div>
       <div class="page page-2"></div>
       <div class="page page-3"></div>
+      <div class="page page-4"></div>
     </div>
   </div>
 </template>
 
 <script>
   import { TimeLineMax } from 'gsap'
+  import Page1 from './Page1'
 
   export default {
     name: 'home',
@@ -26,6 +30,9 @@
           }
         }
       }
+    },
+    components: {
+      Page1
     }
   }
 </script>
@@ -37,17 +44,22 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 1;
   }
 
   .page-1 {
-    background-color: red;
+    background-color: #f091a0;
   }
 
   .page-2 {
-    background-color: blue;
+    background-color: #ec681f;
   }
 
   .page-3 {
-    background-color: yellow;
+    background-color: #715ba5;
+  }
+
+  .page-4 {
+    background-color: #8b8d8e;
   }
 </style>
