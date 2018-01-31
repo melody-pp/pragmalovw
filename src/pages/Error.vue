@@ -9,7 +9,7 @@
     </main>
     <footer class="footer">
       <div class="copyRight">
-        © 2017 三生石上 &nbsp; 京 ICP 备 17001316 号 -1
+        © 2018 三生石·尚 &nbsp; 京 ICP 备 17071436 号
       </div>
     </footer>
   </div>
