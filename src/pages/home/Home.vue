@@ -17,9 +17,6 @@
 
 <script>
   import $ from 'jquery'
-  import Vue from 'vue'
-  import store from '../../store'
-  import router from '../../router'
   import { mapMutations } from 'vuex'
   import Page1 from './Page1'
   import Page2 from './Page2'
