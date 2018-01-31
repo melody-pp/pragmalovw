@@ -57,7 +57,7 @@ const compressFont = (fontPath, hanziStr) => {
     }
 
     exec('font-spider ' + templatePath, err => {
-      console.log(err || `${fontPath.split('.')[1]}字体压缩完成!`)
+      console.log(err || `${fontPath.split('/').pop()}字体压缩完成!`)
     })
   })
 }
