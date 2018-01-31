@@ -8,4 +8,13 @@ export default {
   hideNav (state) {
     state.navVisible = false
   },
+
+  enableRefresh (state) {
+    state.refreshable = true
+  },
+
+  disableRefresh (state) {
+    state.refreshable = false
+  },
+
 }

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['nav-box',{bgWhite: navVisible}]">
+  <div class="nav-box">
     <span class="show-nav-btn iconsTogether" v-show="!navVisible" @click="showNav"></span>
     <div class="nav" v-show="navVisible">
       <div class="icons clearfix">
@@ -26,14 +26,19 @@
         <li>日语</li>
       </ul>
 
-      <ul class="contactIfo">
-        <li>Add:</li>
-        <li>北京市朝阳区雅成一里甲三号</li>
-        <li>Tel:</li>
-        <li>4000 000</li>
+      <ul class="contactInfo">
+        <li>
+          <span>Add:</span>
+          北京市朝阳区雅成一里甲三号
+        </li>
+        <li>
+          <span>Tel:</span>
+          4000 000
+        </li>
+        <li>
+          <a href="www.pragmalove4s.com">www.pragmalove4s.com</a>
+        </li>
       </ul>
-
-      <a href="www.pragmalove4s.com">www.pragmalove4s.com</a>
     </div>
   </div>
 
@@ -50,7 +55,9 @@
     methods: {
       ...mapMutations(['showNav', 'hideNav']),
       moveTo (pageIndex) {
-        $('#fullpage').fullpage.moveTo(pageIndex)
+        this.$route.path === '/home'
+          ? $('#fullpage').fullpage.moveTo(pageIndex)
+          : this.$router.push({path: '/home', query: {pageIndex}})
       }
     }
   }
@@ -62,18 +69,12 @@
     right: 0;
     z-index: 100;
     height: 100vh;
-    padding: 2.8vw;
     position: absolute;
-    overflow: auto;
-  }
-
-  .bgWhite {
-    background-color: #fff;
   }
 
   .show-nav-btn {
-    top: 0;
-    left: 0;
+    top: 2.8vw;
+    right: 2.8vw;
     width: 33px;
     height: 29px;
     position: relative;
@@ -81,6 +82,25 @@
   }
 
   .nav {
+    height: 100vh;
+    min-height: 400px;
+    padding: 2.8vw;
+    background-color: #fff;
+
+    .icons {
+      margin-bottom: 8.33vh;
+      .logoTxt {
+        width: 120px;
+        height: 33px;
+        background-position: 1px -127px;
+      }
+      .closeIcon {
+        width: 33px;
+        height: 33px;
+        background-position: 0 -68px;
+      }
+    }
+
     .menu {
       font-family: 'SourceHanSansCN-Bold';
       font-size: 1.56vw;
@@ -112,7 +132,7 @@
         margin-bottom: 0.96vh;
       }
       li:last-child {
-        margin-bottom: 35.56vh;
+        margin-bottom: 5.93vh;
       }
     }
     .language {
@@ -122,21 +142,18 @@
         margin-bottom: 0.96vh;
       }
     }
-    .contactIfo {
+
+    .contactInfo {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 0.68vw;
-    }
-    .icons {
-      margin-bottom: 8.33vh;
-      .logoTxt {
-        width: 120px;
-        height: 33px;
-        background-position: 1px -127px;
-      }
-      .closeIcon {
-        width: 33px;
-        height: 33px;
-        background-position: 0 -68px;
+      position: absolute;
+      bottom: 3vh;
+      li {
+        margin-bottom: 0.96vh;
+        > span {
+          font-family: 'SourceHanSansCN-Bold';
+          display: block;
+        }
       }
     }
   }

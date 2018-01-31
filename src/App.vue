@@ -11,9 +11,10 @@
 </script>
 
 <style lang="scss">
-  html, body, ul, li, p {
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   ul, li {
@@ -38,6 +39,10 @@
 
   .fr {
     float: right;
+  }
+
+  .w100 {
+    width: 100%;
   }
 
   #app {
@@ -96,7 +101,7 @@
     display: flex;
     justify-content: space-around;
     img {
-      width: 33.33vw;
+      width: 33.33%;
     }
   }
 </style>

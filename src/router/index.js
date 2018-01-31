@@ -10,7 +10,11 @@ import Error from '../pages/Error'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0}
+  },
   routes: [
     {
       path: '/',
@@ -27,3 +31,5 @@ export default new Router({
     {path: '*', component: Error}
   ],
 })
+
+export default router

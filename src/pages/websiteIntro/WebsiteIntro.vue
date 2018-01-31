@@ -1,12 +1,12 @@
 <template>
   <div>
-    <img class="topImg" src="../../assets/websiteIntro/pic_top.jpg">
+    <img class="w100" src="../../assets/websiteIntro/pic_top.jpg">
     <div class="desc">
       <p class="descFirstLine">感受 三生石·尚</p>
       <p>三生石尚婚礼策划，主营高端婚礼定制、宴会等服务。为了让每一对新人都能拥有一场独一无二的高品质婚礼，高端定制成为“三生石·尚”永恒不变的品牌定位。</p>
       <p>用心做婚礼，对每场婚礼都献出最饱满的热情与执着， 认真策划，坚持创意，注重细节，完美执行。</p>
     </div>
-    <img src="../../assets/websiteIntro/pic_1.jpg">
+    <img class="w100" src="../../assets/websiteIntro/pic_1.jpg">
     <div class="desc">
       <p class="descFirstLine">在每场婚礼的策划中注入独特的格调与优雅品味</p>
       <p>与新人进行最深度的沟通，以照顾这个难忘时刻当中的每一个细节，</p>
@@ -37,15 +37,12 @@
   </div>
 </template>
 <style scoped lang="scss">
-  .topImg {
-    width: 100vw;
-  }
-
   .desc {
     text-align: center;
     color: #a7a7a7;
     font-family: 'SourceHanSansCN-Light';
     font-size: 1.04vw;
+
     .descFirstLine {
       color: #ec8f9f;
       font-family: 'SourceHanSansCN-Regular';
@@ -60,7 +57,7 @@
   .jigsaw {
     img {
       float: left;
-      width: 25vw;
+      width: 25%;
     }
   }
 </style>

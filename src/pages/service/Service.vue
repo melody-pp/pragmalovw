@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="../../assets/service/pic_top1.jpg">
+    <img class="w100" src="../../assets/service/pic_top1.jpg">
     <p>用专一起专注</p>
     <div class="serviceList">
       <div>
@@ -47,6 +47,9 @@
       </div>
       <div>
         <img src="../../assets/service/photography.png">
+
+      </div>
+      <div>
         <p>海外婚纱映像</p>
         <p>映像是一份时间的触动，场景、灯光、色彩、温度、守恒、都在，看到感受到，无论从一个地方到另外一个地方，</p>
         <p>很美，很真，我们被我们记录，我们被我们坚持。</p>
@@ -63,10 +66,11 @@
 <style scoped lang="scss">
   .serviceList {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     > div {
-      display: inline-block;
-      width: 50vw;
+      text-align: center;
+      width: 50%;
     }
   }
 </style>

@@ -1,20 +1,26 @@
 <template>
-  <div id="fullpage">
-    <div class="section page-1">
-      <Page1/>
+  <keep-alive>
+    <div id="fullpage">
+      <div class="section page-1">
+        <Page1/>
+      </div>
+      <div class="section page-2">
+        <Page2/>
+      </div>
+      <div class="section page-3">
+        <Page3/>
+      </div>
+      <div class="section page-4">Some section</div>
     </div>
-    <div class="section page-2">
-      <Page2/>
-    </div>
-    <div class="section page-3">
-      <Page3/>
-    </div>
-    <div class="section page-4">Some section</div>
-  </div>
+  </keep-alive>
 </template>
 
 <script>
   import $ from 'jquery'
+  import Vue from 'vue'
+  import store from '../../store'
+  import router from '../../router'
+  import { mapMutations } from 'vuex'
   import Page1 from './Page1'
   import Page2 from './Page2'
   import Page3 from './Page3'
@@ -23,6 +29,14 @@
     name: 'home',
     data () {
       return {}
+    },
+    computed: {
+      refreshable () {
+        return this.$store.state.refreshable
+      }
+    },
+    methods: {
+      ...mapMutations(['moveTo', 'hideNav', 'disableRefresh', 'enableRefresh'])
     },
     mounted () {
       const vm = this
@@ -33,9 +47,21 @@
         verticalCentered: true,
         easingcss3: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
         onLeave (index, nextIndex, direction) {
-          vm.$store.commit('moveTo', nextIndex)
-          vm.$store.commit('hideNav')
+          vm.moveTo(nextIndex)
+          vm.hideNav()
         },
+      })
+    },
+    beforeRouteEnter (to, from, next) {
+      next(vm => {
+        if (vm.refreshable) {
+          vm.disableRefresh()
+          vm.$router.go(0)
+        } else {
+          vm.enableRefresh()
+          const pageIndex = to.query.pageIndex
+          pageIndex && $('#fullpage').fullpage.moveTo(pageIndex)
+        }
       })
     },
     components: {Page1, Page2, Page3}
