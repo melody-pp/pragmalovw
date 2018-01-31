@@ -8,12 +8,18 @@
     <img class="bottomStone" src="../../assets/page1/bottomStone.png" alt="">
     <div class="themeTxt">
       <div>从开始，就是开始。</div>
-      <span>See More</span>
+      <span class="pointer" @click="toWebsitIntro">See More</span>
     </div>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    methods: {
+      toWebsitIntro () {
+        this.$router.push({path: '/websiteIntro'})
+      }
+    }
+  }
 </script>
 <style scoped lang="scss">
   .companyIntro {

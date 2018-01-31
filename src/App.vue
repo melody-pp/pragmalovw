@@ -11,9 +11,10 @@
 </script>
 
 <style lang="scss">
-  html, body, ul, li {
+  html, body, ul, li, p {
     margin: 0;
     padding: 0;
+    text-align: center;
   }
 
   ul, li {
@@ -90,5 +91,16 @@
     background: url("./assets/icons.png") no-repeat;
     /*background-size: 10.83vw 18.39vw;*/
 
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+  .similarCases {
+    display: flex;
+    justify-content: space-around;
+    img {
+      width: 33.33vw;
+    }
   }
 </style>
