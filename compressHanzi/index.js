@@ -50,7 +50,7 @@ const getFilePathList = (dirPath, pathList, type = '') => {
 const getFileHanzi = filePath => fs.readFileSync(filePath, 'utf-8').match(/[\u4e00-\u9fa5]/g)
 
 const compressFont = (fontPath, hanziStr) => {
-  const relativePath = path.relative(path.resolve(__dirname), fontPath)
+  const relativePath = path.relative(path.resolve(__dirname), fontPath).replace(/\\/g, '/')
   fs.writeFile(templatePath, getHtml(relativePath, hanziStr), err => {
     if (err) {
       return console.log(err)
