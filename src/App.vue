@@ -84,10 +84,11 @@
     font-family: 'SourceHanSansCN-Light';
     src: url('./font/SourceHanSansCN-Light.otf');
   }
+
   span.iconsTogether {
     display: inline-block;
     background: url("./assets/icons.png") no-repeat;
-    background-size: 10.93vw 14.63vw;
+    /*background-size: 10.83vw 18.39vw;*/
 
   }
 </style>
