@@ -1,21 +1,21 @@
 <template>
   <div class="companyIntro">
     <span class="iconsTogether whiteLogo"></span>
-    <img class="leftTopDirec" src="../../assets/page1/leftTopDirec.png" alt="">
-    <img class="leftBottomDirec" src="../../assets/page1/leftBottomDirec.png" alt="">
-    <img class="topStone" src="../../assets/page1/topStone.png" alt="">
-    <img class="topDirec" src="../../assets/page1/topDirec.png" alt="">
-    <img class="bottomStone" src="../../assets/page1/bottomStone.png" alt="">
+    <img class="leftTopDirec" src="../../assets/page1/leftTopDirec.png">
+    <img class="leftBottomDirec" src="../../assets/page1/leftBottomDirec.png">
+    <img class="topStone" src="../../assets/page1/topStone.png">
+    <img class="topDirec" src="../../assets/page1/topDirec.png">
+    <img class="bottomStone" src="../../assets/page1/bottomStone.png">
     <div class="themeTxt">
       <div>从开始，就是开始。</div>
-      <span class="pointer" @click="toWebsitIntro">See More</span>
+      <span class="pointer" @click="toWebsiteIntro">See More</span>
     </div>
   </div>
 </template>
 <script>
   export default {
     methods: {
-      toWebsitIntro () {
+      toWebsiteIntro () {
         this.$router.push({path: '/websiteIntro'})
       }
     }
@@ -80,9 +80,6 @@
         font-family: 'SourceHanSansCN-Light';
         font-size: 0.94vw;
       }
-
     }
   }
-
-
 </style>

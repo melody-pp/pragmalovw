@@ -67,13 +67,11 @@
   @font-face {
     font-family: 'SourceHanSansCN-Bold';
     src: url('./font/SourceHanSansCN-Bold.otf');
-
   }
 
   @font-face {
     font-family: 'SourceHanSansCN-Heavy';
     src: url('./font/SourceHanSansCN-Heavy.otf');
-
   }
 
   @font-face {
@@ -90,12 +88,12 @@
     display: inline-block;
     background: url("./assets/icons.png") no-repeat;
     /*background-size: 10.83vw 18.39vw;*/
-
   }
 
   .pointer {
     cursor: pointer;
   }
+
   .similarCases {
     display: flex;
     justify-content: space-around;

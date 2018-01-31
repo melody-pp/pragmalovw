@@ -4,14 +4,14 @@
     <div class="themeTxt">
       <div>如此，好看。</div>
       <div>还心动</div>
-      <span class="pointer" @click="toWebsitIntro">See More</span>
+      <span class="pointer" @click="toWebsiteIntro">See More</span>
     </div>
   </div>
 </template>
 <script>
   export default {
     methods: {
-      toWebsitIntro () {
+      toWebsiteIntro () {
         this.$router.push({path: '/wonderfulMoment'})
       }
     }
