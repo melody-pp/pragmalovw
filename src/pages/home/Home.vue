@@ -34,6 +34,7 @@
         easingcss3: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
         onLeave (index, nextIndex, direction) {
           vm.$store.commit('moveTo', nextIndex)
+          vm.$store.commit('hideNav')
         },
       })
     },

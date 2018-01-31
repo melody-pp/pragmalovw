@@ -27,9 +27,9 @@
       position: absolute;
     }
     .whiteLogo {
-      width: 10.94vw;
-      height: 1.88vw;
-      background-position: 0 -1.88vw;
+      width: 210px;
+      height: 33px;
+      background-position: 0 -35px;
       position: absolute;
       top: 3.89vh;
       left: 2.6vw;

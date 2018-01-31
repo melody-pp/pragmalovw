@@ -14,7 +14,6 @@
   html, body, ul, li, p {
     margin: 0;
     padding: 0;
-    text-align: center;
   }
 
   ul, li {
@@ -87,7 +86,6 @@
   span.iconsTogether {
     display: inline-block;
     background: url("./assets/icons.png") no-repeat;
-    /*background-size: 10.83vw 18.39vw;*/
   }
 
   .pointer {
