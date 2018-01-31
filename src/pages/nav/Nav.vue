@@ -31,40 +31,55 @@
 </template>
 <style scoped lang="scss">
   .nav {
-    height: 100vh;
+    /*height: 100vh;*/
     background-color: #fff;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 100;
-    padding: 0 2vw;
+    padding: 2.8vw;
     .menu {
       font-family: 'SourceHanSansCN-Bold';
       font-size: 1.56vw;
+      li {
+        margin-bottom: 1.48vh;
+      }
+      li:last-child {
+        margin-bottom: 5.93vh;
+      }
     }
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 0.833vw;
+      li {
+        margin-bottom: 0.96vh;
+      }
+      li:last-child{
+        margin-bottom: 35.56vh;
+      }
     }
-    .language{
+    .language {
       font-family: 'SourceHanSansCN-Bold';
       font-size: 0.73vw;
+      li{
+        margin-bottom: 0.96vh;
+      }
     }
-    .contactIfo{
+    .contactIfo {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 0.68vw;
     }
     .icons {
-
+      margin-bottom: 8.33vh;
       .logoTxt {
-        width: 6.2vw;
-        height: 2.2vw;
-        background-position: 0 -7.19vw;
+        width: 120px;
+        height: 33px;
+        background-position: 0 -132px;
       }
       .closeIcon {
-        width: 1.67vw;
+        width: 1.72vw;
         height: 1.72vw;
-        background-position: 0 -3.75vw;
+        background-position: 0 -3.85vw;
 
       }
     }

@@ -7,7 +7,7 @@
     <img class="topDirec" src="../../assets/page1/topDirec.png" alt="">
     <img class="bottomStone" src="../../assets/page1/bottomStone.png" alt="">
     <div class="themeTxt">
-      <div>从开始，就是开始</div>
+      <div>从开始，就是开始。</div>
       <span>See More</span>
     </div>
   </div>
@@ -24,6 +24,9 @@
       width: 10.94vw;
       height: 1.88vw;
       background-position: 0 -1.88vw;
+      position: absolute;
+      top: 3.89vh;
+      left: 2.6vw;
     }
     .topDirec {
       top: -50vh;
@@ -56,21 +59,22 @@
     }
     .themeTxt {
       position: absolute;
-      bottom: 6vh;
+      bottom: 21.67vh;
       left: 2.6vw;
       color: #fff;
-      span {
-        border: 1px solid #fff;
-        padding: 0.1vw 2vw;
-        border-radius: 0.3vw;
-        font-family: 'SourceHanSansCN-Light';
-        font-size: 0.94vw;
-      }
       div {
         margin-bottom: 1.85vh;
         font-family: 'SourceHanSansCN-Bold';
         font-size: 2.4vw;
       }
+      span {
+        border: 1px solid #fff;
+        padding: 0.93vh 2.92vw;
+        border-radius: 0.3vw;
+        font-family: 'SourceHanSansCN-Light';
+        font-size: 0.94vw;
+      }
+
     }
   }
 
