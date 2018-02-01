@@ -25,7 +25,7 @@
         <li>英文</li>
         <li>日语</li>
       </ul>
-
+      <div class="line"></div>
       <ul class="contactInfo">
         <li>
           <span>Add:</span>
@@ -68,31 +68,32 @@
     top: 0;
     right: 0;
     z-index: 100;
-    height: 100vh;
+    height: 100%;
     position: absolute;
   }
 
   .show-nav-btn {
-    top: 2.8vw;
-    right: 2.8vw;
+    top: 40px;
+    right: 50px;
     width: 33px;
     height: 29px;
-    position: relative;
+    position: absolute;
     background-position: 0 -219px;
   }
 
   .nav {
     height: 100vh;
     min-height: 400px;
-    padding: 2.8vw;
+    padding: 40px;
     background-color: #fff;
 
     .icons {
-      margin-bottom: 8.33vh;
+      margin-bottom: 90px;
       .logoTxt {
         width: 120px;
         height: 33px;
         background-position: 1px -127px;
+        margin-right: 72px;
       }
       .closeIcon {
         width: 33px;
@@ -103,7 +104,7 @@
 
     .menu {
       font-family: 'SourceHanSansCN-Bold';
-      font-size: 1.56vw;
+      font-size: 30px;
       .menu-color-1 {
         color: #f091a0;
       }
@@ -118,41 +119,46 @@
       }
 
       li {
-        margin-bottom: 1.48vh;
+        margin-bottom: 17px;
       }
       li:last-child {
-        margin-bottom: 5.93vh;
+        margin-bottom: 64px;
       }
     }
 
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
-      font-size: 0.833vw;
+      font-size: 16px;
       li {
-        margin-bottom: 0.96vh;
+        margin-bottom: 10px;
       }
       li:last-child {
-        margin-bottom: 5.93vh;
+        margin-bottom: 233px;
       }
     }
     .language {
       font-family: 'SourceHanSansCN-Bold';
-      font-size: 0.73vw;
+      font-size: 14px;
       li {
         margin-bottom: 0.96vh;
       }
     }
-
+    .line {
+      height: 1px;
+      background-color: #f2acb6;
+      margin: 14px 0;
+    }
     .contactInfo {
       font-family: 'SourceHanSansCN-Regular';
-      font-size: 0.68vw;
+      font-size: 13px;
       position: absolute;
       bottom: 3vh;
       li {
-        margin-bottom: 0.96vh;
+        margin-bottom: 16px;
         > span {
           font-family: 'SourceHanSansCN-Bold';
           display: block;
+          margin-bottom: 9px;
         }
       }
     }

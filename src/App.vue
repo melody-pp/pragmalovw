@@ -43,6 +43,27 @@
 
   .w100 {
     width: 100%;
+    vertical-align: middle;
+  }
+
+  .mb20 {
+    margin-bottom: 20px;
+  }
+
+  .margin136 {
+    margin: 136px 0;
+  }
+
+  .websiteIntroColor {
+    color: #f091a0;
+  }
+
+  .wonderfulMomentColor {
+    color: #ec681f;
+  }
+
+  .serviceColor {
+    color: #715ba5;
   }
 
   #app {
@@ -103,5 +124,45 @@
     img {
       width: 33.33%;
     }
+  }
+
+  .themeTxt {
+    position: absolute;
+    bottom: 235px;
+    left: 50px;
+    color: #fff;
+    div {
+      margin-bottom: 20px;
+      font-family: 'SourceHanSansCN-Bold';
+      font-size: 46px;
+    }
+    span {
+      border: 1px solid #fff;
+      padding: 0.93vh 2.92vw;
+      border-radius: 0.3vw;
+      font-family: 'SourceHanSansCN-Light';
+      font-size: 18px;
+    }
+  }
+
+  .secondPageParagraphTitle {
+    font-family: 'SourceHanSansCN-Regular';
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 54px;
+
+  }
+
+  .secondPageParagraphOnlyTitle, .secondPageParagraphVerticalTitle {
+    font-family: 'SourceHanSansCN-Heavy';
+    font-size: 46px;
+    text-align: center;
+  }
+
+  .secondPageParagraphText {
+    font-family: 'SourceHanSansCN-Light';
+    font-size: 20px;
+    text-align: center;
+    color: #a7a7a7;
   }
 </style>

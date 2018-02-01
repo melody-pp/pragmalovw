@@ -26,13 +26,14 @@
     img {
       position: absolute;
     }
+
     .whiteLogo {
       width: 210px;
       height: 33px;
       background-position: 0 -35px;
       position: absolute;
-      top: 3.89vh;
-      left: 2.6vw;
+      top: 40px;
+      left: 50px;
     }
     .topDirec {
       top: -50vh;
@@ -63,23 +64,6 @@
       right: 34vw;
       width: 12vw;
     }
-    .themeTxt {
-      position: absolute;
-      bottom: 21.67vh;
-      left: 2.6vw;
-      color: #fff;
-      div {
-        margin-bottom: 1.85vh;
-        font-family: 'SourceHanSansCN-Bold';
-        font-size: 2.4vw;
-      }
-      span {
-        border: 1px solid #fff;
-        padding: 0.93vh 2.92vw;
-        border-radius: 0.3vw;
-        font-family: 'SourceHanSansCN-Light';
-        font-size: 0.94vw;
-      }
-    }
+
   }
 </style>
