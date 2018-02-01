@@ -52,7 +52,7 @@
     beforeRouteEnter (to, from, next) {
       next(vm => {
         const pageIndex = to.query.pageIndex
-        
+
         if (pageIndex) {
           vm.moveTo(pageIndex)
           $('#fullpage').fullpage.moveTo(pageIndex)
