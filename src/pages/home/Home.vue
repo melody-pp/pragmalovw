@@ -51,15 +51,17 @@
     },
     beforeRouteEnter (to, from, next) {
       next(vm => {
-        if (vm.refreshable) {
-          vm.disableRefresh()
-          vm.$router.go(0)
-        } else {
-          vm.enableRefresh()
-          const pageIndex = to.query.pageIndex
-          pageIndex && $('#fullpage').fullpage.moveTo(pageIndex)
+        const pageIndex = to.query.pageIndex
+        
+        if (pageIndex) {
+          vm.moveTo(pageIndex)
+          $('#fullpage').fullpage.moveTo(pageIndex)
         }
       })
+    },
+    beforeRouteLeave (to, from, next) {
+      $('#fullpage').fullpage.destroy('all')
+      next()
     },
     components: {Page1, Page2, Page3}
   }
