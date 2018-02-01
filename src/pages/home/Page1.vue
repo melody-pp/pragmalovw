@@ -1,15 +1,15 @@
 <template>
   <div class="companyIntro">
-    <img class="littleRightTop" src="../../assets/page1/littleRightTop.png">
-    <img class="littleBottom" src="../../assets/page1/littleBottom.png">
-    <img class="littleBottomStone" src="../../assets/page1/littleBottomStone.png">
-    <img class="littleMiddle" src="../../assets/page1/littleRightTop.png">
+    <img ref="littleRightTop" class="littleRightTop" src="../../assets/page1/littleRightTop.png">
+    <img ref="littleBottom" class="littleBottom" src="../../assets/page1/littleBottom.png">
+    <img ref="littleBottomStone" class="littleBottomStone" src="../../assets/page1/littleBottomStone.png">
+    <img ref="littleMiddle" class="littleMiddle" src="../../assets/page1/littleRightTop.png">
 
-    <img class="leftTopDirec" src="../../assets/page1/leftTopDirec.png">
-    <img class="topStone" src="../../assets/page1/topStone.png">
-    <img class="leftBottomDirec" src="../../assets/page1/leftBottomDirec.png">
-    <img class="topDirec" src="../../assets/page1/topDirec.png">
-    <img class="bottomStone" src="../../assets/page1/bottomStone.png">
+    <img ref="leftTopDirec" class="leftTopDirec" src="../../assets/page1/leftTopDirec.png">
+    <img ref="topStone" class="topStone" src="../../assets/page1/topStone.png">
+    <img ref="leftBottomDirec" class="leftBottomDirec" src="../../assets/page1/leftBottomDirec.png">
+    <img ref="topDirec" class="topDirec" src="../../assets/page1/topDirec.png">
+    <img ref="bottomStone" class="bottomStone" src="../../assets/page1/bottomStone.png">
 
     <span class="iconsTogether whiteLogo"></span>
     <div class="themeTxt">
@@ -19,10 +19,41 @@
   </div>
 </template>
 <script>
+  import { TweenLite } from 'gsap'
+
   export default {
+    computed: {
+      moveIn () {
+        return this.$store.state.pageIndex === 1
+      }
+    },
+    mounted () {
+      this.animate()
+    },
     methods: {
       toWebsiteIntro () {
         this.$router.push({path: '/websiteIntro'})
+      },
+      animate () {
+        const {
+          littleRightTop, littleBottom, littleBottomStone, littleMiddle,
+          leftTopDirec, topStone, leftBottomDirec, topDirec, bottomStone
+        } = this.$refs
+
+        TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay: .5})
+        TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay: .5})
+        TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay: .5})
+        TweenLite.from(littleMiddle, 1, {x: 30, y: 15, delay: .5})
+        TweenLite.from(leftTopDirec, 1, {x: -30, y: -10, delay: .5})
+        TweenLite.from(topStone, 1, {x: -15, y: -5, delay: .5})
+        TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, delay: .5})
+        TweenLite.from(topDirec, 1, {y: -30, delay: .5})
+        TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay: .5})
+      }
+    },
+    watch: {
+      moveIn (newVal) {
+        newVal && this.animate()
       }
     }
   }
