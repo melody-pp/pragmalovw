@@ -35,10 +35,18 @@
 
     </div>
     <div class="jigsaw">
-      <img src="../../assets/websiteIntro/pic_2.jpg">
-      <img src="../../assets/websiteIntro/pic_3.jpg">
-      <img src="../../assets/websiteIntro/pic_4.jpg">
-      <img src="../../assets/websiteIntro/pic_5.jpg">
+      <div>
+        <img src="../../assets/websiteIntro/pic_2.jpg">
+      </div>
+      <div>
+        <img src="../../assets/websiteIntro/pic_3.jpg">
+      </div>
+      <div>
+        <img src="../../assets/websiteIntro/pic_4.jpg">
+      </div>
+      <div>
+        <img src="../../assets/websiteIntro/pic_5.jpg">
+      </div>
     </div>
   </div>
 </template>
@@ -59,8 +67,12 @@
   .jigsaw {
     display: flex;
     justify-content: space-between;
-    img {
-      width: 25%;
+    > div {
+      width: 50%;
+      img {
+        width: 100%;
+      }
     }
+
   }
 </style>

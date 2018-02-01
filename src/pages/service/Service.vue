@@ -5,7 +5,7 @@
     <div class="serviceList">
       <div class="verticalLine"></div>
       <div>
-        <img src="../../assets/service/planning.png">
+          <img src="../../assets/service/planning.png">
         <p class="secondPageParagraphTitle" style="color:#e86a1d;">求婚策划</p>
         <div class="secondPageParagraphText">
           <p class="mb20">有求婚策划人这个角色出现，就是为了令整个求婚更加特别，</p>
@@ -68,9 +68,15 @@
     </div>
     <p class="secondPageParagraphOnlyTitle" style="color:#878a8a;margin: 90px 0;">更多。</p>
     <div class="similarCases">
-      <img src="../../assets/service/pic_1.jpg">
-      <img src="../../assets/service/pic_2.jpg">
-      <img src="../../assets/service/pic_3.jpg">
+      <div>
+        <img src="../../assets/service/pic_1.jpg">
+      </div>
+      <div>
+        <img src="../../assets/service/pic_2.jpg">
+      </div>
+      <div>
+        <img src="../../assets/service/pic_3.jpg">
+      </div>
     </div>
   </div>
 </template>
@@ -99,6 +105,7 @@
       padding: 0;
 
     }
+
   }
 
 </style>

@@ -1,5 +1,9 @@
 <template>
   <div class="companyIntro">
+    <img src="../../assets/page1/littleRightTop.png" alt="">
+    <img src="../../assets/page1/littleBottom.png" alt="">
+    <img src="../../assets/page1/littleBottom.png" alt="">
+    <img src="../../assets/page1/littleRightTop.png" alt="">
     <span class="iconsTogether whiteLogo"></span>
     <img class="leftTopDirec" src="../../assets/page1/leftTopDirec.png">
     <img class="leftBottomDirec" src="../../assets/page1/leftBottomDirec.png">
@@ -38,31 +42,26 @@
     .topDirec {
       top: -50vh;
       right: 10vw;
-      width: 25vw;
     }
 
     .leftTopDirec {
       top: 1vh;
       right: 10vw;
-      width: 45vw;
     }
 
     .leftBottomDirec {
       bottom: 2vh;
       right: 27vw;
-      width: 42vw;
     }
 
     .bottomStone {
       bottom: -1vh;
       right: 10vw;
-      width: 24vw;
     }
 
     .topStone {
       top: 5vh;
       right: 34vw;
-      width: 12vw;
     }
 
   }

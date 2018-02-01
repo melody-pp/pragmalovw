@@ -121,9 +121,13 @@
   .similarCases {
     display: flex;
     justify-content: space-around;
-    img {
+    > div {
       width: 33.33%;
+      img {
+        width: 100%;
+      }
     }
+
   }
 
   .themeTxt {
