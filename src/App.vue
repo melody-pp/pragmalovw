@@ -54,6 +54,10 @@
     margin: 136px 0;
   }
 
+  img {
+    vertical-align: middle;
+  }
+
   .websiteIntroColor {
     color: #f091a0;
   }
