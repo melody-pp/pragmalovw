@@ -19,26 +19,28 @@
         <li>微博</li>
         <li>留下您的信息</li>
       </ul>
+      <div class="langContactBox">
+        <ul class="language">
+          <li>中文</li>
+          <li>英文</li>
+          <li>日语</li>
+        </ul>
+        <div class="line"></div>
+        <ul class="contactInfo">
+          <li>
+            <span>Add:</span>
+            北京市朝阳区雅成一里甲三号
+          </li>
+          <li>
+            <span>Tel:</span>
+            4000 000
+          </li>
+          <li>
+            <a href="www.pragmalove4s.com">www.pragmalove4s.com</a>
+          </li>
+        </ul>
+      </div>
 
-      <ul class="language">
-        <li>中文</li>
-        <li>英文</li>
-        <li>日语</li>
-      </ul>
-      <div class="line"></div>
-      <ul class="contactInfo">
-        <li>
-          <span>Add:</span>
-          北京市朝阳区雅成一里甲三号
-        </li>
-        <li>
-          <span>Tel:</span>
-          4000 000
-        </li>
-        <li>
-          <a href="www.pragmalove4s.com">www.pragmalove4s.com</a>
-        </li>
-      </ul>
     </div>
   </div>
 
@@ -136,6 +138,10 @@
         margin-bottom: 233px;
       }
     }
+    .langContactBox {
+      position: absolute;
+      bottom: 3vh;
+    }
     .language {
       font-family: 'SourceHanSansCN-Bold';
       font-size: 14px;
@@ -151,8 +157,6 @@
     .contactInfo {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 13px;
-      position: absolute;
-      bottom: 3vh;
       li {
         margin-bottom: 16px;
         > span {

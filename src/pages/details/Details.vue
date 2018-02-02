@@ -19,9 +19,15 @@
       <p>新郎则选取了口袋和领口为黑色的西服，搭配黑色领结，和新娘的装扮相得益彰。</p>
     </div>
     <div class="groupOfPictures">
-      <img src="../../assets/details/pic_3.jpg">
-      <img src="../../assets/details/pic_4.jpg">
-      <img src="../../assets/details/pic_5.jpg">
+      <div>
+        <img src="../../assets/details/pic_3.jpg">
+      </div>
+      <div>
+        <img src="../../assets/details/pic_4.jpg">
+      </div>
+      <div>
+        <img src="../../assets/details/pic_5.jpg">
+      </div>
     </div>
     <div class="secondPageParagraphText margin300">
       <p class="secondPageParagraphTitle color#888b8b">策划师说</p>
@@ -29,9 +35,15 @@
       <p>都一直温暖着策划的工作人员。最后，少女心的新人对于婚礼十分满意，坚持不懈策划新人梦想中的婚礼是我们一直以来的追求。</p>
     </div>
     <div class="similarCases">
-      <img src="../../assets/details/pic_6.jpg">
-      <img src="../../assets/details/pic_7.jpg">
-      <img src="../../assets/details/pic_8.jpg">
+      <div>
+        <img src="../../assets/details/pic_6.jpg">
+      </div>
+      <div>
+        <img src="../../assets/details/pic_7.jpg">
+      </div>
+      <div>
+        <img src="../../assets/details/pic_8.jpg">
+      </div>
     </div>
 
   </div>
@@ -40,22 +52,28 @@
   .groupOfPictures {
     display: flex;
     justify-content: space-around;
-    img {
+    div {
       width: 33.33%;
+      img {
+        width: 100%;
+      }
     }
+
   }
 
   .detailsTitleColor {
     color: #e96b1e;
   }
 
-  .margin300{
+  .margin300 {
     margin: 300px 0;
   }
-  .color#888b8b{
+
+  .color#888b8b {
     color: #888b8b;
   }
-  .margin114{
+
+  .margin114 {
     margin: 114px;
   }
 </style>
