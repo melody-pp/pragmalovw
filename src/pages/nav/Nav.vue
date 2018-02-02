@@ -36,7 +36,7 @@
             4000 000
           </li>
           <li>
-            <a href="www.pragmalove4s.com">www.pragmalove4s.com</a>
+            <a class="www" href="http://www.pragmalove4s.com">http://www.pragmalove4s.com</a>
           </li>
         </ul>
       </div>
@@ -127,7 +127,6 @@
         margin-bottom: 64px;
       }
     }
-
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 16px;
@@ -166,5 +165,12 @@
         }
       }
     }
+  }
+
+  .www {
+    color: #808080;
+    text-decoration: none;
+    font-family: 'SourceHanSansCN-Light';
+    font-size: 13px;
   }
 </style>
