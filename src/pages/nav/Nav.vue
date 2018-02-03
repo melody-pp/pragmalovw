@@ -1,10 +1,17 @@
 <template>
   <div class="nav-box">
-    <span class="show-nav-btn iconsTogether" v-show="!navVisible" @click="showNav"></span>
-    <div class="nav" v-show="navVisible">
+    <div class="show-nav-btn" v-show="!navVisible" @click="showNav">
+      <span class="icon-line line1"></span>
+      <span class="icon-line"></span>
+      <span class="icon-line line3"></span>
+    </div>
+    <div id="nav-bar" class="nav" v-show="navVisible">
       <div class="icons clearfix">
         <span class="iconsTogether logoTxt fl"></span>
-        <span class="iconsTogether closeIcon fr" @click="hideNav"></span>
+        <span class="closeIcon fr" @click="hideNav">
+          <span class="icon-line line1"></span>
+          <span class="icon-line line2"></span>
+        </span>
       </div>
 
       <ul class="menu">
@@ -19,13 +26,16 @@
         <li>微博</li>
         <li>留下您的信息</li>
       </ul>
+
       <div class="langContactBox">
         <ul class="language">
           <li>中文</li>
           <li>英文</li>
           <li>日语</li>
         </ul>
+
         <div class="line"></div>
+
         <ul class="contactInfo">
           <li>
             <span>Add:</span>
@@ -43,7 +53,6 @@
 
     </div>
   </div>
-
 </template>
 
 <script>
@@ -72,19 +81,64 @@
     z-index: 100;
     height: 100%;
     position: absolute;
+    .icon-line {
+      display: block;
+      width: 30px;
+      height: 4px;
+      transition: all 100ms;
+      transition-timing-function: ease-out;
+    }
+  }
+
+  .navVisible {
+    .show-nav-btn {
+      .line1 {
+        transform: rotate(45deg);
+      }
+      .line3 {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .closeIcon {
+      .line1 {
+        transform: rotate(45deg);
+      }
+      .line2 {
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   .show-nav-btn {
     top: 40px;
     right: 50px;
-    width: 33px;
-    height: 29px;
+    cursor: pointer;
     position: absolute;
-    background-position: 0 -219px;
+
+    .icon-line {
+      background: #fff;
+      margin-bottom: 5px;
+    }
+
+    &:hover {
+      .icon-line {
+        background-color: #fd0202;
+      }
+    }
+  }
+
+  .menu, .socialSoftware, .language {
+    li {
+      cursor: pointer;
+      &:hover {
+        color: #fd0202;
+      }
+    }
   }
 
   .nav {
-    height: 100vh;
+    height: 100%;
     min-height: 400px;
     padding: 40px;
     background-color: #fff;
@@ -98,9 +152,21 @@
         margin-right: 72px;
       }
       .closeIcon {
-        width: 33px;
-        height: 33px;
-        background-position: 0 -68px;
+        position: relative;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        .icon-line {
+          top: 12px;
+          position: absolute;
+          background: #000;
+          transform-origin: 50% 50%;
+        }
+        &:hover {
+          .icon-line {
+            background-color: #fd0202;
+          }
+        }
       }
     }
 
@@ -127,6 +193,7 @@
         margin-bottom: 64px;
       }
     }
+
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 16px;
@@ -137,10 +204,12 @@
         margin-bottom: 233px;
       }
     }
+
     .langContactBox {
       position: absolute;
       bottom: 3vh;
     }
+
     .language {
       font-family: 'SourceHanSansCN-Bold';
       font-size: 14px;
@@ -148,11 +217,13 @@
         margin-bottom: 0.96vh;
       }
     }
+
     .line {
       height: 1px;
       background-color: #f2acb6;
       margin: 14px 0;
     }
+
     .contactInfo {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 13px;
