@@ -25,7 +25,7 @@ const router = new Router({
         {path: '/websiteIntro', component: WebsiteIntro},
         {path: '/wonderfulMoment', component: WonderfulMoment},
         {path: '/service', component: Service},
-        {path: '/details', component: Details},
+        {path: '/details/:id', component: Details},
       ]
     },
     {path: '*', component: Error}

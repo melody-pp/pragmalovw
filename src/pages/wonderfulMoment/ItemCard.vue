@@ -3,7 +3,7 @@
     <img ref="img" :src="imgUrl">
     <div ref="modal" class="modal">
       <div class="contentBox">
-        <div ref="title" class="title">
+        <div ref="title" class="title" @click="toDetail">
           <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
@@ -50,6 +50,9 @@
             .to(modal, .5, {autoAlpha: 0})
             .to(img, .5, {scale: 1}, '-=.5')
         }
+      },
+      toDetail () {
+        this.$router.push({path: '/details/1'})
       }
     }
   }
@@ -83,12 +86,12 @@
       padding-left: 10%;
       letter-spacing: 3px;
 
-      .title, .content {
+      .title {
+        cursor: pointer;
         > span {
           display: inline-block;
         }
       }
-
       .content {
         color: #fff;
         text-align: left;

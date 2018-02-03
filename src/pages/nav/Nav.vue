@@ -82,7 +82,7 @@
     right: 0;
     z-index: 100;
     height: 100%;
-    position: absolute;
+    position: fixed;
     .icon-line {
       display: block;
       width: 30px;
