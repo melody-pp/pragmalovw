@@ -113,6 +113,42 @@
     src: url('./font/SourceHanSansCN-Light.otf');
   }
 
+  .animated {
+    animation-duration: 200ms;
+    animation-fill-mode: both
+  }
+
+  .fadeInRight {
+    animation-name: fadeInRight
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0)
+    }
+
+    to {
+      opacity: 1;
+      transform: none
+    }
+  }
+
+  .fadeOutRight {
+    animation-name: fadeOutRight
+  }
+
+  @keyframes fadeOutRight {
+    0% {
+      opacity: 1
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0)
+    }
+  }
+
   span.iconsTogether {
     display: inline-block;
     background: url("./assets/icons.png") no-repeat;

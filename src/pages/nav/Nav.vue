@@ -5,53 +5,55 @@
       <span class="icon-line"></span>
       <span class="icon-line line3"></span>
     </div>
-    <div id="nav-bar" class="nav" v-show="navVisible">
-      <div class="icons clearfix">
-        <span class="iconsTogether logoTxt fl"></span>
-        <span class="closeIcon fr" @click="hideNav">
+    <transition enter-active-class="animated fadeInRight"
+                leave-active-class="animated fadeOutRight">
+      <div id="nav-bar" class="nav" v-show="navVisible">
+        <div class="icons clearfix">
+          <span class="iconsTogether logoTxt fl"></span>
+          <span class="closeIcon fr" @click="hideNav">
           <span class="icon-line line1"></span>
           <span class="icon-line line2"></span>
         </span>
-      </div>
+        </div>
 
-      <ul class="menu">
-        <li @click="moveTo(1)" :class="{'menu-color-1': pageIndex===1}">感受三生石尚</li>
-        <li @click="moveTo(2)" :class="{'menu-color-2': pageIndex===2}">美妙瞬间</li>
-        <li @click="moveTo(3)" :class="{'menu-color-3': pageIndex===3}">服务</li>
-        <li @click="moveTo(4)" :class="{'menu-color-4': pageIndex===4}">优惠</li>
-      </ul>
-
-      <ul class="socialSoftware">
-        <li>微信</li>
-        <li>微博</li>
-        <li>留下您的信息</li>
-      </ul>
-
-      <div class="langContactBox">
-        <ul class="language">
-          <li>中文</li>
-          <li>英文</li>
-          <li>日语</li>
+        <ul class="menu">
+          <li @click="moveTo(1)" :class="{'menu-color-1': pageIndex===1}">感受三生石尚</li>
+          <li @click="moveTo(2)" :class="{'menu-color-2': pageIndex===2}">美妙瞬间</li>
+          <li @click="moveTo(3)" :class="{'menu-color-3': pageIndex===3}">服务</li>
+          <li @click="moveTo(4)" :class="{'menu-color-4': pageIndex===4}">优惠</li>
         </ul>
 
-        <div class="line"></div>
-
-        <ul class="contactInfo">
-          <li>
-            <span>Add:</span>
-            北京市朝阳区雅成一里甲三号
-          </li>
-          <li>
-            <span>Tel:</span>
-            4000 000
-          </li>
-          <li>
-            <a class="www" href="http://www.pragmalove4s.com">http://www.pragmalove4s.com</a>
-          </li>
+        <ul class="socialSoftware">
+          <li>微信</li>
+          <li>微博</li>
+          <li>留下您的信息</li>
         </ul>
-      </div>
 
-    </div>
+        <div class="langContactBox">
+          <ul class="language">
+            <li>中文</li>
+            <li>英文</li>
+            <li>日语</li>
+          </ul>
+
+          <div class="line"></div>
+
+          <ul class="contactInfo">
+            <li>
+              <span>Add:</span>
+              北京市朝阳区雅成一里甲三号
+            </li>
+            <li>
+              <span>Tel:</span>
+              4000 000
+            </li>
+            <li>
+              <a class="www" href="http://www.pragmalove4s.com">http://www.pragmalove4s.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 

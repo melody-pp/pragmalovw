@@ -9,14 +9,14 @@ export default {
     state.navVisible = true
     setTimeout(() => {
       cacheDom('.nav-box').classList.add('navVisible')
-    }, 50)
+    }, 120)
   },
 
   hideNav (state) {
     state.navVisible = false
     setTimeout(() => {
       cacheDom('.nav-box').classList.remove('navVisible')
-    }, 50)
+    }, 80)
   },
 
   enableRefresh (state) {
