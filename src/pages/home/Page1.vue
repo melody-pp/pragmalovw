@@ -1,5 +1,5 @@
 <template>
-  <div class="companyIntro">
+  <div ref="page" class="companyIntro">
     <img ref="littleRightTop" class="littleRightTop" src="../../assets/page1/littleRightTop.png">
     <img ref="littleBottom" class="littleBottom" src="../../assets/page1/littleBottom.png">
     <img ref="littleBottomStone" class="littleBottomStone" src="../../assets/page1/littleBottomStone.png">
@@ -20,13 +20,10 @@
 </template>
 <script>
   import { TweenLite } from 'gsap'
+  import {pageMoveMixin} from '../../mixins'
 
   export default {
-    computed: {
-      moveIn () {
-        return this.$store.state.pageIndex === 1
-      }
-    },
+    mixins:[pageMoveMixin],
     mounted () {
       this.animate()
     },
@@ -36,10 +33,11 @@
       },
       animate () {
         const {
-          littleRightTop, littleBottom, littleBottomStone, littleMiddle,
+          page, littleRightTop, littleBottom, littleBottomStone, littleMiddle,
           leftTopDirec, topStone, leftBottomDirec, topDirec, bottomStone
         } = this.$refs
 
+        TweenLite.to(page, .5, {scale: 1, autoAlpha: 1, delay: .5})
         TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay: .5})
         TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay: .5})
         TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay: .5})
@@ -49,19 +47,18 @@
         TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, rotation: -10, delay: .5})
         TweenLite.from(topDirec, 1, {y: -30, rotation: 10, delay: .5})
         TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay: .5})
+      },
+      pageMoveOut () {
+        TweenLite.to(this.$refs.page, .7, {scale: 0.6, autoAlpha: .4})
       }
     },
-    watch: {
-      moveIn (newVal) {
-        newVal && this.animate()
-      }
-    }
   }
 </script>
 <style scoped lang="scss">
   .companyIntro {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     background-color: #f091a0;
     img {
       position: absolute;

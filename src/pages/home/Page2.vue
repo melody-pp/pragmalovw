@@ -1,5 +1,5 @@
 <template>
-  <div class="companyIntro">
+  <div ref="page" class="companyIntro">
     <span class="iconsTogether whiteLogo"></span>
     <div class="themeTxt">
       <div>如此，好看。</div>

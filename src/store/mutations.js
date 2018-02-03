@@ -18,13 +18,4 @@ export default {
       cacheDom('.nav-box').classList.remove('navVisible')
     }, 80)
   },
-
-  enableRefresh (state) {
-    state.refreshable = true
-  },
-
-  disableRefresh (state) {
-    state.refreshable = false
-  },
-
 }
