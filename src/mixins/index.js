@@ -4,7 +4,7 @@ const pageMoveMixin = {
   props: ['moveIn'],
   methods: {
     pageMoveIn () {
-      TweenLite.to(this.$refs.page, .5, {scale: 1, autoAlpha: 1, delay: .5})
+      TweenLite.to(this.$refs.page, .7, {scale: 1, autoAlpha: 1})
     },
     pageMoveOut () {
       TweenLite.to(this.$refs.page, .7, {scale: 0.6, autoAlpha: .4})
