@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import { TimelineLite } from 'gsap'
+  import { TimelineLite, Power4 } from 'gsap'
 
   export default {
     name: 'item-card',
@@ -32,8 +32,10 @@
           this.enterTimeline
             .to(modal, .5, {autoAlpha: 1})
             .to(img, .5, {scale: 1.2}, '-=.5')
-            .staggerFrom(Array.from(title.querySelectorAll('span')).reverse(), .5, {x: -100, autoAlpha: 0}, .1)
-            .from(content, .8, {y: 20, autoAlpha: 0})
+            .from(content, .5, {x: -50, autoAlpha: 0})
+            .staggerFromTo(
+              title.querySelectorAll('span'), .5, {alpha: 0, x: -100,},
+              {alpha: 1, x: 0, ease: Power4.easeOut}, -.05, '-=0.5')
         }
       },
       mouseleave () {
@@ -75,9 +77,10 @@
     background-color: rgba(0, 0, 0, .6);
     .contentBox {
       position: absolute;
-      width: 100%;
-      left: 14%;
+      left: 0;
       bottom: 18%;
+      letter-spacing: 3px;
+      padding-left: 10%;
       letter-spacing: 3px;
 
       .title, .content {
@@ -89,7 +92,7 @@
       .content {
         color: #fff;
         text-align: left;
-        width: 84%;
+        width: 80%;
       }
     }
 
