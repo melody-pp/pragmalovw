@@ -18,6 +18,10 @@
 </script>
 <style scoped lang="scss">
   .companyIntro {
+    width: 100%;
+    height: 100%;
+    background-color: #715ba5;
+
     .themeTxt {
       position: absolute;
       bottom: 21.67vh;
@@ -35,9 +39,6 @@
         font-family: 'SourceHanSansCN-Light';
         font-size: 0.94vw;
       }
-
     }
   }
-
-
 </style>

@@ -60,6 +60,9 @@
 </script>
 <style scoped lang="scss">
   .companyIntro {
+    width: 100%;
+    height: 100%;
+    background-color: #f091a0;
     img {
       position: absolute;
     }

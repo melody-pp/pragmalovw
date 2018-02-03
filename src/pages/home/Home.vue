@@ -68,19 +68,5 @@
 </script>
 
 <style scoped lang="scss">
-  .page-1 {
-    background-color: #f091a0;
-  }
 
-  .page-2 {
-    background-color: #ec681f;
-  }
-
-  .page-3 {
-    background-color: #715ba5;
-  }
-
-  .page-4 {
-    background-color: #8b8d8e;
-  }
 </style>
