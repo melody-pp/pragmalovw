@@ -20,10 +20,10 @@
 </template>
 <script>
   import { TweenLite } from 'gsap'
-  import {pageMoveMixin} from '../../mixins'
+  import { pageMoveMixin } from '../../mixins'
 
   export default {
-    mixins:[pageMoveMixin],
+    mixins: [pageMoveMixin],
     mounted () {
       this.animate()
     },
@@ -47,9 +47,6 @@
         TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, rotation: -10, delay: .5})
         TweenLite.from(topDirec, 1, {y: -30, rotation: 10, delay: .5})
         TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay: .5})
-      },
-      pageMoveOut () {
-        TweenLite.to(this.$refs.page, .7, {scale: 0.6, autoAlpha: .4})
       }
     },
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="companyIntro">
+  <div ref="page" class="companyIntro">
     <span class="iconsTogether whiteLogo"></span>
     <div class="themeTxt">
       <div>用专一去专注。</div>
@@ -8,10 +8,17 @@
   </div>
 </template>
 <script>
+  import { pageMoveMixin } from '../../mixins'
+  import { TweenLite } from 'gsap'
+
   export default {
+    mixins: [pageMoveMixin],
     methods: {
       toWebsiteIntro () {
         this.$router.push({path: '/service'})
+      },
+      animate () {
+        TweenLite.to(this.$refs.page, .5, {scale: 1, autoAlpha: 1, delay: .5})
       }
     }
   }

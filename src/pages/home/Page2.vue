@@ -9,10 +9,17 @@
   </div>
 </template>
 <script>
+  import { pageMoveMixin } from '../../mixins'
+  import { TweenLite } from 'gsap'
+
   export default {
+    mixins: [pageMoveMixin],
     methods: {
       toWebsiteIntro () {
         this.$router.push({path: '/wonderfulMoment'})
+      },
+      animate () {
+        TweenLite.to(this.$refs.page, .5, {scale: 1, autoAlpha: 1, delay: .5})
       }
     }
   }
