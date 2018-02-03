@@ -33,11 +33,10 @@
       },
       animate () {
         const {
-          page, littleRightTop, littleBottom, littleBottomStone, littleMiddle,
+          littleRightTop, littleBottom, littleBottomStone, littleMiddle,
           leftTopDirec, topStone, leftBottomDirec, topDirec, bottomStone
         } = this.$refs
 
-        TweenLite.to(page, .5, {scale: 1, autoAlpha: 1, delay: .5})
         TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay: .5})
         TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay: .5})
         TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay: .5})

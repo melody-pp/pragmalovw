@@ -19,7 +19,6 @@
         this.$router.push({path: '/wonderfulMoment'})
       },
       animate () {
-        TweenLite.to(this.$refs.page, .5, {scale: 1, autoAlpha: 1, delay: .5})
       }
     }
   }
