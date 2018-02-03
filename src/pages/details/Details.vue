@@ -248,7 +248,6 @@
       window.addEventListener('scroll', () => {
         this.schemeVisible = scrollIntoView(this.$refs.scheme)
       })
-      this.schemeAnimate()
     },
     methods: {
       schemeAnimate () {
