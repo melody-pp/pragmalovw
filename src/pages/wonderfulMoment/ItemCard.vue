@@ -7,7 +7,7 @@
           <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
-          <span class="secondPageParagraphText" v-for="(char, index) of content" :key="index">{{char}}</span>
+          {{content}}
         </div>
       </div>
 
@@ -33,7 +33,7 @@
             .to(modal, .5, {autoAlpha: 1})
             .to(img, .5, {scale: 1.2}, '-=.5')
             .staggerFrom(Array.from(title.querySelectorAll('span')).reverse(), .5, {x: -100, autoAlpha: 0}, .1)
-            .staggerFrom(content.querySelectorAll('span'), .5, {y: 20, autoAlpha: 0}, .03)
+            .from(content, .8, {y: 20, autoAlpha: 0})
         }
       },
       mouseleave () {
