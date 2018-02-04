@@ -6,7 +6,28 @@
       <div ref="content" class="content">
         <div class="colorfulLogo"></div>
         <form>
-
+          <div>
+            <label>
+              您的姓名：<input class="name"/>
+            </label>
+            <label>
+              <input type="radio" class="gender" name="gender" :value="1">新郎
+            </label>
+            <label>
+              <input type="radio" class="gender" name="gender" :value="0">新娘
+            </label>
+          </div>
+          <div>
+            <label>
+              远方的客人，请留下电话来！<input class="phone"/>
+            </label>
+          </div>
+          <div>
+            <label>
+              字多字少，都是心意：
+              <textarea class="comment"></textarea>
+            </label>
+          </div>
         </form>
       </div>
       <div class="simpleColorfulLogo"></div>
@@ -121,6 +142,27 @@
       padding: 50px;
       border-radius: 10px;
       background-color: #fff;
+    }
+  }
+
+  form {
+    > div {
+      line-height: 30px;
+    }
+    input, textarea {
+      outline: none;
+      border: none;
+    }
+
+    .name {
+      width: 150px;
+      margin-right: 150px;
+      border-bottom: 1px solid #ccc;
+    }
+    .comment {
+      width: 100%;
+      display: block;
+      resize: none;
     }
   }
 </style>
