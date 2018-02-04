@@ -151,7 +151,7 @@
         width: 120px;
         height: 33px;
         background-position: 1px -127px;
-        margin-right: 72px;
+        margin-right: 6.67vh;
       }
       .closeIcon {
         position: relative;
@@ -174,7 +174,7 @@
 
     .menu {
       font-family: 'SourceHanSansCN-Bold';
-      font-size: 30px;
+      font-size: 2.78vh;
       .menu-color-1 {
         color: #f091a0;
       }
@@ -198,7 +198,7 @@
 
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
-      font-size: 16px;
+      font-size: 1.48vh;
       li {
         margin-bottom: 1vh;
       }
@@ -214,7 +214,7 @@
 
     .language {
       font-family: 'SourceHanSansCN-Bold';
-      font-size: 14px;
+      font-size: 1.3vh;
       li {
         margin-bottom: 0.96vh;
       }
@@ -228,7 +228,7 @@
 
     .contactInfo {
       font-family: 'SourceHanSansCN-Regular';
-      font-size: 13px;
+      font-size: 1.3vh;
       li {
         margin-bottom: 1.48vh;
         > span {
@@ -244,6 +244,6 @@
     color: #808080;
     text-decoration: none;
     font-family: 'SourceHanSansCN-Light';
-    font-size: 13px;
+    font-size: 1.2vh;
   }
 </style>

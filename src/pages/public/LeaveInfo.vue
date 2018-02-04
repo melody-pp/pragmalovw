@@ -25,8 +25,8 @@
     },
     methods: {
       ...mapMutations(['hideLeaveInfo']),
-      clickHandler (evnet) {
-        evnet.target.classList.contains('modal') && this.hideLeaveInfo()
+      clickHandler (event) {
+        event.target.classList.contains('modal') && this.hideLeaveInfo()
       },
       openAnimate () {
         if (this.openTimeline) {
@@ -43,8 +43,8 @@
           .to(seal, 1, {rotationX: 0})
           .set(seal, {zIndex: 1})
           .set(content, {zIndex: 2})
-          .to(content, 1, {y: -400, height: 700, ease: Back.easeOut.config(1.1)})
-          .to(envelope, 1, {y: 0}, '-=1')
+          .to(content, 1, {y: -300, height: 600, ease: Back.easeOut.config(1.1)})
+          .to(envelope, 1, {y: -50}, '-=1')
       },
       hideAnimate () {
         if (this.hideTimeline) {
