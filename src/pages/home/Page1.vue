@@ -37,15 +37,15 @@
           leftTopDirec, topStone, leftBottomDirec, topDirec, bottomStone
         } = this.$refs
 
-        TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay: .5})
-        TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay: .5})
-        TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay: .5})
-        TweenLite.from(littleMiddle, 1, {x: 30, y: 15, delay: .5})
-        TweenLite.from(leftTopDirec, 1, {x: -30, y: -10, rotation: 10, delay: .5})
-        TweenLite.from(topStone, 1, {x: -15, y: -5, delay: .5})
-        TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, rotation: -10, delay: .5})
-        TweenLite.from(topDirec, 1, {y: -30, rotation: 10, delay: .5})
-        TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay: .5})
+        TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay: 1.5})
+        TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay: 1.5})
+        TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay: 1.5})
+        TweenLite.from(littleMiddle, 1, {x: 30, y: 15, delay: 1.5})
+        TweenLite.from(leftTopDirec, 1, {x: -30, y: -10, rotation: 10, delay: 1.5})
+        TweenLite.from(topStone, 1, {x: -15, y: -5, delay: 1.5})
+        TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, rotation: -10, delay: 1.5})
+        TweenLite.from(topDirec, 1, {y: -30, rotation: 10, delay: 1.5})
+        TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay: 1.5})
       }
     },
   }

@@ -36,7 +36,7 @@
     mounted () {
       const vm = this
       $('#fullpage').fullpage({
-        scrollingSpeed: 750,
+        scrollingSpeed: 1500,
         responsiveWidth: 767,
         scrollOverflow: true,
         verticalCentered: true,
@@ -46,7 +46,6 @@
           if (vm.leaveInfoVisible) {
             return false
           }
-
           vm.moveTo(nextIndex)
           vm.hideNav()
         },
@@ -71,5 +70,7 @@
 </script>
 
 <style scoped lang="scss">
-
+  .section {
+    perspective: 1500px;
+  }
 </style>
