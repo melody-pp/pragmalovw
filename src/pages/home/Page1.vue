@@ -60,27 +60,26 @@
       position: absolute;
     }
     .littleRightTop {
-      width: 454px;
+      width: 23.65vw;
       top: -20vh;
       right: -14vw;
     }
     .littleBottom {
-      width: 362px;
+      width: 18.85vw;
       bottom: -27vh;
       right: -6vw;
     }
     .littleBottomStone {
-      width: 225px;
+      width: 11.72vw;
       right: -9vw;
       bottom: -6vh;
       transform: rotateZ(50deg);
     }
     .littleMiddle {
-      width: 454px;
+      width: 23.65vw;
       top: 18vh;
       right: -23vw;
       transform: rotateZ(60deg);
-
     }
     .whiteLogo {
       width: 210px;
@@ -90,35 +89,30 @@
       top: 40px;
       left: 50px;
     }
-
     .topDirec {
       top: -43vh;
       right: 15vw;
-      width: 460px;
+      width: 23.96vw;
     }
-
     .leftTopDirec {
       top: 1vh;
       right: 12vw;
-      width: 852px;
+      width: 44.38vw;
     }
-
     .leftBottomDirec {
       bottom: 8vh;
       right: 27vw;
-      width: 743px;
+      width: 38.7vw;
     }
-
     .bottomStone {
       bottom: -0.5vh;
       right: 17vw;
-      width: 462px;
+      width: 24.06vw;
     }
-
     .topStone {
       top: 6vh;
       right: 36vw;
-      width: 217px;
+      width: 11.3vw;
     }
   }
 </style>

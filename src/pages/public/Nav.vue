@@ -146,7 +146,7 @@
     background-color: #fff;
 
     .icons {
-      margin-bottom: 90px;
+      margin-bottom: 8.33vh;
       .logoTxt {
         width: 120px;
         height: 33px;
@@ -189,10 +189,10 @@
       }
 
       li {
-        margin-bottom: 17px;
+        margin-bottom: 1.6vh;
       }
       li:last-child {
-        margin-bottom: 64px;
+        margin-bottom: 5.93vh;
       }
     }
 
@@ -200,10 +200,10 @@
       font-family: 'SourceHanSansCN-Regular';
       font-size: 16px;
       li {
-        margin-bottom: 10px;
+        margin-bottom: 1vh;
       }
       li:last-child {
-        margin-bottom: 233px;
+        margin-bottom: 21.57vh;
       }
     }
 
@@ -230,11 +230,11 @@
       font-family: 'SourceHanSansCN-Regular';
       font-size: 13px;
       li {
-        margin-bottom: 16px;
+        margin-bottom: 1.48vh;
         > span {
           font-family: 'SourceHanSansCN-Bold';
           display: block;
-          margin-bottom: 9px;
+          margin-bottom: 0.83vh;
         }
       }
     }
