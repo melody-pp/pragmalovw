@@ -158,6 +158,20 @@
     background: url("./assets/icons.png") no-repeat;
   }
 
+  .colorfulLogo {
+    width: 208px;
+    height: 37px;
+    display: inline-block;
+    background: url("./assets/icons.png") no-repeat 0 0;
+  }
+
+  .simpleColorfulLogo {
+    width: 120px;
+    height: 33px;
+    display: inline-block;
+    background: url("./assets/icons.png") no-repeat 1px -127px;
+  }
+
   .pointer {
     cursor: pointer;
   }

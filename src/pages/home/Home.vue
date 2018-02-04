@@ -28,7 +28,7 @@
       return {}
     },
     computed: {
-      ...mapState(['refreshable', 'pageIndex']),
+      ...mapState(['refreshable', 'pageIndex', 'leaveInfoVisible']),
     },
     methods: {
       ...mapMutations(['moveTo', 'hideNav'])
@@ -42,6 +42,11 @@
         verticalCentered: true,
         easingcss3: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
         onLeave (index, nextIndex, direction) {
+          // 留资弹窗可见时，禁止fullpage滚动
+          if (vm.leaveInfoVisible) {
+            return false
+          }
+
           vm.moveTo(nextIndex)
           vm.hideNav()
         },

@@ -18,4 +18,12 @@ export default {
       cacheDom('.nav-box').classList.remove('navVisible')
     }, 80)
   },
+
+  showLeaveInfo (state) {
+    state.leaveInfoVisible = true
+  },
+
+  hideLeaveInfo (state) {
+    state.leaveInfoVisible = false
+  },
 }

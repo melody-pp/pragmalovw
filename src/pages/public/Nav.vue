@@ -26,7 +26,7 @@
         <ul class="socialSoftware">
           <li>微信</li>
           <li>微博</li>
-          <li>留下您的信息</li>
+          <li @click="showLeaveInfo">留下您的信息</li>
         </ul>
 
         <div class="langContactBox">
@@ -66,7 +66,7 @@
       ...mapState(['navVisible', 'pageIndex'])
     },
     methods: {
-      ...mapMutations(['showNav', 'hideNav']),
+      ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo']),
       moveTo (pageIndex) {
         this.$route.path === '/home'
           ? $('#fullpage').fullpage.moveTo(pageIndex)
