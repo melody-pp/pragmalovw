@@ -8,7 +8,7 @@
         <form>
           <div>
             <label>
-              您的姓名：<input class="name"/>
+              你叫小明吗？<input class="name"/>
             </label>
             <label>
               <input type="radio" class="gender" name="gender" :value="1">新郎
@@ -24,8 +24,7 @@
           </div>
           <div>
             <label>
-              字多字少，都是心意：
-              <textarea class="comment"></textarea>
+              字多字少，都是心意：<textarea class="comment"></textarea>
             </label>
           </div>
         </form>
@@ -136,18 +135,21 @@
       z-index: 1;
       position: absolute;
       transform: translateX(-50%);
-      width: 660px;
+      width: 630px;
       height: 400px;
       text-align: left;
-      padding: 50px;
+      padding: 40px 50px;
+      border: 1px solid #a7a7a7;
       border-radius: 10px;
       background-color: #fff;
     }
   }
 
   form {
+    margin-top: 20px;
+
     > div {
-      line-height: 30px;
+      line-height: 40px;
     }
     input, textarea {
       outline: none;
@@ -155,14 +157,27 @@
     }
 
     .name {
-      width: 150px;
-      margin-right: 150px;
-      border-bottom: 1px solid #ccc;
+      width: 160px;
+      margin: 0 80px 0 15px;
+      border-bottom: 1px solid #a7a7a7;
+    }
+    .gender {
+      margin: 0 10px 0 15px;
+    }
+    .phone {
+      width: 270px;
+      margin: 0 0 0 15px;
+      border-bottom: 1px solid #a7a7a7;
     }
     .comment {
       width: 100%;
+      margin-top: -10px;
+      line-height: 40px;
+      height: 152px;
       display: block;
       resize: none;
+      overflow: hidden;
+      background: url("../../assets/leaveInfo/commentBG.png");
     }
   }
 </style>
