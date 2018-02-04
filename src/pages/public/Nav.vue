@@ -7,7 +7,7 @@
     </div>
     <transition enter-active-class="animated fadeInRight"
                 leave-active-class="animated fadeOutRight">
-      <div id="nav-bar" class="nav" v-show="navVisible">
+      <div id="nav-bar" :class="['nav', {glass: leaveInfoVisible}]" v-show="navVisible">
         <div class="icons clearfix">
           <span class="iconsTogether logoTxt fl"></span>
           <span class="closeIcon fr" @click="hideNav">
@@ -63,7 +63,7 @@
 
   export default {
     computed: {
-      ...mapState(['navVisible', 'pageIndex'])
+      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible'])
     },
     methods: {
       ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo']),

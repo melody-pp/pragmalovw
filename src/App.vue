@@ -172,6 +172,10 @@
     background: url("./assets/icons.png") no-repeat 1px -127px;
   }
 
+  .glass {
+    filter: blur(5px);
+  }
+
   .pointer {
     cursor: pointer;
   }
