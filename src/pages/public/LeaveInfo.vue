@@ -8,28 +8,31 @@
         <form>
           <div>
             <label>
-              你叫小明吗？<input class="name"/>
+              你叫小明吗？<input class="name" v-model="name"/>
             </label>
             <label>
-              <input type="radio" class="gender" name="gender" :value="1">新郎
+              <input type="radio" class="gender" name="gender" :value="1" v-model="gender">新郎
             </label>
             <label>
-              <input type="radio" class="gender" name="gender" :value="0">新娘
-            </label>
-          </div>
-          <div>
-            <label>
-              远方的客人，请留下电话来！<input class="phone"/>
+              <input type="radio" class="gender" name="gender" :value="0" v-model="gender">新娘
             </label>
           </div>
           <div>
             <label>
-              字多字少，都是心意：<textarea class="comment"></textarea>
+              远方的客人，请留下电话来！<input class="phone" v-model="phone"/>
+            </label>
+          </div>
+          <div>
+            <label>
+              字多字少，都是心意：<textarea class="comment" v-model="comment"></textarea>
             </label>
           </div>
         </form>
       </div>
       <div class="simpleColorfulLogo"></div>
+      <div ref="btn" class="btn-box">
+        <button class="submit" @click="submit">确定</button>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +46,14 @@
     computed: {
       ...mapState(['leaveInfoVisible'])
     },
+    data () {
+      return {
+        name: '',
+        gender: 1,
+        phone: null,
+        comment: ''
+      }
+    },
     methods: {
       ...mapMutations(['hideLeaveInfo']),
       clickHandler (event) {
@@ -53,7 +64,7 @@
           return this.openTimeline.restart()
         }
 
-        const {modal, seal, envelope, content} = this.$refs
+        const {modal, seal, envelope, content, btn} = this.$refs
         this.openTimeline = new TimelineLite()
 
         this.openTimeline
@@ -65,6 +76,7 @@
           .set(content, {zIndex: 2})
           .to(content, 1, {y: -300, height: 600, ease: Back.easeOut.config(1.1)})
           .to(envelope, 1, {y: -50}, '-=1')
+          .from(btn, .5, {autoAlpha: 0, y: 10}, '-=.5')
       },
       hideAnimate () {
         if (this.hideTimeline) {
@@ -76,6 +88,22 @@
         this.hideTimeline
           .to(modal, .2, {autoAlpha: .6, scale: .6})
           .to(modal, .5, {autoAlpha: 0, scale: 0, x: 500, y: -500, ease: Elastic.easeIn.config(1, 0.75),})
+      },
+      submit () {
+        if (!this.validateData()) {
+          return
+        }
+        this.axios.post('/api/saveUserInfo', {
+          name: this.name,
+          gender: this.gender,
+          phone: this.phone,
+          comment: this.comment
+        }).then(res => {
+          console.log(res.msg)
+        })
+      },
+      validateData () {
+        return true
       }
     },
     watch: {
@@ -180,4 +208,22 @@
       background: url("../../assets/leaveInfo/commentBG.png");
     }
   }
+
+  .btn-box {
+    z-index: 5;
+    left: 50%;
+    bottom: 260px;
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+    button {
+      outline: none;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 5px 25px;
+      border-radius: 5px;
+      border: 1px solid #a7a7a7;
+    }
+  }
+
 </style>
