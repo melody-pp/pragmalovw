@@ -4,8 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 import router from './router'
-import 'normalize.css'
-import './lib/fullpage'
+import './lib'
 
 Vue.config.productionTip = false
 

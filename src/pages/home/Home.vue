@@ -37,9 +37,6 @@
       const vm = this
       $('#fullpage').fullpage({
         scrollingSpeed: 1500,
-        responsiveWidth: 767,
-        scrollOverflow: true,
-        verticalCentered: true,
         easingcss3: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
         onLeave (index, nextIndex, direction) {
           // 留资弹窗可见时，禁止fullpage滚动
