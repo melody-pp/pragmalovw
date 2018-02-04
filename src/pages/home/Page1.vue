@@ -8,6 +8,7 @@
     <img ref="leftTopDirec" class="leftTopDirec" src="../../assets/page1/leftTopDirec.png">
     <img ref="topStone" class="topStone" src="../../assets/page1/topStone.png">
     <img ref="leftBottomDirec" class="leftBottomDirec" src="../../assets/page1/leftBottomDirec.png">
+    <div class="topDirecShadow"></div>
     <img ref="topDirec" class="topDirec" src="../../assets/page1/topDirec.png">
     <img ref="bottomStone" class="bottomStone" src="../../assets/page1/bottomStone.png">
 
@@ -56,8 +57,10 @@
     height: 100%;
     overflow: hidden;
     background-color: #f091a0;
+    perspective: 1500px;
     img {
       position: absolute;
+      perspective: 1500px;
     }
     .littleRightTop {
       width: 23.65vw;
@@ -81,18 +84,23 @@
       right: -23vw;
       transform: rotateZ(60deg);
     }
-    .whiteLogo {
-      width: 210px;
-      height: 33px;
-      background-position: 0 -35px;
-      position: absolute;
-      top: 40px;
-      left: 50px;
-    }
     .topDirec {
       top: -43vh;
       right: 15vw;
       width: 23.96vw;
+    }
+    .topDirecShadow {
+      top: 6vh;
+      right: 36vw;
+      width: 9vw;
+      height: 16vw;
+      border-radius: 39%;
+      position: absolute;
+      -webkit-box-shadow: 10px 10px 10px #a7a7a7;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      transform: rotateZ(-23deg);
     }
     .leftTopDirec {
       top: 1vh;
@@ -113,6 +121,7 @@
       top: 6vh;
       right: 36vw;
       width: 11.3vw;
+      z-index: 2;
     }
   }
 </style>

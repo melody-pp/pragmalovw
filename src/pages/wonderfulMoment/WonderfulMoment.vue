@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span class="iconsTogether whiteLogo"></span>
     <img class="w100" src="../../assets/wonderfulMoment/pic_top.jpg">
     <p class="secondPageParagraphOnlyTitle wonderfulMomentColor margin152">动心，而且心动</p>
     <div class="casesBox clearfix">

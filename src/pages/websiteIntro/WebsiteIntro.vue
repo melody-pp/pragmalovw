@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span class="iconsTogether whiteLogo"></span>
     <img class="w100" src="../../assets/websiteIntro/pic_top.jpg">
     <Paragraph v-bind="paragraphs[0]"/>
     <img class="w100" src="../../assets/websiteIntro/pic_1.jpg">

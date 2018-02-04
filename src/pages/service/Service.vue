@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span class="iconsTogether whiteLogo"></span>
     <img class="w100" src="../../assets/service/pic_top1.jpg">
     <p class="secondPageParagraphOnlyTitle serviceColor margin136">用专一去专注</p>
     <div class="serviceList">

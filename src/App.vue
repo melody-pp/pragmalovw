@@ -153,6 +153,15 @@
     }
   }
 
+  .whiteLogo {
+    width: 210px;
+    height: 33px;
+    background-position: 0 -35px !important;
+    position: absolute;
+    top: 40px;
+    left: 50px;
+  }
+
   span.iconsTogether {
     display: inline-block;
     background: url("./assets/icons.png") no-repeat;
