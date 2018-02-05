@@ -65,6 +65,7 @@
         }
 
         const {modal, seal, envelope, content, btn} = this.$refs
+        const _height = Math.min(1500, window.innerHeight)
         this.openTimeline = new TimelineLite()
 
         this.openTimeline
@@ -74,8 +75,8 @@
           .to(seal, 1, {rotationX: 0})
           .set(seal, {zIndex: 1})
           .set(content, {zIndex: 2})
-          .to(content, 1, {y: -300, height: '55.56vh', ease: Back.easeOut.config(1.1)})
-          .to(envelope, 1, {y: -50}, '-=1')
+          .to(content, 1, {y: -1 * 0.4 * _height, height: 200 + 0.4 * _height, ease: Back.easeOut.config(1.1)})
+          .to(envelope, 1, {y: (_height - 1000) / 5}, '-=1')
           .from(btn, .5, {autoAlpha: 0, y: 10}, '-=.5')
       },
       hideAnimate () {
@@ -132,7 +133,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    height: 37.04vh;
+    height: 400px;
     text-align: center;
 
     > .simpleColorfulLogo {
