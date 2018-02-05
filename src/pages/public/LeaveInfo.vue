@@ -119,7 +119,7 @@
 <style scoped lang="scss">
   .modal {
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 101;
     top: 0;
     left: 0;

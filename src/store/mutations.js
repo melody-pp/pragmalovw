@@ -20,10 +20,16 @@ export default {
   },
 
   showLeaveInfo (state) {
+    for (const el of cacheDom('#app>div').children) {
+      el.classList.contains('modal') || el.classList.add('glass')
+    }
     state.leaveInfoVisible = true
   },
 
   hideLeaveInfo (state) {
+    for (const el of cacheDom('#app>div').children) {
+      el.classList.remove('glass')
+    }
     state.leaveInfoVisible = false
   },
 }

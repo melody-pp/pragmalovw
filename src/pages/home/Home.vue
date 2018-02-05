@@ -1,6 +1,6 @@
 <template>
   <keep-alive>
-    <div id="fullpage" :class="{glass: leaveInfoVisible}">
+    <div id="fullpage">
       <div class="section page-1">
         <Page1 :moveIn="pageIndex === 1"/>
       </div>
