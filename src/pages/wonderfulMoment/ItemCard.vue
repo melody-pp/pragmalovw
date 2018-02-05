@@ -10,7 +10,6 @@
           {{content}}
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -23,33 +22,31 @@
     props: ['imgUrl', 'title', 'content'],
     methods: {
       mouseenter () {
-        const {img, modal, title, content} = this.$refs
         if (this.enterTimeline) {
-          this.enterTimeline.restart()
-        } else {
-          this.enterTimeline = new TimelineLite()
-
-          this.enterTimeline
-            .to(modal, .5, {autoAlpha: 1})
-            .to(img, .5, {scale: 1.2}, '-=.5')
-            .from(content, .5, {x: -50, autoAlpha: 0})
-            .staggerFromTo(
-              title.querySelectorAll('span'), .5, {alpha: 0, x: -100,},
-              {alpha: 1, x: 0, ease: Power4.easeOut}, -.05, '-=0.5')
+          return this.enterTimeline.restart()
         }
+
+        const {img, modal, title, content} = this.$refs
+        this.enterTimeline = new TimelineLite()
+
+        this.enterTimeline
+          .to(modal, .5, {autoAlpha: 1})
+          .to(img, .5, {scale: 1.2}, '-=.5')
+          .from(content, .5, {x: -50, autoAlpha: 0})
+          .staggerFromTo(title.querySelectorAll('span'), .5, {alpha: 0, x: -100,},
+            {alpha: 1, x: 0, ease: Power4.easeOut}, -.05, '-=0.5')
       },
       mouseleave () {
-        const {img, modal} = this.$refs
-
         if (this.leaveTimeline) {
-          this.leaveTimeline.restart()
-        } else {
-          this.leaveTimeline = new TimelineLite()
-
-          this.leaveTimeline
-            .to(modal, .5, {autoAlpha: 0})
-            .to(img, .5, {scale: 1}, '-=.5')
+          return this.leaveTimeline.restart()
         }
+
+        const {img, modal} = this.$refs
+        this.leaveTimeline = new TimelineLite()
+
+        this.leaveTimeline
+          .to(modal, .5, {autoAlpha: 0})
+          .to(img, .5, {scale: 1}, '-=.5')
       },
       toDetail () {
         this.$router.push({path: '/details/1'})
