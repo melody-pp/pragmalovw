@@ -24,6 +24,10 @@
   }
 </script>
 <style scoped lang="scss">
+  .themeTxt span:hover {
+    color: #715ba5;
+  }
+
   .companyIntro {
     width: 100%;
     height: 100%;
@@ -36,6 +40,5 @@
       top: 16vh;
       left: 38vw;
     }
-
   }
 </style>

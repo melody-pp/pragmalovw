@@ -62,7 +62,7 @@
 </script>
 <style scoped lang="scss">
   .themeTxt span:hover {
-    color: #ec681f;
+    color: #f091a0;
   }
 
   .companyIntro {

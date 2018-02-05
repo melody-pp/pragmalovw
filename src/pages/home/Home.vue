@@ -71,6 +71,6 @@
 
 <style scoped lang="scss">
   .section {
-    perspective: 1500px;
+    overflow: hidden;
   }
 </style>
