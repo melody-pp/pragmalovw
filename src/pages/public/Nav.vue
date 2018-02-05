@@ -124,7 +124,7 @@
     }
   }
 
-  .menu, .socialSoftware, .language {
+  .menu {
     li {
       cursor: pointer;
       &:nth-child(1):hover {
@@ -194,8 +194,13 @@
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 1.48vh;
+      color: #a7a7a7;
       li {
         margin-bottom: 1vh;
+        cursor: pointer;
+        &:hover {
+          color: #333333;
+        }
       }
       li:last-child {
         margin-bottom: 21.57vh;
@@ -210,8 +215,14 @@
     .language {
       font-family: 'SourceHanSansCN-Bold';
       font-size: 1.3vh;
+      color: #a7a7a7;
+
       li {
         margin-bottom: 0.96vh;
+        cursor: pointer;
+        &:hover {
+          color: #333333;
+        }
       }
     }
 
