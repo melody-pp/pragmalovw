@@ -74,7 +74,7 @@
           .to(seal, 1, {rotationX: 0})
           .set(seal, {zIndex: 1})
           .set(content, {zIndex: 2})
-          .to(content, 1, {y: -300, height: 600, ease: Back.easeOut.config(1.1)})
+          .to(content, 1, {y: -300, height: '55.56vh', ease: Back.easeOut.config(1.1)})
           .to(envelope, 1, {y: -50}, '-=1')
           .from(btn, .5, {autoAlpha: 0, y: 10}, '-=.5')
       },
@@ -132,7 +132,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    height: 400px;
+    height: 37.04vh;
     text-align: center;
 
     > .simpleColorfulLogo {

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-  import Paragraph from './Paragraph'
+  import Paragraph from '../public/Paragraph'
   import { scrollIntoView } from '../../util'
 
   export default {

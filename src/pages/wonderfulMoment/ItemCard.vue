@@ -75,9 +75,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: #fff;
+    color: #000;
     opacity: 0;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(255, 255, 255, .6);
     .contentBox {
       position: absolute;
       left: 0;
@@ -93,7 +93,7 @@
         }
       }
       .content {
-        color: #fff;
+        color: #000;
         text-align: left;
         width: 80%;
       }

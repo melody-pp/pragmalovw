@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import { scrollIntoView } from '../../util'
+  import { scrollIntoView } from '../../util/index'
   import { TimelineLite } from 'gsap'
 
   export default {
@@ -39,8 +39,8 @@
         const {paragraph, title, content} = this.$refs
         timeline
           .set(paragraph, {autoAlpha: 1})
-          .from(title, .5, {autoAlpha: 0})
-          .staggerFrom(content.querySelectorAll('span'), .5, {y: 30, autoAlpha: 0}, .01)
+          .from(title, .5, {autoAlpha: 0},'-=.5')
+          .staggerFrom(content.querySelectorAll('span'), .4, {y: 30, autoAlpha: 0}, .01)
       }
     },
     watch: {

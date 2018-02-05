@@ -122,12 +122,6 @@
       background: #fff;
       margin-bottom: 5px;
     }
-
-    &:hover {
-      .icon-line {
-        background-color: #fd0202;
-      }
-    }
   }
 
   .menu, .socialSoftware, .language {
@@ -148,7 +142,7 @@
   .nav {
     height: 100%;
     min-height: 400px;
-    padding: 40px;
+    padding: 2.08vw;
     background-color: #fff;
 
     .icons {
@@ -169,11 +163,6 @@
           position: absolute;
           background: #000;
           transform-origin: 50% 50%;
-        }
-        &:hover {
-          .icon-line {
-            background-color: #fd0202;
-          }
         }
       }
     }

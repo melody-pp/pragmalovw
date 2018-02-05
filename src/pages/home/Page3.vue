@@ -2,8 +2,16 @@
   <div ref="page" class="companyIntro">
     <span class="iconsTogether whiteLogo"></span>
     <div class="themeTxt">
-      <div>用专一去专注。</div>
+      <div style="margin-bottom: 1vh;">如此，好看。</div>
+      <div>还心动</div>
       <span class="pointer" @click="toWebsiteIntro">See More</span>
+    </div>
+    <div class="imgBox">
+      <img class="bigStone" src=../../assets/page3/bigStone.png>
+      <img class="leaf" src=../../assets/page3/leaf.png>
+      <img class="littleStone" src=../../assets/page3/littleStone.png>
+      <img class="ball" src=../../assets/page3/ball.png>
+      <img class="glassGreen" src=../../assets/page3/glass.png>
     </div>
   </div>
 </template>
@@ -15,7 +23,7 @@
     mixins: [pageMoveMixin],
     methods: {
       toWebsiteIntro () {
-        this.$router.push({path: '/service'})
+        this.$router.push({path: '/wonderfulMoment'})
       },
       animate () {
       }
@@ -26,24 +34,38 @@
   .companyIntro {
     width: 100%;
     height: 100%;
-    background-color: #715ba5;
-
-    .themeTxt {
-      position: absolute;
-      bottom: 21.67vh;
-      left: 2.6vw;
-      color: #fff;
-      div {
-        margin-bottom: 1.85vh;
-        font-family: 'SourceHanSansCN-Bold';
-        font-size: 2.4vw;
+    background-color: #ec681f;
+    overflow: hidden;
+    .imgBox {
+      position: relative;
+      height: 100%;
+      img {
+        position: absolute;
       }
-      span {
-        border: 1px solid #fff;
-        padding: 0.93vh 2.92vw;
-        border-radius: 0.3vw;
-        font-family: 'SourceHanSansCN-Light';
-        font-size: 0.94vw;
+      .leaf {
+        width: 29.664vw;
+        top: -11vh;
+        left: 24vw;
+      }
+      .ball {
+        width: 18.288vw;
+        bottom: 21vh;
+        left: 44vw
+      }
+      .bigStone {
+        width: 58.752vw;
+        top: -36vh;
+        right: 3vw;
+      }
+      .littleStone {
+        width: 31.624vw;
+        bottom: -9vh;
+        left: 40vw;
+      }
+      .glassGreen {
+        width: 22.13vw;
+        top: -23vh;
+        right: 10vw;
       }
     }
   }
