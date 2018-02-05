@@ -29,7 +29,7 @@
           </div>
         </form>
       </div>
-      <div class="simpleColorfulLogo"></div>
+      <img class="envelopeLogo" src="../../assets/leaveInfo/The_envelope.png" alt="">
       <div ref="btn" class="btn-box">
         <button class="submit" @click="submit">确定</button>
       </div>
@@ -170,6 +170,14 @@
       border: 1px solid #a7a7a7;
       border-radius: 10px;
       background-color: #fff;
+    }
+    .envelopeLogo {
+      position: absolute;
+      bottom: 8vh;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 10;
     }
   }
 
