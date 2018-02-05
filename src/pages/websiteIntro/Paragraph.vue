@@ -21,12 +21,17 @@
     data () {
       return {visible: false, animated: false}
     },
-    mounted () {
-      window.addEventListener('scroll', () => {
-        this.visible = scrollIntoView(this.$refs.paragraph)
-      })
+    created () {
+      this.changeVisible = this.changeVisible.bind(this)
+      window.addEventListener('scroll', this.changeVisible)
+    },
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.changeVisible)
     },
     methods: {
+      changeVisible () {
+        this.visible = scrollIntoView(this.$refs.paragraph)
+      },
       animate () {
         this.animated = true
 

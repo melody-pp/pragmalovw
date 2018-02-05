@@ -69,12 +69,17 @@
         ]
       }
     },
-    mounted () {
-      window.addEventListener('scroll', () => {
-        this.titleVisible = scrollIntoView(this.$refs.verticalTitle)
-      })
+    created () {
+      this.changeTitleVisible = this.changeTitleVisible.bind(this)
+      window.addEventListener('scroll', this.changeTitleVisible)
+    },
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.changeTitleVisible)
     },
     methods: {
+      changeTitleVisible () {
+        this.titleVisible = scrollIntoView(this.$refs.verticalTitle)
+      },
       titleAnimate () {
         this.titleAnimated = true
 
