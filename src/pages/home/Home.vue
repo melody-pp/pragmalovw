@@ -13,7 +13,6 @@
       <div class="section page-4">
         <Page4 :moveIn="pageIndex === 4"/>
       </div>
-      <!--<div class="section page-4">Some section</div>-->
     </div>
   </keep-alive>
 </template>
@@ -21,9 +20,9 @@
 <script>
   import $ from 'jquery'
   import { mapState, mapMutations } from 'vuex'
-  import Page1 from './Page2'
-  import Page2 from './Page3'
-  import Page3 from './Page4'
+  import Page1 from './Page1'
+  import Page2 from './Page2'
+  import Page3 from './Page3'
   import Page4 from './Page4'
 
   export default {
