@@ -61,6 +61,10 @@
   }
 </script>
 <style scoped lang="scss">
+  .themeTxt span:hover {
+    color: #ec681f;
+  }
+
   .companyIntro {
     width: 100%;
     height: 100%;
