@@ -11,69 +11,6 @@
 </script>
 
 <style lang="scss">
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  ul, li {
-    list-style: none;
-  }
-
-  .clearfix {
-    overflow: hidden;
-    _zoom: 1;
-    &:after {
-      content: ".";
-      display: block;
-      height: 0;
-      clear: both;
-      visibility: hidden
-    }
-  }
-
-  .fl {
-    float: left;
-  }
-
-  .fr {
-    float: right;
-  }
-
-  .w100 {
-    width: 100%;
-    vertical-align: middle;
-  }
-
-  .mb20 {
-    margin-bottom: 20px;
-  }
-
-  .mt20 {
-    margin-top: 20px;
-  }
-
-  .margin136 {
-    margin: 136px 0;
-  }
-
-  img {
-    vertical-align: middle;
-  }
-
-  .websiteIntroColor {
-    color: #f091a0;
-  }
-
-  .wonderfulMomentColor {
-    color: #ec681f;
-  }
-
-  .serviceColor {
-    color: #715ba5;
-  }
-
   #app {
     font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -117,6 +54,65 @@
     src: url('./font/SourceHanSansCN-Light.otf');
   }
 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  .clearfix {
+    overflow: hidden;
+    _zoom: 1;
+    &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden
+    }
+  }
+
+  .fl {
+    float: left;
+  }
+
+  .fr {
+    float: right;
+  }
+
+  .w100 {
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  .mb20 {
+    margin-bottom: 20px;
+  }
+
+  .mt20 {
+    margin-top: 20px;
+  }
+
+  .margin136 {
+    margin: 136px 0;
+  }
+
+  .glass {
+    filter: blur(5px);
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
   .animated {
     animation-duration: 200ms;
     animation-fill-mode: both
@@ -153,6 +149,18 @@
     }
   }
 
+  .websiteIntroColor {
+    color: #f091a0;
+  }
+
+  .wonderfulMomentColor {
+    color: #ec681f;
+  }
+
+  .serviceColor {
+    color: #715ba5;
+  }
+
   .whiteLogo {
     width: 210px;
     height: 33px;
@@ -181,14 +189,6 @@
     background: url("./assets/icons.png") no-repeat 1px -127px;
   }
 
-  .glass {
-    filter: blur(5px);
-  }
-
-  .pointer {
-    cursor: pointer;
-  }
-
   .similarCases {
     display: flex;
     justify-content: space-around;
@@ -198,7 +198,6 @@
         width: 100%;
       }
     }
-
   }
 
   .themeTxt {
@@ -217,6 +216,12 @@
       border-radius: 0.3vw;
       font-family: 'SourceHanSansCN-Light';
       font-size: 18px;
+      transition: all .5s;
+      transition-timing-function: ease-out;
+      &:hover {
+        background: #fff;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 
@@ -228,7 +233,8 @@
 
   }
 
-  .secondPageParagraphOnlyTitle, .secondPageParagraphVerticalTitle {
+  .secondPageParagraphOnlyTitle,
+  .secondPageParagraphVerticalTitle {
     font-family: 'SourceHanSansCN-Heavy';
     font-size: 46px;
     text-align: center;
