@@ -22,6 +22,9 @@
     props: ['imgUrl', 'title', 'content'],
     methods: {
       mouseenter () {
+        if (this.leaveTimeline) {
+          this.leaveTimeline.pause()
+        }
         if (this.enterTimeline) {
           return this.enterTimeline.restart()
         }
@@ -37,6 +40,9 @@
             {alpha: 1, x: 0, ease: Power4.easeOut}, -.05, '-=0.5')
       },
       mouseleave () {
+        if (this.enterTimeline) {
+          this.enterTimeline.pause()
+        }
         if (this.leaveTimeline) {
           return this.leaveTimeline.restart()
         }
@@ -58,7 +64,6 @@
 <style scoped lang="scss">
   .item-card {
     width: 50%;
-    float: left;
     position: relative;
     overflow: hidden;
     img {

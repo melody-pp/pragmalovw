@@ -75,4 +75,10 @@
   .margin152 {
     margin: 152px 0;
   }
+
+  .casesBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 </style>
