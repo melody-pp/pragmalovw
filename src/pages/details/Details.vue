@@ -244,12 +244,17 @@
         schemeAnimated: false
       }
     },
-    mounted () {
-      window.addEventListener('scroll', () => {
-        this.schemeVisible = scrollIntoView(this.$refs.scheme)
-      })
+    created () {
+      this.changeSchemeVisible = this.changeSchemeVisible.bind(this)
+      window.addEventListener('scroll', this.changeSchemeVisible)
+    },
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.changeSchemeVisible)
     },
     methods: {
+      changeSchemeVisible () {
+        this.schemeVisible = scrollIntoView(this.$refs.scheme)
+      },
       schemeAnimate () {
         for (const path of this.$refs.stoneSvg.querySelectorAll('path')) {
           const length = path.getTotalLength()
