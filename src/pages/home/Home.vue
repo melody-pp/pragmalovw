@@ -10,7 +10,7 @@
       <div class="section page-3">
         <Page3 :moveIn="pageIndex === 3"/>
       </div>
-      <div class="section page-4">Some section</div>
+      <!--<div class="section page-4">Some section</div>-->
     </div>
   </keep-alive>
 </template>

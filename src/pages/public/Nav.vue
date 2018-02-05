@@ -20,7 +20,7 @@
           <li @click="moveTo(1)" :class="{'menu-color-1': pageIndex===1}">感受三生石尚</li>
           <li @click="moveTo(2)" :class="{'menu-color-2': pageIndex===2}">美妙瞬间</li>
           <li @click="moveTo(3)" :class="{'menu-color-3': pageIndex===3}">服务</li>
-          <li @click="moveTo(4)" :class="{'menu-color-4': pageIndex===4}">优惠</li>
+          <!--<li @click="moveTo(4)" :class="{'menu-color-4': pageIndex===4}">优惠</li>-->
         </ul>
 
         <ul class="socialSoftware">
@@ -133,8 +133,14 @@
   .menu, .socialSoftware, .language {
     li {
       cursor: pointer;
-      &:hover {
-        color: #fd0202;
+      &:nth-child(1):hover {
+        color: #f091a0;
+      }
+      &:nth-child(2):hover {
+        color: #ec681f;
+      }
+      &:nth-child(3):hover {
+        color: #715ba5;
       }
     }
   }
@@ -192,7 +198,7 @@
         margin-bottom: 1.6vh;
       }
       li:last-child {
-        margin-bottom: 5.93vh;
+        margin-bottom: 9vh;
       }
     }
 
