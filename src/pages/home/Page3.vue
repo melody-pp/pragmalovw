@@ -17,7 +17,6 @@
   import { TweenLite } from 'gsap'
   import ThemeText from '../public/ThemeText'
 
-
   export default {
     mixins: [pageMoveMixin],
     components: {ThemeText},
@@ -47,16 +46,15 @@
     }
   }
 </script>
-<style scoped lang="scss">
-  .themeTxt span:hover {
-    color: #ec681f;
-  }
-
+<style lang="scss">
   .companyIntro {
     width: 100%;
     height: 100%;
     background-color: #ec681f;
     overflow: hidden;
+    .themeTxt span:hover {
+      color: #ec681f;
+    }
     img {
       position: absolute;
     }
@@ -73,7 +71,6 @@
       filter: blur(12px);
       border-radius: 15vw 0;
       transform: rotateZ(-6deg);
-
     }
     .leaf {
       width: 29.664vw;
@@ -125,7 +122,6 @@
       top: -23vh;
       right: 10vw;
       transform-origin: top;
-
     }
   }
 </style>

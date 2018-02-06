@@ -28,12 +28,11 @@
     }
   }
 </script>
-<style scoped lang="scss">
-  .themeTxt span:hover {
-    color: #715ba5;
-  }
-
+<style lang="scss">
   .companyIntro {
+    .themeTxt span:hover {
+      color: #715ba5;
+    }
     width: 100%;
     height: 100%;
     background-color: #715ba5;
@@ -50,6 +49,5 @@
       top: 40vh;
       left: 38vw;
     }
-
   }
 </style>
