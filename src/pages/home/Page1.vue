@@ -21,11 +21,12 @@
 </script>
 
 <style scoped lang="scss">
-  .homePage {
-    height: 100%;
-    background-color: #f9f6ee;
-    img {
-      position: absolute;
-    }
+.homePage{
+  height: 100%;
+  background-color: #e1e1e1;
+  img{
+    position:absolute;
   }
+}
+
 </style>

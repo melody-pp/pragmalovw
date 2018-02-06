@@ -24,7 +24,7 @@
           </div>
           <div>
             <label>
-              字多字少，都是心意：<textarea class="comment" v-model="comment"></textarea>
+              字多字少，都是心意：<textarea class="comment" v-model="con"></textarea>
             </label>
           </div>
         </form>
@@ -51,7 +51,7 @@
         name: '',
         sex: 0,
         tel: null,
-        comment: ''
+        con: ''
       }
     },
     methods: {
@@ -94,13 +94,13 @@
         if (!this.validateData()) {
           return
         }
-        this.axios.post('/cn/index.php/Api/Api/addCapital', {
+        this.axios.post('/Api/addCapital', {
           name: this.name,
           sex: this.sex,
           tel: this.tel,
-          comment: this.comment
+          con: this.con
         }).then(res => {
-          console.log(res.msg)
+          alert(res.statusText)
         })
       },
       validateData () {
