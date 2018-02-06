@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="companyIntro">
+  <div ref="page" class="page2">
     <img ref="littleRightTop" class="littleRightTop" src="../../assets/page2/littleRightTop.png">
     <img ref="littleBottom" class="littleBottom" src="../../assets/page2/littleBottom.png">
     <div ref="littleBottomStoneShadow" class="littleBottomStoneShadow"></div>
@@ -64,17 +64,16 @@
     },
   }
 </script>
-<style scoped lang="scss">
-  .themeTxt span:hover {
-    color: #f091a0;
-  }
-
-  .companyIntro {
+<style lang="scss">
+  .page2 {
     width: 100%;
     height: 100%;
     overflow: hidden;
     background-color: #f0a3ab;
     perspective: 1500px;
+    .themeTxt span:hover {
+      color: #f091a0;
+    }
     img {
       position: absolute;
       perspective: 1500px;
@@ -96,8 +95,6 @@
       filter: blur(12px);
       position: absolute;
       border-radius: 50%;
-      position: absolute;
-
     }
     .littleBottom {
       width: 18.85vw;
@@ -109,7 +106,6 @@
       right: -9vw;
       bottom: -6vh;
       transform: rotateZ(50deg);
-
     }
     .littleMiddle {
       width: 23.65vw;
@@ -169,7 +165,6 @@
       filter: blur(12px);
       border-radius: 50%;
       position: absolute;
-
     }
     .bottomStone {
       bottom: -0.5vh;

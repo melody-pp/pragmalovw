@@ -17,9 +17,10 @@
         </div>
 
         <ul class="menu">
-          <li @click="moveTo(2)" :class="{'menu-color-2': pageIndex===2}">感受三生石尚</li>
-          <li @click="moveTo(3)" :class="{'menu-color-3': pageIndex===3}">美妙瞬间</li>
-          <li @click="moveTo(4)" :class="{'menu-color-4': pageIndex===4}">服务</li>
+          <li v-for="(pageText, index) of pageTextList" :key="pageText.id" @click="moveTo(index+2)"
+              :class="{[`menu-color-${index+2}`]: pageIndex===index+2}">
+            {{pageText.title}}
+          </li>
         </ul>
 
         <ul class="socialSoftware">
@@ -62,7 +63,7 @@
 
   export default {
     computed: {
-      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible'])
+      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList'])
     },
     methods: {
       ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo']),
