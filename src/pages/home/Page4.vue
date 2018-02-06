@@ -41,12 +41,12 @@
     }
     .water {
       width: 19.92vw;
-      top: 21vh;
+      top: 10.3vw;
       left: 38.9vw;
     }
     .stone {
       width: 32.71vw;
-      top: 40vh;
+      top: 20vw;
       left: 38vw;
     }
   }

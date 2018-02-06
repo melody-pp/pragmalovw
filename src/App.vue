@@ -182,11 +182,11 @@
 
   .whiteLogo {
     width: 210px;
-    height: 33px;
+    height: 34px;
     background-position: 0 -35px !important;
     position: absolute;
-    top: 40px;
-    left: 50px;
+    top: 2.08vw;
+    left: 2.08vw;
   }
 
   span.iconsTogether {
@@ -196,9 +196,12 @@
 
   .colorfulLogo {
     width: 208px;
-    height: 37px;
+    height: 35px;
     display: inline-block;
     background: url("./assets/icons.png") no-repeat 0 0;
+    position: absolute;
+    top: 2.08vw;
+    left: 2.08vw;
   }
 
   .simpleColorfulLogo {

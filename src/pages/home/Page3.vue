@@ -39,8 +39,8 @@
         TweenLite.from(leafShadow, 1, {x: 30, y: -20, rotation: 15, delay: .5})
         TweenLite.from(glassGreen, 1, {x: 20, y: -20, rotation: -10, delay: .5})
         TweenLite.from(glassGreenShadow, 1, {x: 5, y: -10, rotation: -5})
-        TweenLite.from(ball, 1, {ease: Elastic.easeOut.config(1, 0.3), y: -50, delay: .5})
-        TweenLite.from(ballShadow, 1, {ease: Elastic.easeOut.config(1, 0.3), y: -50, scale: 0.8, delay: .5})
+        TweenLite.from(ball, 1, {ease: Elastic.easeOut.config(1, 0.3), y: -100, delay: .5})
+        TweenLite.from(ballShadow, 1, {ease: Elastic.easeOut.config(1, 0.3), y: -100, scale: 0.5, delay: .5})
 
       }
     }
