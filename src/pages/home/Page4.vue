@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="companyIntro">
+  <div ref="page" class="page4">
     <span class="iconsTogether whiteLogo"></span>
     <ThemeText :content="ThemeText" @seemore="toService"/>
     <img class="stone" src="../../assets/page4/pic_06.png" alt="">
@@ -29,7 +29,7 @@
   }
 </script>
 <style lang="scss">
-  .companyIntro {
+  .page4 {
     .themeTxt span:hover {
       color: #715ba5;
     }

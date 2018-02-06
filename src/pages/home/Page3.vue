@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="companyIntro">
+  <div ref="page" class="page3">
     <span class="iconsTogether whiteLogo"></span>
     <ThemeText :content="ThemeText" @seemore="toWonderfulMoment"/>
     <img class="bigStone" src=../../assets/page3/bigStone.png>
@@ -47,7 +47,7 @@
   }
 </script>
 <style lang="scss">
-  .companyIntro {
+  .page3 {
     width: 100%;
     height: 100%;
     background-color: #ec681f;

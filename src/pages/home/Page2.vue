@@ -1,5 +1,5 @@
 <template>
-  <div ref="page" class="companyIntro">
+  <div ref="page" class="page2">
     <img ref="littleRightTop" class="littleRightTop" src="../../assets/page2/littleRightTop.png">
     <img ref="littleBottom" class="littleBottom" src="../../assets/page2/littleBottom.png">
     <div ref="littleBottomStoneShadow" class="littleBottomStoneShadow"></div>
@@ -65,7 +65,7 @@
   }
 </script>
 <style lang="scss">
-  .companyIntro {
+  .page2 {
     width: 100%;
     height: 100%;
     overflow: hidden;
