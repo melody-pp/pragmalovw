@@ -5,8 +5,21 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
-    name: 'App'
+    name: 'App',
+    created () {
+      this.getText()
+    },
+    methods: {
+      ...mapMutations(['setPageTextList']),
+      getText () {
+        this.axios.get('/Api/getText').then(res => {
+          this.setPageTextList(res.data)
+        })
+      }
+    }
   }
 </script>
 

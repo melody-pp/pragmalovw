@@ -1,10 +1,7 @@
 <template>
   <div ref="page" class="companyIntro">
     <span class="iconsTogether whiteLogo"></span>
-    <div class="themeTxt">
-      <div>用专一去专注。</div>
-      <span class="pointer" @click="toWebsiteIntro">See More</span>
-    </div>
+    <ThemeText :content="ThemeText" @seemore="toService"/>
     <img class="stone" src="../../assets/page4/pic_06.png" alt="">
     <img class="water" src="../../assets/page4/pic_05.png" alt="">
   </div>
@@ -12,11 +9,18 @@
 <script>
   import { pageMoveMixin } from '../../mixins'
   import { TweenLite } from 'gsap'
+  import ThemeText from '../public/ThemeText'
 
   export default {
     mixins: [pageMoveMixin],
+    components: {ThemeText},
+    computed: {
+      ThemeText () {
+        return this.$store.getters.getThemeText(2)
+      }
+    },
     methods: {
-      toWebsiteIntro () {
+      toService () {
         this.$router.push({path: '/service'})
       },
       animate () {

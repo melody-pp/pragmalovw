@@ -17,20 +17,24 @@
     <img ref="bottomStone" class="bottomStone" src="../../assets/page2/bottomStone.png">
 
     <span class="iconsTogether whiteLogo"></span>
-    <div class="themeTxt">
-      <div>从开始，就是开始。</div>
-      <span class="pointer" @click="toWebsiteIntro">See More</span>
-    </div>
+    <ThemeText :content="ThemeText" @seemore="toWebsiteIntro"/>
   </div>
 </template>
 <script>
   import { TweenLite } from 'gsap'
   import { pageMoveMixin } from '../../mixins'
+  import ThemeText from '../public/ThemeText'
 
   export default {
     mixins: [pageMoveMixin],
+    components: {ThemeText},
     mounted () {
       this.animate()
+    },
+    computed: {
+      ThemeText () {
+        return this.$store.getters.getThemeText(0)
+      }
     },
     methods: {
       toWebsiteIntro () {

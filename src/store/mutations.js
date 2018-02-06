@@ -32,4 +32,9 @@ export default {
     }
     state.leaveInfoVisible = false
   },
+
+  setPageTextList (state, pageTextList) {
+    state.pageTextList = pageTextList
+  },
+
 }
