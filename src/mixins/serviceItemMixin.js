@@ -21,7 +21,6 @@ export const serviceItemMixin = {
   },
   methods: {
     mouseenter () {
-      console.log('mouseenter')
       this.hover = true
     },
     mouseleave () {

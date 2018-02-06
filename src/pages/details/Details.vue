@@ -228,10 +228,12 @@
 
   import { TimelineLite } from 'gsap'
   import { scrollIntoView } from '../../util'
+  import { changeVisibleMixin } from '../../mixins'
   import Paragraph from '../public/Paragraph'
 
   export default {
     components: {Paragraph},
+    mixins: [changeVisibleMixin],
     data () {
       return {
         schemeVisible: false,
@@ -254,15 +256,8 @@
         ]
       }
     },
-    created () {
-      this.changeSchemeVisible = this.changeSchemeVisible.bind(this)
-      window.addEventListener('scroll', this.changeSchemeVisible)
-    },
-    beforeDestroy () {
-      window.removeEventListener('scroll', this.changeSchemeVisible)
-    },
     methods: {
-      changeSchemeVisible () {
+      changeVisible () {
         this.schemeVisible = scrollIntoView(this.$refs.scheme)
       },
       schemeAnimate () {
