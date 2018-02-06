@@ -114,49 +114,50 @@
       transform: rotateZ(60deg);
     }
     .topDirec {
-      top: -43vh;
-      right: 15vw;
-      width: 23.96vw;
+      top: -46vh;
+      right: 18vw;
+      width: 25.96vw;
     }
     .topDirecShadow {
-      top: -7vh;
-      right: 11vw;
-      width: 21vw;
-      height: 21vw;
+      top: -19vh;
+      right: 14.7vw;
+      width: 27vw;
+      height: 27vw;
       position: absolute;
       background-color: rgba(73, 41, 35, 0.25);
-      -webkit-transform: rotateZ(-22deg);
-      transform: rotateZ(-22deg);
-      border-radius: 21vw 0;
+      -webkit-transform: rotateZ(-38deg);
+      transform: rotateZ(-38deg);
+      border-radius: 20vw 0;
       -webkit-filter: blur(12px);
       filter: blur(12px);
     }
     .leftTopDirec {
-      top: 1vh;
-      right: 12vw;
-      width: 44.38vw;
+      top: 8vh;
+      right: 17vw;
+      width: 45.38vw;
     }
     .leftBottomDirecShadow {
-      bottom: 9vh;
-      right: 32vw;
+      bottom: 3vh;
+      right: 39vw;
       width: 29.7vw;
       height: 26vw;
       border-radius: 29.7vw 0;
       position: absolute;
       background-color: rgba(73, 41, 35, 0.25);
-      -webkit-transform: rotateZ(-3deg);
-      transform: rotateZ(-3deg);
+      -webkit-transform: rotateZ(-7deg);
+      transform: rotateZ(-7deg);
+      -webkit-filter: blur(12px);
       filter: blur(12px);
     }
     .leftBottomDirec {
-      bottom: 8vh;
-      right: 27vw;
-      width: 38.7vw;
+      bottom: -1vh;
+      right: 34vw;
+      width: 40.7vw;
     }
     .bottomStoneShadow {
-      bottom: 7.5vh;
+      bottom: 9.5vh;
       right: 15vw;
-      width: 22.06vw;
+      width: 24.06vw;
       height: 10vw;
       background-color: rgba(73, 41, 35, 0.25);
       -webkit-transform: rotateZ(28deg);
@@ -169,23 +170,24 @@
     .bottomStone {
       bottom: -0.5vh;
       right: 17vw;
-      width: 24.06vw;
+      width: 26.06vw;
     }
     .topStoneShadow {
-      top: 6vh;
-      right: 36vw;
+      top: 11vh;
+      right: 39vw;
       width: 9vw;
-      height: 17vw;
+      height: 18vw;
       border-radius: 39%;
       position: absolute;
       background-color: rgba(73, 41, 35, 0.25);
       -webkit-transform: rotateZ(-20deg);
       transform: rotateZ(-20deg);
+      -webkit-filter: blur(12px);
       filter: blur(12px);
     }
     .topStone {
-      top: 6vh;
-      right: 36vw;
+      top: 12vh;
+      right: 40vw;
       width: 11.3vw;
     }
   }
