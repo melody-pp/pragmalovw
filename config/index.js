@@ -11,7 +11,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/cn/index.php/Api': 'http://118.190.99.176/'
+      '/cn/index.php/Api': 'http://118.190.99.176/',
+      '/cn/thumb': 'http://118.190.99.176/',
+      '/en/thumb': 'http://118.190.99.176/',
+      '/jp/thumb': 'http://118.190.99.176/',
     },
 
     // Various Dev Server settings
