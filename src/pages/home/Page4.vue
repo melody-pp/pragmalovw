@@ -5,7 +5,8 @@
       <div>用专一去专注。</div>
       <span class="pointer" @click="toWebsiteIntro">See More</span>
     </div>
-    <img class="together" src="../../assets/page4/together.png" alt="">
+    <img class="stone" src="../../assets/page4/pic_06.png" alt="">
+    <img class="water" src="../../assets/page4/pic_05.png" alt="">
   </div>
 </template>
 <script>
@@ -35,10 +36,16 @@
     img {
       position: absolute;
     }
-    .together {
+    .water {
+      width: 19.92vw;
+      top: 21vh;
+      left: 38.9vw;
+    }
+    .stone {
       width: 32.71vw;
-      top: 16vh;
+      top: 40vh;
       left: 38vw;
     }
+
   }
 </style>

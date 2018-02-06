@@ -11,15 +11,15 @@
               你叫小明吗？<input class="name" v-model="name"/>
             </label>
             <label>
-              <input type="radio" class="gender" name="gender" :value="1" v-model="gender">新郎
+              <input type="radio" class="gender" name="gender" :value="0" v-model="sex">新郎
             </label>
             <label>
-              <input type="radio" class="gender" name="gender" :value="0" v-model="gender">新娘
+              <input type="radio" class="gender" name="gender" :value="1" v-model="sex">新娘
             </label>
           </div>
           <div>
             <label>
-              远方的客人，请留下电话来！<input class="phone" v-model="phone"/>
+              远方的客人，请留下电话来！<input class="phone" v-model="tel"/>
             </label>
           </div>
           <div>
@@ -49,8 +49,8 @@
     data () {
       return {
         name: '',
-        gender: 1,
-        phone: null,
+        sex: 0,
+        tel: null,
         comment: ''
       }
     },
@@ -94,10 +94,10 @@
         if (!this.validateData()) {
           return
         }
-        this.axios.post('/api/saveUserInfo', {
+        this.axios.post('/cn/index.php/Api/Api/addCapital', {
           name: this.name,
-          gender: this.gender,
-          phone: this.phone,
+          sex: this.sex,
+          tel: this.tel,
           comment: this.comment
         }).then(res => {
           console.log(res.msg)
@@ -184,6 +184,8 @@
 
   form {
     margin-top: 20px;
+    font-family: 'SourceHanSansCN-Regular';
+    font-size: 0.73vw;
 
     > div {
       line-height: 40px;
@@ -195,19 +197,19 @@
 
     .name {
       width: 160px;
-      margin: 0 80px 0 15px;
+      margin: 0 80px 0 47px;
       border-bottom: 1px solid #a7a7a7;
     }
     .gender {
       margin: 0 10px 0 15px;
     }
     .phone {
-      width: 270px;
-      margin: 0 0 0 15px;
+      width: 282px;
+      margin: 0 0 0 47px;
       border-bottom: 1px solid #a7a7a7;
     }
     .comment {
-      width: 100%;
+      width: 98%;
       margin-top: -10px;
       line-height: 40px;
       height: 152px;
@@ -232,6 +234,7 @@
       padding: 5px 25px;
       border-radius: 5px;
       border: 1px solid #a7a7a7;
+      background-color: transparent;
     }
   }
 
