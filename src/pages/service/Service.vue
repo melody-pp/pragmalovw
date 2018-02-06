@@ -1,8 +1,8 @@
 <template>
   <div>
     <span class="iconsTogether whiteLogo"></span>
-    <img class="w100" src="../../assets/service/pic_top1.jpg">
-    <p class="secondPageParagraphOnlyTitle serviceColor margin136">用专一去专注</p>
+    <img class="w100" :src="unit.image">
+    <p class="secondPageParagraphOnlyTitle serviceColor margin136">{{unit.title}}</p>
     <div class="serviceList">
       <div class="verticalLine"></div>
       <service-item v-for="(item, index) of items" v-bind="item" :key="index"/>
@@ -108,6 +108,11 @@
         }
       }
     },
+    computed:{
+      unit () {
+        return this.$store.getters.getUnit('service')
+      },
+    }
   }
 </script>
 
