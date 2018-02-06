@@ -13,20 +13,15 @@
 
 <script>
   import { scrollIntoView } from '../../util/index'
+  import { changeVisibleMixin } from '../../mixins'
   import { TimelineLite } from 'gsap'
 
   export default {
     name: 'paragraph',
+    mixins:[changeVisibleMixin],
     props: ['title', 'content'],
     data () {
       return {visible: false, animated: false}
-    },
-    created () {
-      this.changeVisible = this.changeVisible.bind(this)
-      window.addEventListener('scroll', this.changeVisible)
-    },
-    beforeDestroy () {
-      window.removeEventListener('scroll', this.changeVisible)
     },
     methods: {
       changeVisible () {

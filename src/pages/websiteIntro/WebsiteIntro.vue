@@ -37,8 +37,10 @@
 <script>
   import Paragraph from '../public/Paragraph'
   import { scrollIntoView } from '../../util'
+  import { changeVisibleMixin } from '../../mixins'
 
   export default {
+    mixins: [changeVisibleMixin],
     components: {Paragraph},
     data () {
       return {
@@ -69,15 +71,8 @@
         ]
       }
     },
-    created () {
-      this.changeTitleVisible = this.changeTitleVisible.bind(this)
-      window.addEventListener('scroll', this.changeTitleVisible)
-    },
-    beforeDestroy () {
-      window.removeEventListener('scroll', this.changeTitleVisible)
-    },
     methods: {
-      changeTitleVisible () {
+      changeVisible () {
         this.titleVisible = scrollIntoView(this.$refs.verticalTitle)
       },
       titleAnimate () {
