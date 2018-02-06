@@ -11,12 +11,18 @@
     name: 'App',
     created () {
       this.getText()
+      this.getContact()
     },
     methods: {
-      ...mapMutations(['setPageTextList']),
+      ...mapMutations(['setPageTextList', 'setContactInfo']),
       getText () {
         this.axios.get('/Api/getText').then(res => {
           this.setPageTextList(res.data)
+        })
+      },
+      getContact () {
+        this.axios.get('/Api/getContact').then(res => {
+          this.setContactInfo(res.data[0])
         })
       }
     }

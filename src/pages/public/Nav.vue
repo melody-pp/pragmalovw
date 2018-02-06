@@ -39,17 +39,9 @@
           <div class="line"></div>
 
           <ul class="contactInfo">
-            <li>
-              <span>Add:</span>
-              北京市朝阳区雅成一里甲三号
-            </li>
-            <li>
-              <span>Tel:</span>
-              4000 000
-            </li>
-            <li>
-              <a class="www" href="http://www.pragmalove4s.com">http://www.pragmalove4s.com</a>
-            </li>
+            <li><span>Add:</span>{{contactInfo.addr}}</li>
+            <li><span>Tel:</span>{{contactInfo.tel}}</li>
+            <li><a class="www" href="http://www.pragmalove4s.com">http://www.pragmalove4s.com</a></li>
           </ul>
         </div>
       </div>
@@ -63,7 +55,7 @@
 
   export default {
     computed: {
-      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList'])
+      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList', 'contactInfo'])
     },
     methods: {
       ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo']),

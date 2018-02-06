@@ -37,4 +37,7 @@ export default {
     state.pageTextList = pageTextList
   },
 
+  setContactInfo (state, contactInfo) {
+    state.contactInfo = contactInfo
+  },
 }
