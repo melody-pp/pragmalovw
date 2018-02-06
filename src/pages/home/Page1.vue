@@ -24,7 +24,7 @@
 <style scoped lang="scss">
 .homePage{
   height: 100%;
-  background-color: #f9f6ee;
+  background-color: #e1e1e1;
   img{
     position:absolute;
   }
