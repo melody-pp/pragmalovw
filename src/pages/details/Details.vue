@@ -256,6 +256,14 @@
         ]
       }
     },
+    computed: {
+      detailId () {
+        return this.$route.params.id
+      },
+      detailData () {
+        return this.$store.state.goodtime.find(item => item.id === this.detailId)
+      }
+    },
     methods: {
       changeVisible () {
         this.schemeVisible = scrollIntoView(this.$refs.scheme)

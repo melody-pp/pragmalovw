@@ -8,6 +8,5 @@ export default {
     const unit = state.unite[key]
 
     return unit && unit[0] || {}
-  },
-
+  }
 }

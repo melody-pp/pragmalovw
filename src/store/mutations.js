@@ -45,4 +45,7 @@ export default {
     state.unite = unite
   },
 
+  setGoodtime (state, goodtime) {
+    state.goodtime = goodtime
+  }
 }

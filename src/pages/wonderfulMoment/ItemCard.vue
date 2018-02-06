@@ -19,7 +19,7 @@
 
   export default {
     name: 'item-card',
-    props: ['imgUrl', 'title', 'content'],
+    props: ['imgUrl', 'title', 'content', 'id'],
     methods: {
       mouseenter () {
         if (this.leaveTimeline) {
@@ -55,7 +55,7 @@
           .to(img, .5, {scale: 1}, '-=.5')
       },
       toDetail () {
-        this.$router.push({path: '/details/1'})
+        this.$router.push({path: `/details/${this.id}`})
       }
     }
   }

@@ -4,5 +4,6 @@ export default {
   leaveInfoVisible: false,
   pageTextList: [],
   contactInfo: {},
-  unite: []
+  unite: [],
+  goodtime: []
 }
