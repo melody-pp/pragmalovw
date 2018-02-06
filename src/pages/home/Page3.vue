@@ -1,11 +1,7 @@
 <template>
   <div ref="page" class="companyIntro">
     <span class="iconsTogether whiteLogo"></span>
-    <div class="themeTxt">
-      <div style="margin-bottom: 1vh;">如此，好看。</div>
-      <div>还心动</div>
-      <span class="pointer" @click="toWebsiteIntro">See More</span>
-    </div>
+    <ThemeText :content="ThemeText" @seemore="toWonderfulMoment"/>
     <img class="bigStone" src=../../assets/page3/bigStone.png>
     <div ref="leafShadow" class="leafShadow"></div>
     <img ref="leaf" class="leaf" src=../../assets/page3/leaf.png>
@@ -19,16 +15,24 @@
 <script>
   import { pageMoveMixin } from '../../mixins'
   import { TweenLite } from 'gsap'
+  import ThemeText from '../public/ThemeText'
+
 
   export default {
     mixins: [pageMoveMixin],
+    components: {ThemeText},
+    computed: {
+      ThemeText () {
+        return this.$store.getters.getThemeText(1)
+      }
+    },
     methods: {
-      toWebsiteIntro () {
+      toWonderfulMoment () {
         this.$router.push({path: '/wonderfulMoment'})
       },
       animate () {
         const {
-          leaf, leafShadow, glassGreen,glassGreenShadow, ball, ballShadow
+          leaf, leafShadow, glassGreen, glassGreenShadow, ball, ballShadow
         }
           = this.$refs
 

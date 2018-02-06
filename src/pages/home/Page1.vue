@@ -11,7 +11,6 @@
     <img src="../../assets/page1/banner10.png">
     <img src="../../assets/page1/banner11.png">
     <img src="../../assets/page1/banner12.png">
-
   </div>
 </template>
 
@@ -22,11 +21,11 @@
 </script>
 
 <style scoped lang="scss">
-.homePage{
-  height: 100%;
-  background-color: #f9f6ee;
-  img{
-    position:absolute;
+  .homePage {
+    height: 100%;
+    background-color: #f9f6ee;
+    img {
+      position: absolute;
+    }
   }
-}
 </style>
