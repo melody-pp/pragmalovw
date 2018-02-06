@@ -1,8 +1,8 @@
 <template>
   <div>
     <span class="iconsTogether whiteLogo"></span>
-    <img class="w100" src="../../assets/wonderfulMoment/pic_top.jpg">
-    <p class="secondPageParagraphOnlyTitle wonderfulMomentColor margin152">动心，而且心动</p>
+    <img class="w100" :src="unit.image">
+    <p class="secondPageParagraphOnlyTitle wonderfulMomentColor margin152">{{unit.title}}</p>
     <div class="casesBox clearfix">
       <item-card v-for="(item, index) of items" v-bind="item" :key="index"/>
     </div>
@@ -69,6 +69,11 @@
         ]
       }
     },
+    computed:{
+      unit () {
+        return this.$store.getters.getUnit('greate')
+      },
+    }
   }
 </script>
 <style scoped lang="scss">
