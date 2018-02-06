@@ -40,4 +40,9 @@ export default {
   setContactInfo (state, contactInfo) {
     state.contactInfo = contactInfo
   },
+
+  setUnite (state, unite) {
+    state.unite = unite
+  },
+
 }

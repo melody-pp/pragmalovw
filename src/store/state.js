@@ -3,5 +3,6 @@ export default {
   navVisible: false,
   leaveInfoVisible: false,
   pageTextList: [],
-  contactInfo: {}
+  contactInfo: {},
+  unite: []
 }

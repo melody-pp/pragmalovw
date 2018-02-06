@@ -183,7 +183,7 @@
   }
 
   form {
-    margin-top: 20px;
+    margin-top: 5vh;
     font-family: 'SourceHanSansCN-Regular';
     font-size: 0.73vw;
 

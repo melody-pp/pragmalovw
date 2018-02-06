@@ -12,9 +12,10 @@
     created () {
       this.getText()
       this.getContact()
+      this.getUnite()
     },
     methods: {
-      ...mapMutations(['setPageTextList', 'setContactInfo']),
+      ...mapMutations(['setPageTextList', 'setContactInfo', 'setUnite']),
       getText () {
         this.axios.get('/Api/getText').then(res => {
           this.setPageTextList(res.data)
@@ -24,7 +25,13 @@
         this.axios.get('/Api/getContact').then(res => {
           this.setContactInfo(res.data[0])
         })
-      }
+      },
+      getUnite () {
+        this.axios.get('/Api/getUnite').then(res => {
+          this.setUnite(res.data)
+        })
+      },
+
     }
   }
 </script>
