@@ -112,8 +112,8 @@
   }
 
   .show-nav-btn {
-    top: 40px;
-    right: 50px;
+    top: 2.08vw;
+    right: 2.08vw;
     cursor: pointer;
     position: absolute;
 
