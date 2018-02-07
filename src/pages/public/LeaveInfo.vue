@@ -24,7 +24,7 @@
           </div>
           <div>
             <label>
-              字多字少，都是心意：<textarea class="comment" v-model="con"></textarea>
+              字多字少，都是心意：<textarea class="comment" v-model="con" maxlength="80"></textarea>
             </label>
           </div>
         </form>
@@ -38,9 +38,11 @@
 </template>
 
 <script>
+  import alertify from 'alertify.js'
   import { TimelineLite } from 'gsap'
   import { mapState, mapMutations } from 'vuex'
 
+  alertify.logPosition('top right')
   export default {
     name: 'leave-info',
     computed: {
@@ -100,11 +102,27 @@
           tel: this.tel,
           con: this.con
         }).then(res => {
-          alert(res.statusText)
+          alertify.alert(res.data)
         })
       },
       validateData () {
-        return true
+        let isValid = true
+        if (!this.name) {
+          alertify.error('请填写姓名！')
+          isValid = false
+        }
+
+        if (!this.tel) {
+          alertify.error('请填写电话！')
+          isValid = false
+        }
+
+        if (!this.con) {
+          alertify.error('请填写评论！')
+          isValid = false
+        }
+
+        return isValid
       }
     },
     watch: {

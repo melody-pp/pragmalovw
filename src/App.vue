@@ -144,6 +144,14 @@
     cursor: pointer;
   }
 
+  .alertify {
+    z-index: 103;
+  }
+
+  .alertify-logs {
+    z-index: 103;
+  }
+
   .animated {
     animation-duration: 200ms;
     animation-fill-mode: both
