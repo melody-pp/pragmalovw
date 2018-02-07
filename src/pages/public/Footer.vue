@@ -1,6 +1,6 @@
 <template>
   <div class="footerBox">
-    <span class="iconsTogether footerLogo"></span>
+    <span class="iconsTogether footerLogo" @click="toIndex"></span>
     <div>
       <p style="margin-bottom: 6px;">Copyright &copy; 2018 Pragmalove4s.com All Rights Reserved</p>
       <div class="clearfix">
@@ -10,6 +10,18 @@
     </div>
   </div>
 </template>
+<script>
+  export default {
+    methods: {
+      toIndex () {
+        this.$router.push('/', this.moveFullpage, this.moveFullpage)
+      },
+      moveFullpage () {
+        $('#fullpage').fullpage.moveTo(1)
+      }
+    }
+  }
+</script>
 <style scoped lang="scss">
   .footerBox {
     margin: 50px;

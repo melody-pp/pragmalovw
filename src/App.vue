@@ -207,11 +207,13 @@
     position: absolute;
     top: 2.08vw;
     left: 2.08vw;
+    cursor: pointer;
   }
 
   span.iconsTogether {
     display: inline-block;
     background: url("./assets/icons.png") no-repeat;
+    cursor: pointer;
   }
 
   .colorfulLogo {
@@ -222,6 +224,7 @@
     position: absolute;
     top: 2.08vw;
     left: 2.08vw;
+    cursor: pointer;
   }
 
   .simpleColorfulLogo {

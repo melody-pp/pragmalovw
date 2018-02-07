@@ -1,8 +1,10 @@
 <template>
   <div>
     <img class="w100" :src="detailData.sj1_thumb">
-    <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136">
-      <p v-for="(char, index) of detailData.sj1_title[0]" :key="index">{{char}}</p>
+    <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136 clearfix">
+      <p v-for="(line, index) of detailData.sj1_title[0].split('\n').reverse()" :key="index">
+        <span v-for="(char, index) of line" :key="index">{{char}}</span>
+      </p>
     </div>
     <img class="w100" :src="detailData.sj2_thumb">
     <Paragraph v-bind="paragraphs[0]" class="margin114"/>
@@ -299,7 +301,7 @@
     padding: 300px 0;
     overflow: hidden;
     opacity: 0;
-    
+
     p {
       overflow: hidden;
       span {
@@ -328,5 +330,18 @@
 
   .margin114 {
     margin: 114px;
+  }
+
+  .secondPageParagraphVerticalTitle {
+    text-align: center;
+    p {
+      width: 2.4vw;
+      margin: 0 .7vw;
+      vertical-align: middle;
+      display: inline-block;
+      span {
+        float: right;
+      }
+    }
   }
 </style>
