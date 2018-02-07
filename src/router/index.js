@@ -37,4 +37,10 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+router.afterEach(() => {
+  setTimeout(() => {
+    window.scrollTo(0, 1)
+  })
+})
+
 export default router
