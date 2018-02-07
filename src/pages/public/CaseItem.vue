@@ -7,7 +7,7 @@
           <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
-          {{content[0]}}
+          {{content}}
         </div>
       </div>
     </div>

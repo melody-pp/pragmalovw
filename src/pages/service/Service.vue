@@ -10,15 +10,7 @@
     <bottom-service v-bind="bottomItem"/>
     <p class="secondPageParagraphOnlyTitle" style="color:#878a8a;margin: 90px 0;">更多。</p>
     <div class="similarCases">
-      <div>
-        <img src="../../assets/service/pic_1.jpg">
-      </div>
-      <div>
-        <img src="../../assets/service/pic_2.jpg">
-      </div>
-      <div>
-        <img src="../../assets/service/pic_3.jpg">
-      </div>
+      <case-item v-for="item of similarCases" v-bind="item" :key="item.id"/>
     </div>
   </div>
 </template>
@@ -27,11 +19,15 @@
   import ServiceItem from './ServiceItem'
   import BottomService from './BottomService'
   import WhiteLogo from '../public/WhiteLogo'
+  import { similarCaseMixin } from '../../mixins'
 
   export default {
+    mixins: [similarCaseMixin],
     components: {ServiceItem, BottomService, WhiteLogo},
     data () {
       return {
+        similarNum: 3,
+        tjImgKey: 'tj_thumb',
         items: [
           {
             imgUrl: require('../../assets/service/planning.png'),
@@ -86,7 +82,7 @@
       unit () {
         return this.$store.getters.getUnit('service')
       },
-    }
+    },
   }
 </script>
 

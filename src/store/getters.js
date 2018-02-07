@@ -7,6 +7,6 @@ export default {
   getUnit: state => key => {
     const unit = state.unite[key]
 
-    return unit && unit[0] || {}
+    return unit && unit[0] || {con1: '', con2: '', con3: '',}
   }
 }

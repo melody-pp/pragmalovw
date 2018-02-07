@@ -10,18 +10,7 @@
     </div>
     <Paragraph v-bind="paragraphs[2]"/>
     <div class="jigsaw">
-      <div>
-        <img src="../../assets/websiteIntro/pic_2.jpg">
-      </div>
-      <div>
-        <img src="../../assets/websiteIntro/pic_3.jpg">
-      </div>
-      <div>
-        <img src="../../assets/websiteIntro/pic_4.jpg">
-      </div>
-      <div>
-        <img src="../../assets/websiteIntro/pic_5.jpg">
-      </div>
+      <case-item v-for="item of similarCases" v-bind="item" :key="item.id"/>
     </div>
   </div>
 </template>
@@ -31,12 +20,15 @@
   import WhiteLogo from '../public/WhiteLogo'
   import { scrollIntoView } from '../../util'
   import { changeVisibleMixin } from '../../mixins'
+  import { similarCaseMixin } from '../../mixins'
 
   export default {
-    mixins: [changeVisibleMixin],
+    mixins: [changeVisibleMixin, similarCaseMixin],
     components: {Paragraph, WhiteLogo},
     data () {
       return {
+        similarNum: 4,
+        tjImgKey: 'gtj_thumb',
         titleVisible: false,
         titleAnimated: false,
       }
@@ -47,18 +39,9 @@
       },
       paragraphs () {
         return [
-          {
-            title: this.unit.title1,
-            content: this.unit.con1.split('\n')
-          },
-          {
-            title: this.unit.title2,
-            content: this.unit.con2.split('\n')
-          },
-          {
-            title: '',
-            content: this.unit.con3.split('\n')
-          },
+          {title: this.unit.title1, content: this.unit.con1.split('\n')},
+          {title: this.unit.title2, content: this.unit.con2.split('\n')},
+          {title: '', content: this.unit.con3.split('\n')},
         ]
       }
     },
