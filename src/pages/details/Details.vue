@@ -1,25 +1,17 @@
 <template>
   <div>
-    <img class="w100" src="../../assets/details/pic_top.jpg">
+    <img class="w100" :src="detailData.sj1_thumb">
     <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136">
-      <p>繁</p>
-      <p>花</p>
-      <p style="margin-left: 54px;">。</p>
+      <p v-for="(char, index) of detailData.sj1_title[0]" :key="index">{{char}}</p>
     </div>
-    <img class="w100" src="../../assets/details/pic_1.jpg">
+    <img class="w100" :src="detailData.sj2_thumb">
     <Paragraph v-bind="paragraphs[0]" class="margin114"/>
-    <img class="w100" src="../../assets/details/pic_2.jpg">
+    <img class="w100" :src="detailData.sj3_thumb">
     <Paragraph v-bind="paragraphs[1]" class="margin114"/>
     <div class="groupOfPictures">
-      <div>
-        <img src="../../assets/details/pic_3.jpg">
-      </div>
-      <div>
-        <img src="../../assets/details/pic_4.jpg">
-      </div>
-      <div>
-        <img src="../../assets/details/pic_5.jpg">
-      </div>
+      <div><img :src="detailData.sj41_thumb"></div>
+      <div><img :src="detailData.sj42_thumb"></div>
+      <div><img :src="detailData.sj43_thumb"></div>
     </div>
     <div ref="scheme" class="secondPageParagraphText scheme">
       <svg ref="stoneSvg" class="stone-svg" viewBox="0 0 481 347" xmlns="http://www.w3.org/2000/svg">
@@ -206,9 +198,12 @@
 				C827.4,161.5,825.4,162.3,826.1,163.1L826.1,163.1z"/>
       </svg>
 
-      <p class="secondPageParagraphTitle color#888b8b">策划师说</p>
-      <p class="mb20">这场婚礼是一场小成本低预算的婚礼，在小预算里尽量满足新人的要求，最后得到的新人的肯定。新人是个特别细心温暖的人，从前期沟通到后期整个酒店的布置中，</p>
-      <p>都一直温暖着策划的工作人员。最后，少女心的新人对于婚礼十分满意，坚持不懈策划新人梦想中的婚礼是我们一直以来的追求。</p>
+      <p class="secondPageParagraphTitle color#888b8b" ref="title">{{detailData.sj41_title[0]}}</p>
+      <div ref="content">
+        <p v-for="(sentence, index) of detailData.sj42_title[0].split('\n')" :class="{mt20:!!index}" :key="index">
+          <span v-for="(char, index) of sentence" :key="index">{{char}}</span>
+        </p>
+      </div>
     </div>
     <div class="similarCases">
       <div>
@@ -238,22 +233,6 @@
       return {
         schemeVisible: false,
         schemeAnimated: false,
-        paragraphs: [
-          {
-            content: [
-              '新娘拥有一颗少女心，而且是个十分温暖的人，喜欢花儿，喜欢暖粉色，喜欢一切温暖的事物。',
-              '这是一场低预算的的小型婚礼，为了满足新人繁花的效果，路引选择了花蕾灯，错落有致的玻璃花瓶和蜡烛相结合，',
-              '舞台主背景选择了新人logo的首字母，选择金色蕾丝元素和手工纸质花朵。'
-            ]
-          },
-          {
-            content: [
-              '甜品台选择花朵形状的翻糖蛋糕，为婚礼增添了一丝甜蜜。',
-              '成就一场完美婚礼的不仅仅都是布景，是人。新人在婚纱的选择上，极佳的配合现场布置，高贵中多了一点点俏皮，浪漫而精致。',
-              '新郎则选取了口袋和领口为黑色的西服，搭配黑色领结，和新娘的装扮相得益彰。'
-            ]
-          }
-        ]
       }
     },
     computed: {
@@ -261,7 +240,19 @@
         return this.$route.params.id
       },
       detailData () {
-        return this.$store.state.goodtime.find(item => item.id === this.detailId)
+        return this.$store.state.goodtime.find(item => item.id === this.detailId) || {
+          sj1_title: [''],
+          sj2_title: [''],
+          sj3_title: [''],
+          sj41_title: [''],
+          sj42_title: ['']
+        }
+      },
+      paragraphs () {
+        return [
+          {content: this.detailData.sj2_title[0].split('\n')},
+          {content: this.detailData.sj3_title[0].split('\n')}
+        ]
       }
     },
     methods: {
@@ -269,10 +260,14 @@
         this.schemeVisible = scrollIntoView(this.$refs.scheme)
       },
       schemeAnimate () {
-        for (const path of this.$refs.stoneSvg.querySelectorAll('path')) {
-          const length = path.getTotalLength()
-          console.log(length)
-        }
+        this.schemeAnimated = true
+
+        const timeline = new TimelineLite()
+        const {scheme, title, content} = this.$refs
+        timeline
+          .set(scheme, {autoAlpha: 1})
+          .from(title, .5, {autoAlpha: 0}, '-=.5')
+          .staggerFrom(content.querySelectorAll('span'), .4, {y: 30, autoAlpha: 0}, .01)
       }
     },
     watch: {
@@ -303,6 +298,14 @@
     position: relative;
     padding: 300px 0;
     overflow: hidden;
+    opacity: 0;
+    
+    p {
+      overflow: hidden;
+      span {
+        display: inline-block;
+      }
+    }
 
     .stone-svg {
       height: 280px;

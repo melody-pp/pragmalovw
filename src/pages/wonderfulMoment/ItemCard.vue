@@ -1,13 +1,13 @@
 <template>
   <div ref="item" class="item-card" @mouseenter="mouseenter" @mouseleave="mouseleave">
-    <img ref="img" :src="imgUrl">
+    <img ref="img" :src="ej_content">
     <div ref="modal" class="modal">
       <div class="contentBox">
         <div ref="title" class="title" @click="toDetail">
-          <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
+          <span class="secondPageParagraphTitle" v-for="(char, index) of ej_title" :key="index">{{char}}</span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
-          {{content}}
+          {{ej_description[0]}}
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
 
   export default {
     name: 'item-card',
-    props: ['imgUrl', 'title', 'content', 'id'],
+    props: ['ej_content', 'ej_title', 'ej_description', 'id'],
     methods: {
       mouseenter () {
         if (this.leaveTimeline) {

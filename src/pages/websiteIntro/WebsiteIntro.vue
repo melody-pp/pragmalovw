@@ -85,7 +85,7 @@
 <style scoped lang="scss">
   .verticalTitleMargin {
     opacity: 0;
-    margin: 500px 0 400px;
+    margin: 26.04vw 0 20.83vw;
   }
 
   .jigsaw {

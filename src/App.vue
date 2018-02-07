@@ -13,9 +13,10 @@
       this.getText()
       this.getContact()
       this.getUnite()
+      this.getGoodtime()
     },
     methods: {
-      ...mapMutations(['setPageTextList', 'setContactInfo', 'setUnite']),
+      ...mapMutations(['setPageTextList', 'setContactInfo', 'setUnite', 'setGoodtime']),
       getText () {
         this.axios.get('/Api/getText').then(res => {
           this.setPageTextList(res.data)
@@ -31,7 +32,11 @@
           this.setUnite(res.data)
         })
       },
-
+      getGoodtime () {
+        this.axios.get('/api/get_goodtime').then(res => {
+          this.setGoodtime(res.data)
+        })
+      }
     }
   }
 </script>
@@ -256,22 +261,22 @@
 
   .secondPageParagraphTitle {
     font-family: 'SourceHanSansCN-Regular';
-    font-size: 36px;
+    font-size: 1.875vw;
     text-align: center;
-    margin-bottom: 54px;
+    margin-bottom: 2.81vw;
 
   }
 
   .secondPageParagraphOnlyTitle,
   .secondPageParagraphVerticalTitle {
     font-family: 'SourceHanSansCN-Heavy';
-    font-size: 46px;
+    font-size: 2.4vw;
     text-align: center;
   }
 
   .secondPageParagraphText {
     font-family: 'SourceHanSansCN-Light';
-    font-size: 20px;
+    font-size: 1.04vw;
     text-align: center;
     color: #a7a7a7;
   }

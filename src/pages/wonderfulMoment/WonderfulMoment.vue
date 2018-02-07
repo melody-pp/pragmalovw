@@ -10,18 +10,9 @@
 </template>
 <script>
   import ItemCard from './ItemCard'
-  import { mapMutations } from 'vuex'
 
   export default {
     components: {ItemCard},
-    methods: {
-      ...mapMutations(['setGoodtime'])
-    },
-    created () {
-      this.axios.get('/api/get_goodtime').then(res => {
-        this.setGoodtime(res.data)
-      })
-    },
     computed: {
       unit () {
         return this.$store.getters.getUnit('greate')
