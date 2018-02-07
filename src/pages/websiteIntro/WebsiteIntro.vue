@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="iconsTogether whiteLogo"></span>
+    <white-logo/>
     <img class="w100" :src="unit.image1">
     <Paragraph v-bind="paragraphs[0]"/>
     <img class="w100" :src="unit.image2">
@@ -28,12 +28,13 @@
 
 <script>
   import Paragraph from '../public/Paragraph'
+  import WhiteLogo from '../public/WhiteLogo'
   import { scrollIntoView } from '../../util'
   import { changeVisibleMixin } from '../../mixins'
 
   export default {
     mixins: [changeVisibleMixin],
-    components: {Paragraph},
+    components: {Paragraph, WhiteLogo},
     data () {
       return {
         titleVisible: false,

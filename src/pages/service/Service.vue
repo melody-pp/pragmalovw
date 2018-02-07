@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="iconsTogether whiteLogo"></span>
+    <white-logo/>
     <img class="w100" :src="unit.image">
     <p class="secondPageParagraphOnlyTitle serviceColor margin136">{{unit.title}}</p>
     <div class="serviceList">
@@ -26,9 +26,10 @@
 <script>
   import ServiceItem from './ServiceItem'
   import BottomService from './BottomService'
+  import WhiteLogo from '../public/WhiteLogo'
 
   export default {
-    components: {ServiceItem, BottomService},
+    components: {ServiceItem, BottomService, WhiteLogo},
     data () {
       return {
         items: [

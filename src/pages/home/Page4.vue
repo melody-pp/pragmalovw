@@ -1,6 +1,6 @@
 <template>
   <div ref="page" class="page4">
-    <span class="iconsTogether whiteLogo"></span>
+    <white-logo/>
     <ThemeText :content="ThemeText" @seemore="toService"/>
     <img class="stone" src="../../assets/page4/pic_06.png" alt="">
     <img class="water" src="../../assets/page4/pic_05.png" alt="">
@@ -10,10 +10,11 @@
   import { pageMoveMixin } from '../../mixins'
   import { TweenLite } from 'gsap'
   import ThemeText from '../public/ThemeText'
+  import WhiteLogo from '../public/WhiteLogo'
 
   export default {
     mixins: [pageMoveMixin],
-    components: {ThemeText},
+    components: {ThemeText, WhiteLogo},
     computed: {
       ThemeText () {
         return this.$store.getters.getThemeText(2)

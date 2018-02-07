@@ -9,7 +9,7 @@
                 leave-active-class="animated fadeOutRight">
       <div id="nav-bar" class="nav" v-show="navVisible">
         <div class="icons clearfix">
-          <span class="iconsTogether logoTxt fl"></span>
+          <span class="iconsTogether logoTxt fl" @click="moveTo(1)"></span>
           <span class="closeIcon fr" @click="hideNav">
           <span class="icon-line line1"></span>
           <span class="icon-line line2"></span>
@@ -60,9 +60,14 @@
     methods: {
       ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo']),
       moveTo (pageIndex) {
-        this.$route.path === '/home'
-          ? $('#fullpage').fullpage.moveTo(pageIndex)
-          : this.$router.push({path: '/home', query: {pageIndex}})
+        this.$router.push('/', () => {
+          this.moveFullpage(pageIndex)
+        }, () => {
+          this.moveFullpage(pageIndex)
+        })
+      },
+      moveFullpage (pageIndex) {
+        $('#fullpage').fullpage.moveTo(pageIndex)
       }
     }
   }

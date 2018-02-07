@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="iconsTogether whiteLogo"></span>
+    <white-logo/>
     <img class="w100" :src="unit.image">
     <p class="secondPageParagraphOnlyTitle wonderfulMomentColor margin152">{{unit.title}}</p>
     <div class="casesBox clearfix">
@@ -10,9 +10,10 @@
 </template>
 <script>
   import ItemCard from './ItemCard'
+  import WhiteLogo from '../public/WhiteLogo'
 
   export default {
-    components: {ItemCard},
+    components: {ItemCard, WhiteLogo},
     computed: {
       unit () {
         return this.$store.getters.getUnit('greate')

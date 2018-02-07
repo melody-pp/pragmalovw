@@ -16,7 +16,7 @@
     <div ref="bottomStoneShadow" class="bottomStoneShadow"></div>
     <img ref="bottomStone" class="bottomStone" src="../../assets/page2/bottomStone.png">
 
-    <span class="iconsTogether whiteLogo"></span>
+    <white-logo/>
     <ThemeText :content="ThemeText" @seemore="toWebsiteIntro"/>
   </div>
 </template>
@@ -24,10 +24,11 @@
   import { TweenLite } from 'gsap'
   import { pageMoveMixin } from '../../mixins'
   import ThemeText from '../public/ThemeText'
+  import WhiteLogo from '../public/WhiteLogo'
 
   export default {
     mixins: [pageMoveMixin],
-    components: {ThemeText},
+    components: {ThemeText, WhiteLogo},
     mounted () {
       this.animate()
     },
