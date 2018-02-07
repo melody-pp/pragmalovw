@@ -48,15 +48,15 @@
         return [
           {
             title: this.unit.title1,
-            content: this.unit.con1.split('/n')
+            content: this.unit.con1.split('\n')
           },
           {
             title: this.unit.title2,
-            content: this.unit.con2.split('/n')
+            content: this.unit.con2.split('\n')
           },
           {
             title: '',
-            content: this.unit.con3.split('/n')
+            content: this.unit.con3.split('\n')
           },
         ]
       }
