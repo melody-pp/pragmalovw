@@ -32,4 +32,9 @@ const router = new Router({
   ],
 })
 
+router.beforeEach((to, from, next) => {
+  this.a.app.$store.commit('hideNav')
+  next()
+})
+
 export default router
