@@ -168,7 +168,8 @@
     }
 
     .menu {
-      font-family: 'SourceHanSansCN-Bold';
+      font-family: 'SourceHanSansCN-Regular';
+      font-weight: bolder;
       font-size: 2.78vh;
       .menu-color-1 {
         color: #f091a0;
@@ -213,9 +214,10 @@
     }
 
     .language {
-      font-family: 'SourceHanSansCN-Bold';
+      font-family: 'SourceHanSansCN-Regular';
       font-size: 1.3vh;
       color: #a7a7a7;
+      font-weight: bolder;
 
       li {
         margin-bottom: 0.96vh;
@@ -238,9 +240,10 @@
       li {
         margin-bottom: 1.48vh;
         > span {
-          font-family: 'SourceHanSansCN-Bold';
+          font-family: 'SourceHanSansCN-Regular';
           display: block;
           margin-bottom: 0.83vh;
+          font-weight: bolder;
         }
       }
     }

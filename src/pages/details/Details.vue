@@ -2,9 +2,9 @@
   <div>
     <img class="w100" :src="detailData.sj1_thumb">
     <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136 clearfix">
-      <p v-for="(line, index) of detailData.sj1_title[0].split('\n').reverse()" :key="index">
-        <span v-for="(char, index) of line" :key="index">{{char}}</span>
-      </p>
+      <div v-for="(line, index) of detailData.sj1_title[0].split('\n').reverse()" :key="index">
+        <div :class="{punctuation:index===line.length-1}" v-for="(char, index) of line" :key="index">{{char}}</div>
+      </div>
     </div>
     <img class="w100" :src="detailData.sj2_thumb">
     <Paragraph v-bind="paragraphs[0]" class="margin114"/>
@@ -210,6 +210,7 @@
     <div class="similarCases">
       <case-item v-for="item of similarCases" v-bind="item" :key="item.id"/>
     </div>
+    <p class="secondPageParagraphOnlyTitle moreCase pointer" @click="toMoreCase">更多。</p>
   </div>
 </template>
 
@@ -264,6 +265,9 @@
           .set(scheme, {autoAlpha: 1})
           .from(title, .5, {autoAlpha: 0}, '-=.5')
           .staggerFrom(content.querySelectorAll('span'), .4, {y: 30, autoAlpha: 0}, .01)
+      },
+      toMoreCase () {
+        this.$router.push({path: '/wonderfulMoment'})
       }
     },
     watch: {
@@ -292,7 +296,7 @@
 
   .scheme {
     position: relative;
-    padding: 300px 0;
+    padding: 15.63vw 0;
     overflow: hidden;
     opacity: 0;
 
@@ -304,17 +308,17 @@
     }
 
     .stone-svg {
-      height: 280px;
+      height: 14.58vw;
       position: absolute;
-      right: -65px;
-      top: -40px;
+      right: -3.39vw;
+      top: -2.08vw;
     }
 
     .leaf-svg {
-      height: 350px;
+      height: 18.23vw;
       position: absolute;
-      bottom: -115px;
-      left: -320px;
+      bottom: -5.99vw;
+      left: -16.67vw;
     }
   }
 
@@ -323,18 +327,22 @@
   }
 
   .margin114 {
-    margin: 114px;
+    margin: 5.94vw;
   }
 
   .secondPageParagraphVerticalTitle {
     text-align: center;
-    p {
+    > div {
       width: 2.4vw;
       margin: 0 .7vw;
       vertical-align: middle;
       display: inline-block;
-      span {
-        float: right;
+      > div {
+        text-align: right;
+        display: inline-block;
+        &.punctuation {
+          margin-left: 1.4vw;
+        }
       }
     }
   }

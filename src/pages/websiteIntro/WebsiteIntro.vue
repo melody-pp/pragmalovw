@@ -75,6 +75,9 @@
   .jigsaw {
     display: flex;
     justify-content: space-between;
+    .secondPageParagraphTitle {
+      margin-bottom: 0.6vw;
+    }
     > div {
       width: 50%;
       img {

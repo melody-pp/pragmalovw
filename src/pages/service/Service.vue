@@ -8,7 +8,7 @@
       <service-item v-for="(item, index) of items" v-bind="item" :key="index"/>
     </div>
     <bottom-service v-bind="bottomItem"/>
-    <p class="secondPageParagraphOnlyTitle" style="color:#878a8a;margin: 90px 0;">更多。</p>
+    <p class="secondPageParagraphOnlyTitle moreCase">更多。</p>
     <div class="similarCases">
       <case-item v-for="item of similarCases" v-bind="item" :key="item.id"/>
     </div>
@@ -103,4 +103,5 @@
     position: absolute;
     padding: 0;
   }
+
 </style>

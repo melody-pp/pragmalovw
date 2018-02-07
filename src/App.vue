@@ -85,17 +85,6 @@
      src: url('./font/SourceHanSansCN-Normal.otf');
 
    }*/
-
-  @font-face {
-    font-family: 'SourceHanSansCN-Bold';
-    src: url('./font/SourceHanSansCN-Bold.otf');
-  }
-
-  @font-face {
-    font-family: 'SourceHanSansCN-Heavy';
-    src: url('./font/SourceHanSansCN-Heavy.otf');
-  }
-
   @font-face {
     font-family: 'SourceHanSansCN-Regular';
     src: url('./font/SourceHanSansCN-Regular.otf');
@@ -112,7 +101,7 @@
     box-sizing: border-box;
   }
 
-  canvas {
+  body canvas {
     display: none;
   }
 
@@ -150,15 +139,15 @@
   }
 
   .mb20 {
-    margin-bottom: 20px;
+    margin-bottom: 1.04vw;
   }
 
   .mt20 {
-    margin-top: 20px;
+    margin-top: 1.04vw;
   }
 
   .margin136 {
-    margin: 136px 0;
+    margin: 7.08vw 0;
   }
 
   .glass {
@@ -262,6 +251,9 @@
   .similarCases {
     display: flex;
     justify-content: space-around;
+    .secondPageParagraphTitle {
+      margin-bottom: 0.6vw;
+    }
     > div {
       width: 33.33%;
       img {
@@ -277,8 +269,9 @@
     color: #fff;
     div {
       margin-bottom: 3vh;
-      font-family: 'SourceHanSansCN-Bold';
+      font-family: 'SourceHanSansCN-Regular';
       font-size: 2.4vw;
+      font-weight: bolder;
     }
     span {
       border: 1px solid #fff;
@@ -305,9 +298,10 @@
 
   .secondPageParagraphOnlyTitle,
   .secondPageParagraphVerticalTitle {
-    font-family: 'SourceHanSansCN-Heavy';
+    font-family: 'SourceHanSansCN-Regular';
     font-size: 2.4vw;
     text-align: center;
+    font-weight: bolder;
   }
 
   .secondPageParagraphText {
@@ -315,5 +309,16 @@
     font-size: 1.04vw;
     text-align: center;
     color: #a7a7a7;
+  }
+
+  .similarCases {
+    .secondPageParagraphTitle {
+      margin-bottom: 0.6vw;
+    }
+  }
+
+  .moreCase {
+    color: #878a8a;
+    margin: 4.69vw 0;
   }
 </style>

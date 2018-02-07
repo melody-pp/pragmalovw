@@ -7,6 +7,7 @@ import WonderfulMoment from '../pages/wonderfulMoment/WonderfulMoment'
 import Service from '../pages/service/Service'
 import Details from '../pages/details/Details'
 import Error from '../pages/Error'
+import store from '../store'
 
 Vue.use(Router)
 
@@ -33,7 +34,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  this.a.app.$store.commit('hideNav')
+  store.commit('hideNav')
   next()
 })
 
