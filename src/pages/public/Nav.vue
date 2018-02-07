@@ -67,7 +67,7 @@
         })
       },
       moveFullpage (pageIndex) {
-        $('#fullpage').fullpage.moveTo(pageIndex)
+        setTimeout(() => $('#fullpage').fullpage.moveTo(pageIndex))
       }
     }
   }
