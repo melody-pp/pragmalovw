@@ -47,5 +47,9 @@ export default {
 
   setGoodtime (state, goodtime) {
     state.goodtime = goodtime
+  },
+
+  setLoadingStatus (state, isLoading) {
+    state.isLoading = isLoading
   }
 }

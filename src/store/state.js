@@ -5,5 +5,6 @@ export default {
   pageTextList: [],
   contactInfo: {},
   unite: [],
-  goodtime: []
+  goodtime: [],
+  isLoading: true
 }
