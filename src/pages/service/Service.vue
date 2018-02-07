@@ -78,6 +78,7 @@
           _item.title = item.catname
           _item.content = item.catcontent.split('\n')
         })
+        this.$forceUpdate()
       })
     },
     computed: {
