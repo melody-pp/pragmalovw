@@ -6,5 +6,6 @@ export default {
   contactInfo: {},
   unite: [],
   goodtime: [],
-  isLoading: true
+  isLoading: true,
+  lang: 'cn'
 }

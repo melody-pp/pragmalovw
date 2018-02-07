@@ -19,8 +19,8 @@
       const ctx = this.$refs.canvas.getContext('2d')
       const mainImg = document.createElement('img')
 
-      ctx.fillStyle = "#715ba5";
-      ctx.fillRect(0, 0, 785, 1537);
+      ctx.fillStyle = '#715ba5'
+      ctx.fillRect(0, 0, 785, 1537)
       mainImg.src = require('../../assets/page4/together.png')
       mainImg.onload = () => {
         ctx.drawImage(mainImg, 0, 0)
@@ -52,6 +52,7 @@
     background-color: #715ba5;
     img, canvas {
       position: absolute;
+      display: block;
     }
     .water {
       width: 19.92vw;

@@ -31,9 +31,9 @@
 
         <div class="langContactBox">
           <ul class="language">
-            <li>中文</li>
-            <li>英文</li>
-            <li>日语</li>
+            <li @click="changLang('cn')" :class="{active: lang==='cn'}">中文</li>
+            <li @click="changLang('en')" :class="{active: lang==='en'}">英文</li>
+            <li @click="changLang('jp')" :class="{active: lang==='jp'}">日语</li>
           </ul>
 
           <div class="line"></div>
@@ -55,7 +55,7 @@
 
   export default {
     computed: {
-      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList', 'contactInfo'])
+      ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList', 'contactInfo', 'lang'])
     },
     methods: {
       ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo']),
@@ -68,6 +68,9 @@
       },
       moveFullpage (pageIndex) {
         setTimeout(() => $('#fullpage').fullpage.moveTo(pageIndex))
+      },
+      changLang (lang) {
+        location.href = `?lang=${lang}`
       }
     }
   }
@@ -217,7 +220,7 @@
       li {
         margin-bottom: 0.96vh;
         cursor: pointer;
-        &:hover {
+        &:hover, &.active {
           color: #333333;
         }
       }

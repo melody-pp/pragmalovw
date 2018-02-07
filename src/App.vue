@@ -5,18 +5,39 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+  import axios from 'axios'
   import { mapMutations } from 'vuex'
 
   export default {
     name: 'App',
     created () {
+      const lang = this.getLang()
+      Vue.prototype.axios = axios.create({
+        headers: {'Content-Type': 'application/json'},
+        baseURL: `/${lang}/index.php/Api`
+      })
+      this.setLang(lang)
       this.getText()
       this.getContact()
       this.getUnite()
       this.getGoodtime()
     },
     methods: {
-      ...mapMutations(['setPageTextList', 'setContactInfo', 'setUnite', 'setGoodtime']),
+      ...mapMutations(['setPageTextList', 'setContactInfo', 'setUnite', 'setGoodtime', 'setLang']),
+      getLang () {
+        let lang
+        const language = navigator.language
+        if (language.includes('zh')) {
+          lang = 'cn'
+        } else if (language === 'en') {
+          lang = 'en'
+        } else {
+          lang = 'jp'
+        }
+
+        return this.$route.query.lang || lang
+      },
       getText () {
         this.axios.get('/Api/getText').then(res => {
           this.setPageTextList(res.data)
@@ -89,6 +110,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  canvas {
+    display: none;
   }
 
   ul, li {

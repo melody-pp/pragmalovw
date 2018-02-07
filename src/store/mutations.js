@@ -51,5 +51,9 @@ export default {
 
   setLoadingStatus (state, isLoading) {
     state.isLoading = isLoading
+  },
+
+  setLang (state, lang) {
+    state.lang = lang
   }
 }
