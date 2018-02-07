@@ -208,15 +208,7 @@
       </div>
     </div>
     <div class="similarCases">
-      <div>
-        <img src="../../assets/details/pic_6.jpg">
-      </div>
-      <div>
-        <img src="../../assets/details/pic_7.jpg">
-      </div>
-      <div>
-        <img src="../../assets/details/pic_8.jpg">
-      </div>
+      <case-item v-for="item of similarCases" v-bind="item" :key="item.id"/>
     </div>
   </div>
 </template>
@@ -225,14 +217,16 @@
 
   import { TimelineLite } from 'gsap'
   import { scrollIntoView } from '../../util'
-  import { changeVisibleMixin } from '../../mixins'
+  import { changeVisibleMixin, similarCaseMixin } from '../../mixins'
   import Paragraph from '../public/Paragraph'
 
   export default {
     components: {Paragraph},
-    mixins: [changeVisibleMixin],
+    mixins: [changeVisibleMixin, similarCaseMixin],
     data () {
       return {
+        similarNum: 3,
+        tjImgKey: 'tj_thumb',
         schemeVisible: false,
         schemeAnimated: false,
       }
