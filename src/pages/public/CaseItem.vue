@@ -1,13 +1,13 @@
 <template>
-  <div ref="item" class="item-card" @mouseenter="mouseenter" @mouseleave="mouseleave">
-    <img ref="img" :src="ej_content">
+  <div ref="item" class="item-card" :style="{width}" @mouseenter="mouseenter" @mouseleave="mouseleave">
+    <img ref="img" :src="imgUrl">
     <div ref="modal" class="modal">
       <div class="contentBox">
         <div ref="title" class="title" @click="toDetail">
-          <span class="secondPageParagraphTitle" v-for="(char, index) of ej_title" :key="index">{{char}}</span>
+          <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
-          {{ej_description[0]}}
+          {{content[0]}}
         </div>
       </div>
     </div>
@@ -18,8 +18,8 @@
   import { TimelineLite, Power4 } from 'gsap'
 
   export default {
-    name: 'item-card',
-    props: ['ej_content', 'ej_title', 'ej_description', 'id'],
+    name: 'case-item',
+    props: ['imgUrl', 'title', 'content', 'id', 'width'],
     methods: {
       mouseenter () {
         if (this.leaveTimeline) {
@@ -63,7 +63,6 @@
 
 <style scoped lang="scss">
   .item-card {
-    width: 50%;
     position: relative;
     overflow: hidden;
     img {
@@ -86,8 +85,6 @@
       bottom: 18%;
       letter-spacing: 3px;
       padding-left: 10%;
-      letter-spacing: 3px;
-
       .title {
         cursor: pointer;
         > span {
@@ -100,6 +97,5 @@
         width: 80%;
       }
     }
-
   }
 </style>

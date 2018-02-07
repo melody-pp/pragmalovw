@@ -4,16 +4,17 @@
     <img class="w100" :src="unit.image">
     <p class="secondPageParagraphOnlyTitle wonderfulMomentColor margin152">{{unit.title}}</p>
     <div class="casesBox clearfix">
-      <item-card v-for="(item, index) of goodtime" v-bind="item" :key="index"/>
+      <case-item v-for="item of goodtime" :key="item.id" width="50%" :id="item.id"
+                 :imgUrl="item.ej_content" :title="item.ej_title" :content="item.ej_description"/>
     </div>
   </div>
 </template>
 <script>
-  import ItemCard from './ItemCard'
+  import CaseItem from '../public/CaseItem'
   import WhiteLogo from '../public/WhiteLogo'
 
   export default {
-    components: {ItemCard, WhiteLogo},
+    components: {CaseItem, WhiteLogo},
     computed: {
       unit () {
         return this.$store.getters.getUnit('greate')
