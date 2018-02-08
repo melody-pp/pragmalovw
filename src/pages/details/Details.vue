@@ -3,7 +3,7 @@
     <white-logo/>
     <img class="w100" :src="detailData.sj1_thumb">
     <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136 clearfix">
-      <div v-for="(line, index) of detailData.sj1_title.split('\n').reverse()" :key="index">
+      <div v-for="(line, index) of detailData.sj1_title.split(/\r?\n/).reverse()" :key="index">
         <div :class="{punctuation:index===line.length-1}" v-for="(char, index) of line" :key="index">{{char}}</div>
       </div>
     </div>
@@ -203,7 +203,7 @@
 
       <p class="secondPageParagraphTitle color#888b8b" ref="title">{{detailData.sj41_title}}</p>
       <div ref="content">
-        <p v-for="(sentence, index) of detailData.sj42_title.split('\n')" :class="{mt20:!!index}" :key="index">
+        <p v-for="(sentence, index) of detailData.sj42_title.split(/\r?\n/)" :class="{mt20:!!index}" :key="index">
           <span v-for="(char, index) of sentence" :key="index">{{char}}</span>
         </p>
       </div>
@@ -249,8 +249,8 @@
       },
       paragraphs () {
         return [
-          {content: this.detailData.sj2_title.split('\n')},
-          {content: this.detailData.sj3_title.split('\n')}
+          {content: this.detailData.sj2_title.split(/\r?\n/)},
+          {content: this.detailData.sj3_title.split(/\r?\n/)}
         ]
       }
     },

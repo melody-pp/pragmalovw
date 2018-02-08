@@ -73,7 +73,7 @@
           const _item = this.items[i] || this.bottomItem
 
           _item.title = item.catname
-          _item.content = item.catcontent.split('\n')
+          _item.content = item.catcontent.split(/\r?\n/)
         })
         this.$forceUpdate()
       })

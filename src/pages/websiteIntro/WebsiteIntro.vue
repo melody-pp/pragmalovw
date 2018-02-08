@@ -39,9 +39,9 @@
       },
       paragraphs () {
         return [
-          {title: this.unit.title1, content: this.unit.con1.split('\n')},
-          {title: this.unit.title2, content: this.unit.con2.split('\n')},
-          {title: '', content: this.unit.con3.split('\n')},
+          {title: this.unit.title1, content: this.unit.con1.split(/\r?\n/)},
+          {title: this.unit.title2, content: this.unit.con2.split(/\r?\n/)},
+          {title: '', content: this.unit.con3.split(/\r?\n/)},
         ]
       }
     },
