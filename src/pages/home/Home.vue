@@ -1,16 +1,16 @@
 <template>
   <div id="fullpage">
-    <div class="section page-1">
-      <Page1 :moveIn="pageIndex === 1"/>
-    </div>
+    <!--<div class="section page-1">-->
+      <!--<Page1 :moveIn="pageIndex === 1"/>-->
+    <!--</div>-->
     <div class="section page-2">
-      <Page2 :moveIn="pageIndex === 2"/>
+      <Page2 :moveIn="pageIndex === 1"/>
     </div>
     <div class="section page-3">
-      <Page3 :moveIn="pageIndex === 3"/>
+      <Page3 :moveIn="pageIndex === 2"/>
     </div>
     <div class="section page-4">
-      <Page4 :moveIn="pageIndex === 4"/>
+      <Page4 :moveIn="pageIndex === 3"/>
     </div>
   </div>
 </template>
