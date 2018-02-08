@@ -166,6 +166,11 @@
     z-index: 103;
   }
 
+  .spaceWidth {
+    width: 1vw;
+    height: 100%;
+  }
+
   .animated {
     animation-duration: 200ms;
     animation-fill-mode: both

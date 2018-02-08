@@ -4,7 +4,10 @@
     <div ref="modal" class="modal" @click="toDetail">
       <div class="contentBox">
         <div ref="title" class="title">
-          <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
+          <span :class="['secondPageParagraphTitle',{spaceWidth: char===' '}]"
+                v-for="(char, index) of title" :key="index" >
+            {{char}}
+          </span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
           {{content}}
@@ -98,7 +101,6 @@
         width: 82%;
         font-size: 1vw;
         line-height: 1.8vw;
-
       }
     }
   }
