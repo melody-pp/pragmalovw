@@ -1,9 +1,9 @@
 <template>
   <div ref="item" class="item-card" :style="{width}" @mouseenter="mouseenter" @mouseleave="mouseleave">
     <img ref="img" :src="imgUrl">
-    <div ref="modal" class="modal">
+    <div ref="modal" class="modal" @click="toDetail">
       <div class="contentBox">
-        <div ref="title" class="title" @click="toDetail">
+        <div ref="title" class="title">
           <span class="secondPageParagraphTitle" v-for="(char, index) of title" :key="index">{{char}}</span>
         </div>
         <div ref="content" class="content secondPageParagraphText">
@@ -79,6 +79,7 @@
     color: #000;
     opacity: 0;
     background-color: rgba(255, 255, 255, .6);
+    cursor: pointer;
     .contentBox {
       position: absolute;
       left: 0;
@@ -86,7 +87,9 @@
       letter-spacing: 3px;
       padding-left: 10%;
       .title {
-        cursor: pointer;
+        .secondPageParagraphTitle {
+          font-weight: bolder;
+        }
         > span {
           display: inline-block;
         }

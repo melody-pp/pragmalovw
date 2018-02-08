@@ -32,8 +32,8 @@
         <div class="langContactBox">
           <ul class="language">
             <li @click="changLang('cn')" :class="{active: lang==='cn'}">中文</li>
-            <li @click="changLang('en')" :class="{active: lang==='en'}">英文</li>
-            <li @click="changLang('jp')" :class="{active: lang==='jp'}">日语</li>
+           <!-- <li @click="changLang('en')" :class="{active: lang==='en'}">英文</li>
+            <li @click="changLang('jp')" :class="{active: lang==='jp'}">日语</li>-->
           </ul>
 
           <div class="line"></div>
