@@ -240,11 +240,11 @@
       },
       detailData () {
         return this.$store.state.goodtime.find(item => item.id === this.detailId) || {
-          sj1_title: [''],
-          sj2_title: [''],
-          sj3_title: [''],
-          sj41_title: [''],
-          sj42_title: ['']
+          sj1_title: '',
+          sj2_title: '',
+          sj3_title: '',
+          sj41_title: '',
+          sj42_title: ''
         }
       },
       paragraphs () {
