@@ -268,10 +268,13 @@
     left: 2.6vw;
     color: #fff;
     div {
-      margin-bottom: 3vh;
+      margin-bottom: 1vh;
       font-family: 'SourceHanSansCN-Regular';
       font-size: 2.4vw;
       font-weight: bolder;
+      &:last-of-type {
+        margin-bottom: 3vh;
+      }
     }
     span {
       border: 1px solid #fff;

@@ -1,6 +1,6 @@
 <template>
   <div class="themeTxt">
-    <div>{{content}}</div>
+    <div v-for="sentence of content.split(/\r?\n/)">{{sentence}}</div>
     <span class="pointer" @click="clickHandler">See More</span>
   </div>
 </template>
