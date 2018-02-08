@@ -23,7 +23,7 @@
     components: {ThemeText, WhiteLogo},
     computed: {
       ThemeText () {
-        return this.$store.getters.getThemeText(1)
+        return this.$store.getters.getThemeText(1).split('\n')
       }
     },
     methods: {

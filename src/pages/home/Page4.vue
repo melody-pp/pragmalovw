@@ -29,7 +29,7 @@
     },
     computed: {
       ThemeText () {
-        return this.$store.getters.getThemeText(2)
+        return this.$store.getters.getThemeText(2).split('\n')
       }
     },
     methods: {

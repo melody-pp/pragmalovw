@@ -34,7 +34,7 @@
     },
     computed: {
       ThemeText () {
-        return this.$store.getters.getThemeText(0)
+        return this.$store.getters.getThemeText(0).split('\n')
       }
     },
     methods: {
