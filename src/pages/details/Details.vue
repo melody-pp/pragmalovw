@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="detail-page">
     <white-logo/>
     <img class="w100" :src="detailData.sj1_thumb">
     <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136 clearfix">
@@ -11,8 +11,10 @@
     <Paragraph v-bind="paragraphs[0]" class="margin114"/>
     <img class="w100" :src="detailData.sj3_thumb">
     <Paragraph v-bind="paragraphs[1]" class="margin114"/>
-    <div class="groupOfPictures">
-      <div v-for="(slick,index) of detailData.sj_thumb"><img :src="slick"></div>
+    <div id="slicker">
+      <div v-for="(slick,index) of detailData.sj_thumb" :key="index">
+        <img :src="slick">
+      </div>
     </div>
     <div ref="scheme" class="secondPageParagraphText scheme">
       <svg ref="stoneSvg" class="stone-svg" viewBox="0 0 481 347" xmlns="http://www.w3.org/2000/svg">
@@ -253,15 +255,6 @@
         ]
       }
     },
-    mounted () {
-      $('.groupOfPictures').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear'
-      })
-    },
     methods: {
       changeVisible () {
         this.schemeVisible = scrollIntoView(this.$refs.scheme)
@@ -281,80 +274,88 @@
       },
       isPunctuation (char) {
         return ['，', '。', '？', '！',].includes(char)
+      },
+      initSlick () {
+        $('#slicker').slick({
+          slidesToShow: 1,
+          dots: true,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear'
+        })
       }
     },
     watch: {
       schemeVisible (newVal) {
         newVal && !this.schemeAnimated && this.schemeAnimate()
+      },
+      detailData () {
+        setTimeout(this.initSlick.bind(this))
       }
     }
   }
 </script>
 
-<style scoped lang="scss">
-  .groupOfPictures {
-    display: flex;
-    justify-content: space-around;
-    div {
-      width: 33.33%;
-      img {
-        width: 100%;
-      }
+<style lang="scss">
+  .detail-page {
+    .slick-slide img {
+      width: 100%;
     }
-  }
 
-  .detailsTitleColor {
-    color: #e96b1e;
-  }
+    .detailsTitleColor {
+      color: #e96b1e;
+    }
 
-  .scheme {
-    position: relative;
-    padding: 15.63vw 0;
-    overflow: hidden;
-    opacity: 0;
-
-    p {
+    .scheme {
+      position: relative;
+      padding: 15.63vw 0;
       overflow: hidden;
-      span {
-        display: inline-block;
+      opacity: 0;
+
+      p {
+        overflow: hidden;
+        span {
+          display: inline-block;
+        }
+      }
+
+      .stone-svg {
+        height: 14.58vw;
+        position: absolute;
+        right: -3.39vw;
+        top: -2.08vw;
+      }
+
+      .leaf-svg {
+        height: 18.23vw;
+        position: absolute;
+        bottom: -5.99vw;
+        left: -16.67vw;
       }
     }
 
-    .stone-svg {
-      height: 14.58vw;
-      position: absolute;
-      right: -3.39vw;
-      top: -2.08vw;
+    .color#888b8b {
+      color: #888b8b;
     }
 
-    .leaf-svg {
-      height: 18.23vw;
-      position: absolute;
-      bottom: -5.99vw;
-      left: -16.67vw;
+    .margin114 {
+      margin: 5.94vw;
     }
-  }
 
-  .color#888b8b {
-    color: #888b8b;
-  }
-
-  .margin114 {
-    margin: 5.94vw;
-  }
-
-  .secondPageParagraphVerticalTitle {
-    text-align: center;
-    > div {
-      width: 2.4vw;
-      margin: 0 .7vw;
-      vertical-align: middle;
-      display: inline-block;
+    .secondPageParagraphVerticalTitle {
+      text-align: center;
       > div {
-        text-align: right;
+        width: 2.4vw;
+        margin: 0 .7vw;
+        vertical-align: middle;
         display: inline-block;
-        &.punctuation {
-          margin-left: 1.4vw;
+        > div {
+          text-align: right;
+          display: inline-block;
+          &.punctuation {
+            margin-left: 1.4vw;
+          }
         }
       }
     }
