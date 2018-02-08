@@ -290,9 +290,9 @@
 
   .secondPageParagraphTitle {
     font-family: 'SourceHanSansCN-Regular';
-    font-size: 1.875vw;
+    font-size: 2.4vw;
     text-align: center;
-    margin-bottom: 2.81vw;
+    margin-bottom: 1.8vw;
 
   }
 
