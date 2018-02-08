@@ -24,7 +24,7 @@
           </div>
           <div>
             <label>
-              字多字少，都是心意：<textarea class="comment" v-model="con" maxlength="80"></textarea>
+              字多字少，都是心意：<textarea ref="comment" class="comment" v-model="con" maxlength="80"></textarea>
             </label>
           </div>
         </form>
@@ -66,7 +66,7 @@
           return this.openTimeline.restart()
         }
 
-        const {modal, seal, envelope, content, btn} = this.$refs
+        const {modal, seal, envelope, content, comment, btn} = this.$refs
         const _height = Math.min(1500, window.innerHeight)
         this.openTimeline = new TimelineLite()
 
@@ -77,6 +77,7 @@
           .to(seal, 1, {rotationX: 0})
           .set(seal, {zIndex: 1})
           .set(content, {zIndex: 2})
+          .set(comment, {height: 152})
           .to(content, 1, {y: -1 * 0.4 * _height, height: 200 + 0.4 * _height, ease: Back.easeOut.config(1.1)})
           .to(envelope, 1, {y: (_height - 1000) / 5}, '-=1')
           .from(btn, .5, {autoAlpha: 0, y: 10}, '-=.5')
@@ -163,7 +164,7 @@
     }
     .seal {
       left: 50%;
-      top: -233px;
+      top: -231px;
       z-index: 4;
       position: absolute;
       transform-origin: bottom;
@@ -230,7 +231,7 @@
       width: 98%;
       margin-top: -10px;
       line-height: 40px;
-      height: 152px;
+      height: 107px;
       display: block;
       resize: none;
       overflow: hidden;
