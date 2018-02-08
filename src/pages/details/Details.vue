@@ -255,6 +255,9 @@
         ]
       }
     },
+    mounted () {
+      this.initSlick()
+    },
     methods: {
       changeVisible () {
         this.schemeVisible = scrollIntoView(this.$refs.scheme)
@@ -293,6 +296,9 @@
         newVal && !this.schemeAnimated && this.schemeAnimate()
       },
       detailData () {
+        try {
+          $('#slicker').slick('unslick')
+        } catch (e) {}
         setTimeout(this.initSlick.bind(this))
       }
     }
