@@ -34,9 +34,8 @@
 
         this.enterTimeline
           .to(modal, .5, {autoAlpha: 1})
-          .to(img, .5, {scale: 1.2}, '-=.5')
-          .from(content, .5, {x: -50, autoAlpha: 0})
-          .staggerFromTo(title.querySelectorAll('span'), .5, {alpha: 0, x: -100,},
+          .from(content, .7, {x: -50, autoAlpha: 0})
+          .staggerFromTo(title.querySelectorAll('span'), .7, {alpha: 0, x: -100,},
             {alpha: 1, x: 0, ease: Power4.easeOut}, -.05, '-=0.5')
       },
       mouseleave () {
@@ -52,7 +51,6 @@
 
         this.leaveTimeline
           .to(modal, .5, {autoAlpha: 0})
-          .to(img, .5, {scale: 1}, '-=.5')
       },
       toDetail () {
         this.$router.push({path: `/details/${this.id}`})
@@ -78,7 +76,7 @@
     height: 100%;
     color: #000;
     opacity: 0;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, 1);
     cursor: pointer;
     .contentBox {
       position: absolute;
@@ -99,7 +97,7 @@
         text-align: left;
         width: 82%;
         font-size: 1vw;
-        line-height: 1.4vw;
+        line-height: 1.8vw;
 
       }
     }

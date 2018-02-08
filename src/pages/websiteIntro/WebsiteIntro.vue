@@ -10,7 +10,18 @@
     </div>
     <Paragraph v-bind="paragraphs[2]"/>
     <div class="jigsaw">
-      <case-item v-for="item of similarCases" v-bind="item" :key="item.id"/>
+      <div>
+        <img src="../../assets/websiteIntro/pic_2.jpg" alt="">
+      </div>
+      <div>
+        <img src="../../assets/websiteIntro/pic_3.jpg" alt="">
+      </div>
+      <div>
+        <img src="../../assets/websiteIntro/pic_4.jpg" alt="">
+      </div>
+      <div>
+        <img src="../../assets/websiteIntro/pic_5.jpg" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -74,11 +85,8 @@
   .jigsaw {
     display: flex;
     justify-content: space-between;
-    .secondPageParagraphTitle {
-      margin-bottom: 0.6vw;
-    }
     > div {
-      width: 50%;
+      width: 25%;
       img {
         width: 100%;
       }

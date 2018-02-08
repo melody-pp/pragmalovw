@@ -12,9 +12,7 @@
     <img class="w100" :src="detailData.sj3_thumb">
     <Paragraph v-bind="paragraphs[1]" class="margin114"/>
     <div class="groupOfPictures">
-      <div><img :src="detailData.sj41_thumb"></div>
-      <div><img :src="detailData.sj42_thumb"></div>
-      <div><img :src="detailData.sj43_thumb"></div>
+      <div v-for="(slick,index) of detailData.sj_thumb"><img :src="slick"></div>
     </div>
     <div ref="scheme" class="secondPageParagraphText scheme">
       <svg ref="stoneSvg" class="stone-svg" viewBox="0 0 481 347" xmlns="http://www.w3.org/2000/svg">
@@ -216,7 +214,7 @@
 </template>
 
 <script>
-
+  import $ from 'jquery'
   import { TimelineLite } from 'gsap'
   import { scrollIntoView } from '../../util'
   import { changeVisibleMixin, similarCaseMixin } from '../../mixins'
@@ -244,7 +242,8 @@
           sj2_title: '',
           sj3_title: '',
           sj41_title: '',
-          sj42_title: ''
+          sj42_title: '',
+          sj_thumb: []
         }
       },
       paragraphs () {
@@ -253,6 +252,15 @@
           {content: this.detailData.sj3_title.split(/\r?\n/)}
         ]
       }
+    },
+    mounted () {
+      $('.groupOfPictures').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+      })
     },
     methods: {
       changeVisible () {
@@ -272,7 +280,7 @@
         this.$router.push({path: '/wonderfulMoment'})
       },
       isPunctuation (char) {
-        return ['，', '。', '？','！',].includes(char)
+        return ['，', '。', '？', '！',].includes(char)
       }
     },
     watch: {
