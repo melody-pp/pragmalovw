@@ -17,8 +17,8 @@
         </div>
 
         <ul class="menu">
-          <li v-for="(pageText, index) of pageTextList" :key="pageText.id" @click="moveTo(index+2)"
-              :class="{[`menu-color-${index+2}`]: pageIndex===index+2}">
+          <li v-for="(pageText, index) of pageTextList" :key="pageText.id" @click="moveTo(index+1)"
+              :class="{[`menu-color-${index+1}`]: pageIndex===index+1}">
             {{pageText.title}}
           </li>
         </ul>

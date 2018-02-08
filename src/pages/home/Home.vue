@@ -1,16 +1,16 @@
 <template>
   <div id="fullpage">
-    <div class="section page-1">
-      <Page1 :moveIn="pageIndex === 1"/>
-    </div>
+    <!--<div class="section page-1">-->
+    <!--<Page1 :moveIn="pageIndex === 1"/>-->
+    <!--</div>-->
     <div class="section page-2">
-      <Page2 :moveIn="pageIndex === 2"/>
+      <Page2 :moveIn="pageIndex === 1"/>
     </div>
     <div class="section page-3">
-      <Page3 :moveIn="pageIndex === 3"/>
+      <Page3 :moveIn="pageIndex === 2"/>
     </div>
     <div class="section page-4">
-      <Page4 :moveIn="pageIndex === 4"/>
+      <Page4 :moveIn="pageIndex === 3"/>
     </div>
   </div>
 </template>
@@ -18,16 +18,14 @@
 <script>
   import $ from 'jquery'
   import { mapState, mapMutations } from 'vuex'
-  import Page1 from './Page1'
+  // import Page1 from './Page1'
   import Page2 from './Page2'
   import Page3 from './Page3'
   import Page4 from './Page4'
 
   export default {
     name: 'home',
-    data () {
-      return {}
-    },
+    components: {Page2, Page3, Page4},
     computed: {
       ...mapState(['refreshable', 'pageIndex', 'leaveInfoVisible']),
     },
@@ -53,7 +51,6 @@
       $('#fullpage').fullpage.destroy('all')
       next()
     },
-    components: {Page1, Page2, Page3, Page4}
   }
 </script>
 
