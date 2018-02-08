@@ -24,12 +24,12 @@
         </ul>
 
         <ul class="socialSoftware">
-          <li @click="!pragmaloveEWM">微信</li>
+          <li @click="pragmaloveEWM=!pragmaloveEWM">微信</li>
           <li @click="microblog">微博</li>
           <li @click="showLeaveInfo">留下您的信息</li>
         </ul>
-        <div v-if="pragmaloveEWM==true" class="pragmaloveEWM">
-          <img src="../../assets/pragmaloveEWM.jpg" alt="">
+        <div v-if="pragmaloveEWM" class="pragmaloveEWM">
+          <img src="../../assets/pragmaloveEWM.jpg">
         </div>
 
         <div class="langContactBox">
@@ -81,7 +81,7 @@
         location.href = `?lang=${lang}`
       },
       microblog () {
-        location.href = 'https://m.weibo.cn/p/1005056281744904'
+        window.open('https://weibo.com/u/6281744904')
       }
     }
   }
