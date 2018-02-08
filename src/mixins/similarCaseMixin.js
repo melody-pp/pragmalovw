@@ -9,7 +9,7 @@ export const similarCaseMixin = {
       const result = []
       while (result.length < Math.min(this.similarNum, items.length)) {
         const item = sample(items)
-        result.some(exItem => exItem.id === item.id) || item.id === this.detailId || result.push(item)
+        item.id === this.detailId || result.some(exItem => exItem.id === item.id) || result.push(item)
       }
 
       return this.cleanCase(result)
@@ -23,6 +23,14 @@ export const similarCaseMixin = {
         title: item.ej_title,
         content: item.ej_description
       }))
+    }
+  },
+  watch: {
+    $route: {
+      deep: true,
+      handler () {
+        this.$forceUpdate()
+      }
     }
   }
 }
