@@ -24,10 +24,13 @@
         </ul>
 
         <ul class="socialSoftware">
-          <li>微信</li>
-          <li>微博</li>
+          <li @click="!pragmaloveEWM">微信</li>
+          <li @click="microblog">微博</li>
           <li @click="showLeaveInfo">留下您的信息</li>
         </ul>
+        <div v-if="pragmaloveEWM==true" class="pragmaloveEWM">
+          <img src="../../assets/pragmaloveEWM.jpg" alt="">
+        </div>
 
         <div class="langContactBox">
           <ul class="language">
@@ -54,6 +57,11 @@
   import { mapState, mapMutations } from 'vuex'
 
   export default {
+    data () {
+      return {
+        pragmaloveEWM: false
+      }
+    },
     computed: {
       ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList', 'contactInfo', 'lang'])
     },
@@ -71,6 +79,9 @@
       },
       changLang (lang) {
         location.href = `?lang=${lang}`
+      },
+      microblog () {
+        location.href = 'https://m.weibo.cn/p/1005056281744904'
       }
     }
   }
@@ -193,7 +204,7 @@
     .socialSoftware {
       font-family: 'SourceHanSansCN-Regular';
       font-size: 1.48vh;
-      color: #a7a7a7;
+      color: #6f6c6c;
       li {
         margin-bottom: 1vh;
         cursor: pointer;
@@ -252,5 +263,15 @@
     text-decoration: none;
     font-family: 'SourceHanSansCN-Light';
     font-size: 1.2vh;
+  }
+
+  .pragmaloveEWM {
+    position: absolute;
+    left: 1vw;
+    top: 10vw;
+    width: 83.33vw;
+    img {
+      width: 100%;
+    }
   }
 </style>

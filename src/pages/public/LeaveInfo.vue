@@ -103,7 +103,7 @@
           tel: this.tel,
           con: this.con
         }).then(res => {
-          alertify.alert(res.data)
+          alertify.alert("提交成功！")
         })
       },
       validateData () {
