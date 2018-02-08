@@ -267,9 +267,9 @@
 
   .pragmaloveEWM {
     position: absolute;
-    left: 1vw;
+    left: -18vw;
     top: 10vw;
-    width: 83.33vw;
+    width: 18vw;
     img {
       width: 100%;
     }
