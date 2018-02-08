@@ -12,7 +12,7 @@
         this.$router.push('/', this.moveFullpage, this.moveFullpage)
       },
       moveFullpage () {
-        $('#fullpage').fullpage.moveTo(1)
+        setTimeout(() => $('#fullpage').fullpage.moveTo(1))
       }
     }
   }

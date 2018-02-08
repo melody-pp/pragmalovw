@@ -12,13 +12,14 @@
 </template>
 <script>
   import $ from 'jquery'
+
   export default {
     methods: {
       toIndex () {
         this.$router.push('/', this.moveFullpage, this.moveFullpage)
       },
       moveFullpage () {
-        $('#fullpage').fullpage.moveTo(1)
+        setTimeout(() => $('#fullpage').fullpage.moveTo(1))
       }
     }
   }
