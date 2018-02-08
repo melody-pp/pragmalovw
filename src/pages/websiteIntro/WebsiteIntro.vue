@@ -19,8 +19,7 @@
   import Paragraph from '../public/Paragraph'
   import WhiteLogo from '../public/WhiteLogo'
   import { scrollIntoView } from '../../util'
-  import { changeVisibleMixin } from '../../mixins'
-  import { similarCaseMixin } from '../../mixins'
+  import { changeVisibleMixin, similarCaseMixin } from '../../mixins'
 
   export default {
     mixins: [changeVisibleMixin, similarCaseMixin],
