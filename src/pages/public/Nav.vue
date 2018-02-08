@@ -32,8 +32,8 @@
         <div class="langContactBox">
           <ul class="language">
             <li @click="changLang('cn')" :class="{active: lang==='cn'}">中文</li>
-           <!-- <li @click="changLang('en')" :class="{active: lang==='en'}">英文</li>
-            <li @click="changLang('jp')" :class="{active: lang==='jp'}">日语</li>-->
+            <!-- <li @click="changLang('en')" :class="{active: lang==='en'}">英文</li>
+             <li @click="changLang('jp')" :class="{active: lang==='jp'}">日语</li>-->
           </ul>
 
           <div class="line"></div>
@@ -171,16 +171,14 @@
       font-family: 'SourceHanSansCN-Regular';
       font-weight: bolder;
       font-size: 2.78vh;
+
       .menu-color-1 {
         color: #f091a0;
       }
       .menu-color-2 {
-        color: #f091a0;
-      }
-      .menu-color-3 {
         color: #ec681f;
       }
-      .menu-color-4 {
+      .menu-color-3 {
         color: #715ba5;
       }
 
