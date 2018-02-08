@@ -21,7 +21,7 @@ export const similarCaseMixin = {
         id: item.id,
         imgUrl: item[this.tjImgKey],
         title: item.ej_title,
-        content: item.ej_description[0]
+        content: item.ej_description
       }))
     }
   }
