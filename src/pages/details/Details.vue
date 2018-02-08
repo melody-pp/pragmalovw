@@ -279,6 +279,7 @@
         $('#slicker').slick({
           slidesToShow: 1,
           autoplay: true,
+          autoplaySpeed: 1000,
           dots: false,
           infinite: true,
           speed: 500,
