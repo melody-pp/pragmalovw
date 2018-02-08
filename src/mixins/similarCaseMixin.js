@@ -9,7 +9,7 @@ export const similarCaseMixin = {
       const result = []
       while (result.length < Math.min(this.similarNum, items.length)) {
         const item = sample(items)
-        result.some(exItem => exItem.id === item.id) || result.push(JSON.parse(JSON.stringify(item)))
+        result.some(exItem => exItem.id === item.id) || item.id === this.detailId || result.push(item)
       }
 
       return this.cleanCase(result)
