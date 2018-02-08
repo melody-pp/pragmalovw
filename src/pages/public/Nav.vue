@@ -208,8 +208,8 @@
       li {
         margin-bottom: 1vh;
         cursor: pointer;
-        &:hover {
-          color: #333333;
+        &:hover, &.active {
+          color: #000;
         }
       }
       li:last-child {
