@@ -1,5 +1,6 @@
 <template>
   <div>
+    <white-logo/>
     <img class="w100" :src="detailData.sj1_thumb">
     <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136 clearfix">
       <div v-for="(line, index) of detailData.sj1_title.split('\n').reverse()" :key="index">
@@ -220,9 +221,10 @@
   import { scrollIntoView } from '../../util'
   import { changeVisibleMixin, similarCaseMixin } from '../../mixins'
   import Paragraph from '../public/Paragraph'
+  import WhiteLogo from '../public/WhiteLogo'
 
   export default {
-    components: {Paragraph},
+    components: {Paragraph, WhiteLogo},
     mixins: [changeVisibleMixin, similarCaseMixin],
     data () {
       return {

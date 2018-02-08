@@ -95,9 +95,12 @@
         }
       }
       .content {
-        color: #000;
+        color: rgba(0, 0, 0, 0.8);
         text-align: left;
         width: 80%;
+        font-size: 1vw;
+        line-height: 1.4vw;
+
       }
     }
   }
