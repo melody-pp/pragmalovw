@@ -4,7 +4,7 @@
     <img class="w100" :src="detailData.sj1_thumb">
     <div class="secondPageParagraphVerticalTitle detailsTitleColor margin136 clearfix">
       <div v-for="(line, index) of detailData.sj1_title.split(/\r?\n/).reverse()" :key="index">
-        <div :class="{punctuation:index===line.length-1}" v-for="(char, index) of line" :key="index">{{char}}</div>
+        <div :class="{punctuation:isPunctuation(char)}" v-for="(char, index) of line" :key="index">{{char}}</div>
       </div>
     </div>
     <img class="w100" :src="detailData.sj2_thumb">
@@ -270,6 +270,9 @@
       },
       toMoreCase () {
         this.$router.push({path: '/wonderfulMoment'})
+      },
+      isPunctuation (char) {
+        return ['，', '。', '？','！',].includes(char)
       }
     },
     watch: {
