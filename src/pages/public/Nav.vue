@@ -24,9 +24,9 @@
         </ul>
 
         <ul class="socialSoftware">
-          <li @click="pragmaloveEWM=!pragmaloveEWM">微信</li>
+          <li @click="pragmaloveEWM=!pragmaloveEWM" :class="{active:pragmaloveEWM}">微信</li>
           <li @click="microblog">微博</li>
-          <li @click="showLeaveInfo">留下您的信息</li>
+          <li @click="showLeaveInfo" :class="{active:leaveInfoVisible}">留下您的信息</li>
         </ul>
         <div v-if="pragmaloveEWM" class="pragmaloveEWM">
           <img src="../../assets/pragmaloveEWM.jpg">
