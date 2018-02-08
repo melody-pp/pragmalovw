@@ -11,7 +11,7 @@
     <Paragraph v-bind="paragraphs[0]" class="margin114"/>
     <img class="w100" :src="detailData.sj3_thumb">
     <Paragraph v-bind="paragraphs[1]" class="margin114"/>
-    <div id="slicker">
+    <div id="slicker" class="groupOfPictures">
       <div v-for="(slick,index) of detailData.sj_thumb" :key="index">
         <img :src="slick">
       </div>
@@ -278,7 +278,8 @@
       initSlick () {
         $('#slicker').slick({
           slidesToShow: 1,
-          dots: true,
+          autoplay: true,
+          dots: false,
           infinite: true,
           speed: 500,
           fade: true,
@@ -359,5 +360,19 @@
         }
       }
     }
+  }
+
+  .slick-next {
+    right: 2vw;
+    z-index: 10;
+  }
+
+  .slick-prev {
+    left: 1vw;
+    z-index: 10;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    font-size: 2vw;
   }
 </style>
