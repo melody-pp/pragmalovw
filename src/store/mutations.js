@@ -14,6 +14,7 @@ export default {
 
   hideNav (state) {
     state.navVisible = false
+    state.weixinVisible = false
     setTimeout(() => {
       cacheDom('.nav-box').classList.remove('navVisible')
     }, 80)
@@ -23,6 +24,7 @@ export default {
     for (const el of cacheDom('#app>div').children) {
       el.classList.contains('modal') || el.classList.add('glass')
     }
+    state.weixinVisible = false
     state.leaveInfoVisible = true
   },
 
@@ -55,5 +57,9 @@ export default {
 
   setLang (state, lang) {
     state.lang = lang
-  }
+  },
+
+  toggleWeixin (state) {
+    state.weixinVisible = !state.weixinVisible
+  },
 }

@@ -7,5 +7,6 @@ export default {
   unite: [],
   goodtime: [],
   isLoading: true,
-  lang: 'cn'
+  lang: 'cn',
+  weixinVisible: false
 }
