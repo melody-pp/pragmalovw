@@ -25,9 +25,6 @@
     computed: {
       isLoading () {
         return this.$store.state.isLoading
-      },
-      setLoadingStatus (status) {
-        return this.$store.commit('setLoadingStatus', status)
       }
     }
   }

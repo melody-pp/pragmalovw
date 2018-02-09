@@ -35,34 +35,42 @@
     computed: {
       ThemeText () {
         return this.$store.getters.getThemeText(0)
+      },
+      isLoading () {
+        return this.$store.state.isLoading
       }
     },
     methods: {
       toWebsiteIntro () {
         this.$router.push({path: '/websiteIntro'})
       },
-      animate () {
+      animate (delay = .5) {
         const {
           littleRightTop, littleBottom, littleBottomStone, littleBottomStoneShadow, littleMiddle,
           leftTopDirec, topStone, topStoneShadow, leftBottomDirec, leftBottomDirecShadow, topDirec, topDirecShadow, bottomStone, bottomStoneShadow
         } = this.$refs
 
-        TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay: .5})
-        TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay: .5})
-        TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay: .5})
-        TweenLite.from(littleBottomStoneShadow, 1, {x: 10, y: 15, delay: .5})
-        TweenLite.from(littleMiddle, 1, {x: 30, y: 15, delay: .5})
-        TweenLite.from(leftTopDirec, 1, {x: -30, y: -10, rotation: 10, delay: .5})
-        TweenLite.from(topStone, 1, {x: -15, y: -5, delay: .5})
-        TweenLite.from(topStoneShadow, 1, {x: -15, y: -5, delay: .5})
-        TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, rotation: -10, delay: .5})
-        TweenLite.from(leftBottomDirecShadow, 1, {x: -20, y: 30, rotation: -10, delay: .5})
-        TweenLite.from(topDirec, 1, {y: -30, rotation: 10, delay: .5})
-        TweenLite.from(topDirecShadow, 1, {y: -10, rotation: 1, delay: .5})
-        TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay: .5})
-        TweenLite.from(bottomStoneShadow, 1, {x: 30, y: 20, delay: .5})
+        TweenLite.from(littleRightTop, 1, {x: 30, y: -20, delay})
+        TweenLite.from(littleBottom, 1, {x: 20, y: 30, delay})
+        TweenLite.from(littleBottomStone, 1, {x: 10, y: 15, delay})
+        TweenLite.from(littleBottomStoneShadow, 1, {x: 10, y: 15, delay})
+        TweenLite.from(littleMiddle, 1, {x: 30, y: 15, delay})
+        TweenLite.from(leftTopDirec, 1, {x: -30, y: -10, rotation: 10, delay})
+        TweenLite.from(topStone, 1, {x: -15, y: -5, delay})
+        TweenLite.from(topStoneShadow, 1, {x: -15, y: -5, delay})
+        TweenLite.from(leftBottomDirec, 1, {x: -20, y: 30, rotation: -10, delay})
+        TweenLite.from(leftBottomDirecShadow, 1, {x: -20, y: 30, rotation: -10, delay})
+        TweenLite.from(topDirec, 1, {y: -30, rotation: 10, delay})
+        TweenLite.from(topDirecShadow, 1, {y: -10, rotation: 1, delay})
+        TweenLite.from(bottomStone, 1, {x: 30, y: 20, delay})
+        TweenLite.from(bottomStoneShadow, 1, {x: 30, y: 20, delay})
       }
     },
+    watch: {
+      isLoading () {
+        this.animate(0)
+      }
+    }
   }
 </script>
 <style lang="scss">
