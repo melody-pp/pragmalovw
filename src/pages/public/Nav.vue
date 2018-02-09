@@ -24,12 +24,12 @@
         </ul>
 
         <ul class="socialSoftware">
-          <li @click="toggleWeixin" :class="{active:weixinVisible}">微信</li>
+          <li @click="toggleWeixin" :class="{active:weixinVisible, weixin: true}">微信</li>
           <li @click="microblog">微博</li>
           <li @click="showLeaveInfo" :class="{active:leaveInfoVisible}">留下您的信息</li>
         </ul>
         <div v-if="weixinVisible" class="pragmaloveEWM">
-          <img src="../../assets/pragmaloveEWM.jpg">
+          <img class="weixin" src="../../assets/pragmaloveEWM.jpg">
         </div>
 
         <div class="langContactBox">
@@ -62,11 +62,18 @@
         pragmaloveEWM: false
       }
     },
+    created () {
+      this.documentClickHandler = this.documentClickHandler.bind(this)
+      window.addEventListener('click', this.documentClickHandler)
+    },
+    beforeDestroy () {
+      window.removeEventListener('click', this.documentClickHandler)
+    },
     computed: {
       ...mapState(['navVisible', 'pageIndex', 'leaveInfoVisible', 'pageTextList', 'contactInfo', 'lang', 'weixinVisible'])
     },
     methods: {
-      ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo', 'toggleWeixin']),
+      ...mapMutations(['showNav', 'hideNav', 'showLeaveInfo', 'toggleWeixin', 'hideWeixin']),
       moveTo (pageIndex) {
         this.$router.push('/', () => {
           this.moveFullpage(pageIndex)
@@ -82,6 +89,11 @@
       },
       microblog () {
         window.open('https://weibo.com/u/6281744904')
+      },
+      documentClickHandler (event) {
+        if (!event.target.classList.contains('weixin')) {
+          this.hideWeixin()
+        }
       }
     }
   }

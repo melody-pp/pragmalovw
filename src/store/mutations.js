@@ -62,4 +62,8 @@ export default {
   toggleWeixin (state) {
     state.weixinVisible = !state.weixinVisible
   },
+
+  hideWeixin (state) {
+    state.weixinVisible = false
+  },
 }
