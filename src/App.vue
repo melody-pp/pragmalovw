@@ -101,8 +101,13 @@
     box-sizing: border-box;
   }
 
-  body canvas {
-    display: none;
+  body {
+    canvas {
+      display: none;
+    }
+    .fp-tableCell, .fp-section.fp-table {
+      display: block;
+    }
   }
 
   ul, li {
